@@ -1,0 +1,17 @@
+@use 'reset';
+@use 'variables';
+
+:root {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  body {
+    font-family: inherit;
+  }
+}
+
