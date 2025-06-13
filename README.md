@@ -1,54 +1,35 @@
-# React + TypeScript + Vite
+🐋 **My Portfolio**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+📝 **Description**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my personal portfolio built with modern front-end technologies to showcase my skills, projects, and professional growth as a Front-End Developer.
 
-## Expanding the ESLint configuration
+The website supports English and Ukrainian languages.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🌐 **Live Demo**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+[ev-indrik-portfolio.netlify.app](https://ev-indrik-portfolio.netlify.app/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+⚙️ **Technologies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Vite
+- React
+- TypeScript
+- React Router
+- Ant Design 5
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🚀 **Current Status**
+
+Project in progress – setting up layout, initial structure, routing, and language switching.
+
+💡 **Key Features** (coming soon)
+
+- [ ] Responsive design
+- [ ] Project gallery
+- [ ] Multi-page navigation with React Router
+- [ ] English and Ukrainian language support
+- [ ] Interactive components
+- [ ] Light and Dark modes
+- [ ] Contact form
