@@ -2,7 +2,9 @@ import {type FC} from 'react';
 
 const About: FC = () => {
     return (
-        <h2>{"ABOUT"}</h2>
+        <div className={'container'}>
+            <h2>{"ABOUT"}</h2>
+        </div>
     );
 };
 

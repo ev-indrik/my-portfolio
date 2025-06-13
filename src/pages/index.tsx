@@ -1,18 +1,37 @@
 import {lazy, type FC} from "react";
 import {type RouteObject, RouterProvider} from "react-router-dom";
 import {createBrowserRouter} from "react-router";
+import WebsiteLayout from "../layuot/WebsiteLayout.tsx";
+import NoFooterLayout from "../layuot/NoFooterLayout.tsx";
 
 const Home = lazy<FC>(() => import('../pages/home/Home.tsx'))
 const About = lazy<FC>(() => import('../pages/about/About.tsx'))
+const NotFound = lazy<FC>(() => import('../pages/not-found/NotFound.tsx'))
 
 const routes: RouteObject[] = [
     {
-        path: `/home`,
-        element: <Home/>,
+        path: `/`,
+        element: <WebsiteLayout/>,
+        children: [
+            {
+                path: `/about`,
+                element: <About/>,
+            },
+        ]
     },
     {
-        path: `/about`,
-        element: <About/>,
+        path: `/`,
+        element: <NoFooterLayout/>,
+        children: [
+            {
+                path: `/home`,
+                element: <Home/>,
+            },
+        ]
+    },
+    {
+        path: `*`,
+        element: <NotFound/>,
     },
 ]
 

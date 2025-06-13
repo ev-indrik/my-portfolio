@@ -2,20 +2,26 @@ body {
   font-family: inherit;
 }
 
-.app-wrapper {
-  height: 100vh;
-  position: relative;
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-  .container {
-    margin: 0 auto;
-    max-width: 1200px;
+  .pages-wrapper {
+    flex: 1 1 auto;
+    border: 2px solid red;
+  }
+}
 
-    @media screen and (max-width: 1240px) {
-      padding: 0 20px;
-    }
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
 
-    @media screen and (max-width: 575px) {
-      padding: 0 12px;
-    }
+  @media screen and (max-width: 1240px) {
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding: 0 12px;
   }
 }

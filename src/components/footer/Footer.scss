@@ -1,0 +1,6 @@
+@use '../../variables';
+
+.footer-wrapper {
+  background: variables.$primary-blue;
+  min-height: 160px;
+}
