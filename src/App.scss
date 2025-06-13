@@ -7,6 +7,15 @@ body {
   position: relative;
 
   .container {
+    margin: 0 auto;
+    max-width: 1200px;
 
+    @media screen and (max-width: 1240px) {
+      padding: 0 20px;
+    }
+
+    @media screen and (max-width: 575px) {
+      padding: 0 12px;
+    }
   }
 }
