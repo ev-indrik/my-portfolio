@@ -1,8 +1,8 @@
 import {type FC, type SVGProps} from 'react';
 
-import {ReactComponent as MainWhale} from './icons/main-whale.svg?react'
+import MainWhale from './icons/main-whale.svg?react'
 
-type IconTypes = 'test'
+type IconTypes = 'main-whale'
 type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {

@@ -4,6 +4,7 @@ import {Col, Menu, type MenuProps, Row } from "antd";
 import {useLocation, useNavigate} from "react-router";
 import MenuItem from './menu-item/MenuItem';
 import './Header.scss'
+import {SvgIcon} from "../icon/SvgIcon.tsx";
 
 
 
@@ -47,6 +48,7 @@ const Header: FC = () => {
                 <Row justify={'space-between'} align={'middle'}>
                     <Col>
                         <h3>{'WHALE LOGO'}</h3>
+                        <SvgIcon type={'main-whale'} />
                     </Col>
                     <Col span={18}>
                         <Menu
