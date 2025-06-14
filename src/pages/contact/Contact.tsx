@@ -2,7 +2,7 @@ import {type FC} from 'react';
 
 const Contact: FC = () => {
     return (
-        <div>
+        <div className={'container'}>
             <h3>{'Contact page'}</h3>
         </div>
     );

@@ -1,17 +1,17 @@
 import type {FC} from "react";
-import {MailOutlined} from "@ant-design/icons";
 import {Typography} from "antd";
+import {type IconTypes, SvgIcon} from "../../icon/SvgIcon.tsx";
 
 import './MenuItem.scss'
 
 const {Text} = Typography
 
 
-const MenuItem: FC<{label: string}> = ({label})=>{
+const MenuItem: FC<{label: string, iconType: IconTypes}> = ({label, iconType})=>{
     return(
         <div className={'menu-item-wrapper'}>
-            <MailOutlined/>
-            <Text>{label}</Text>
+            <SvgIcon type={iconType}/>
+            <Text className={'menu-item-text'}>{label}</Text>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import {type FC} from 'react';
 
 const Projects: FC = () => {
     return (
-        <div>
+        <div className={'container'}>
             <h3>{'Projects'}</h3>
         </div>
     );
