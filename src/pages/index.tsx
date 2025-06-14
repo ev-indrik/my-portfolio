@@ -6,6 +6,8 @@ import NoFooterLayout from "../layuot/NoFooterLayout.tsx";
 
 const Home = lazy<FC>(() => import('../pages/home/Home.tsx'))
 const About = lazy<FC>(() => import('../pages/about/About.tsx'))
+const Projects = lazy<FC>(() => import('../pages/projects/Projects.tsx'))
+const Contact = lazy<FC>(() => import('../pages/contact/Contact.tsx'))
 const NotFound = lazy<FC>(() => import('../pages/not-found/NotFound.tsx'))
 
 const routes: RouteObject[] = [
@@ -16,6 +18,14 @@ const routes: RouteObject[] = [
             {
                 path: `/about`,
                 element: <About/>,
+            },
+            {
+                path: `/projects`,
+                element: <Projects/>,
+            },
+            {
+                path: `/contact`,
+                element: <Contact/>,
             },
         ]
     },

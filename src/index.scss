@@ -2,7 +2,7 @@
 @use 'variables';
 
 :root {
-  font-family: "Quicksand", sans-serif;
+  font-family: variables.$main-font;
   font-optical-sizing: auto;
 
   font-synthesis: none;

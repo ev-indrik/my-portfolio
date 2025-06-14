@@ -2,4 +2,18 @@
 
 .header-wrapper {
 
+  .header-menu {
+    background: variables.$primary-bg-color;
+    border: none;
+    height: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+
+    .ant-menu-title-content {
+      font-family: variables.$main-font;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
 }

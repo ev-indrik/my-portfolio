@@ -1,51 +1,64 @@
 import {type FC, useState} from 'react';
-import {Menu, type MenuProps} from "antd";
+import {Col, Menu, type MenuProps, Row } from "antd";
 
+import {useLocation, useNavigate} from "react-router";
+import MenuItem from './menu-item/MenuItem';
 import './Header.scss'
-import {MailOutlined} from "@ant-design/icons";
+
+
 
 type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
     {
-        label: 'Home',
+        label: <MenuItem label={'Home'}/>,
         key: 'home',
-        icon: <MailOutlined/>,
     },
     {
-        label: 'About',
+        label: <MenuItem label={'About'}/>,
         key: 'about',
-        icon: <MailOutlined/>,
     },
     {
-        label: 'Projects',
+        label: <MenuItem label={'Projects'}/>,
         key: 'projects',
-        icon: <MailOutlined/>,
     },
     {
-        label: 'Contact',
+        label: <MenuItem label={'Contact'}/>,
         key: 'contact',
-        icon: <MailOutlined/>,
     },
 ]
 
-
 const Header: FC = () => {
 
-    const [current, setCurrent] = useState('mail');
+    const navigate = useNavigate()
+    const {pathname} = useLocation()
+    const currentLocation = pathname.split('/')[1]
+
+    const [current, setCurrent] = useState(currentLocation);
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCurrent(e.key);
+        navigate(`/${e.key}`)
     };
 
     return (
         <div className={'header-wrapper'}>
             <div className={'container'}>
-                <Menu
-                    onClick={onClick}
-                    selectedKeys={[current]}
-                    mode={"horizontal"}
-                    items={items}/>
+                <Row justify={'space-between'} align={'middle'}>
+                    <Col>
+                        <h3>{'WHALE LOGO'}</h3>
+                    </Col>
+                    <Col span={18}>
+                        <Menu
+                            className={'header-menu'}
+                            onClick={onClick}
+                            selectedKeys={[current]}
+                            mode={"horizontal"}
+                            items={items}
+                            overflowedIndicator={false}
+                        />
+                    </Col>
+                </Row>
             </div>
         </div>
     );
