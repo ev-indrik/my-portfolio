@@ -1,5 +1,5 @@
 import {type FC, useState} from 'react';
-import {Button, Col, Menu, type MenuProps, Popover, Row, Space} from "antd";
+import {Button, Col, Menu, type MenuProps, Row} from "antd";
 
 import {useLocation, useNavigate} from "react-router";
 import MenuItem from './menu-item/MenuItem';
@@ -29,12 +29,12 @@ const items: MenuItem[] = [
     },
 ]
 
-const content = (
-    <Space direction={'vertical'}>
-        <Button type={'default'} block>{'Go to Ukrainian'}</Button>
-        <Button type={'default'} block>{'Go to the Dark side'}</Button>
-    </Space>
-)
+// const content = (
+//     <Space direction={'vertical'}>
+//         <Button type={'default'} block>{'Go to Ukrainian'}</Button>
+//         <Button type={'default'} block>{'Go to the Dark side'}</Button>
+//     </Space>
+// )
 
 const Header: FC = () => {
 
@@ -73,11 +73,11 @@ const Header: FC = () => {
                                 items={items}
                                 overflowedIndicator={false}
                             />
-                            <Popover content={content} placement={'bottomRight'} arrow={false}>
-                                <Button type={'text'}>
-                                    <SvgIcon type={'burger'}/>
-                                </Button>
-                            </Popover>
+                            {/*<Popover content={content} placement={'bottomRight'} arrow={false}>*/}
+                            {/*    <Button type={'text'}>*/}
+                            {/*        <SvgIcon type={'burger'}/>*/}
+                            {/*    </Button>*/}
+                            {/*</Popover>*/}
                         </Row>
                     </Col>
                 </Row>

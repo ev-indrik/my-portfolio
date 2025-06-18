@@ -1,23 +1,25 @@
 .menu-item-wrapper {
   display: flex;
   align-items: center;
-  min-width: 120px;
+  min-width: 124px;
   border-radius: 8px;
   padding: 4px 8px;
 
   &:hover {
-    background-color: rgba(227, 241, 220, 0.7);
+    .ant-typography {
+      font-weight: 700 !important;
+    }
   }
 
   .menu-item-text {
     padding-left: 8px;
   }
 
-    .ant-typography {
-      font-size: 16px;
-      font-weight: 400;
-    }
+  .ant-typography {
+    font-size: 16px;
+    font-weight: 400;
   }
+}
 
 
 .ant-menu-item {
@@ -47,7 +49,7 @@
     .menu-item-wrapper {
 
       .ant-typography {
-        font-weight: 700!important;
+        font-weight: 700 !important;
       }
     }
   }

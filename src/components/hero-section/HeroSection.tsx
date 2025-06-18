@@ -1,14 +1,16 @@
 import './HeroSection.scss';
 
 import {type FC} from 'react';
-import {Button, Col, Row, Typography} from "antd";
+import {Col, Row, Space, Typography} from "antd";
 
 import homeHeroImg from './images/home-hero-img.png'
 import {SvgIcon} from "../icon/SvgIcon.tsx";
+import WebsiteButton from "../custom-button/WebsiteButton.tsx";
 
 const {Title, Paragraph} = Typography;
 
 const HeroSection: FC = () => {
+
     return (
         <div className={'hero-section-wrapper'}>
 
@@ -28,15 +30,17 @@ const HeroSection: FC = () => {
                         </Paragraph>
 
                         <Row style={{paddingTop: 50}}>
-                            <Button type={'primary'}>{'Learn more'}</Button>
+                            <WebsiteButton btnType={'primary'} text={'Learn More'} size={'large'}/>
                         </Row>
                         <Row style={{paddingTop: 50}}>
-                               <Button type={'text'}><SvgIcon type={'facebook'}/></Button>
-                               <Button type={'text'}><SvgIcon type={'instagram'}/></Button>
-                               <Button type={'text'}><SvgIcon type={'linkedin'}/></Button>
+                            <Space>
+                                <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'instagram'}/>} link={'https://github.com/ev-indrik'}/>
+                                <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'linkedin'}/>} link={'https://www.linkedin.com/in/evindrik/'}/>
+                                <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'facebook'}/>} link={'https://www.facebook.com/ev.indrik'}/>
+                                <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'instagram'}/>} link={'https://www.instagram.com/ev_indrik'}/>
+                            </Space>
                         </Row>
                     </Col>
-
 
                     <Col flex={'auto'}>
                         <Row justify={'end'} align={'bottom'} style={{height: '100%'}}>
@@ -46,12 +50,6 @@ const HeroSection: FC = () => {
                         </Row>
                     </Col>
                 </Row>
-
-                {/*<Row style={{border: '1px solid green'}}>*/}
-                {/*    <Col>*/}
-                {/*        <h3>{'SOCIALs'}</h3>*/}
-                {/*    </Col>*/}
-                {/*</Row>*/}
             </div>
         </div>
     );

@@ -1,0 +1,71 @@
+@use '../../variables';
+
+.ant-btn.custom-button {
+  font-family: variables.$main-font;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  box-shadow: unset;
+
+  &.ant-btn-default {
+    min-height: 42px;
+    height: 42px;
+
+    &.ant-btn-lg {
+      min-width: 200px;
+      min-height: 50px;
+      height: 50px;
+    }
+
+    &.ant-btn-sm {
+      min-height: 36px;
+      height: 36px;
+    }
+  }
+
+  &.ant-btn.custom-button:hover {
+    color: #FFFFFF;
+  }
+
+  &.primary {
+    background: variables.$primary-blue;
+    border-radius: 30px;
+    color: #FFFFFF;
+
+    &:hover {
+      background: #254164;
+    }
+  }
+
+  &.icon {
+
+    .ant-btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.ant-btn-default {
+      height: 42px;
+      width: 42px;
+    }
+
+    &:hover{
+
+      .ant-btn-icon {
+
+        svg {
+          path {
+            fill: variables.$primary-blue;
+          }
+        }
+      }
+
+    }
+  }
+
+}
