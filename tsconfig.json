@@ -3,5 +3,23 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
+  ],
+
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.scss",
+    "vite.config.ts",
+    "./src/type/modules.d.ts"
   ]
 }
+

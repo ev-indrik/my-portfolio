@@ -1,0 +1,19 @@
+{
+  "home": {
+    "mainTitle": "Yevheniia Budko",
+    "subTitle": "Frontend developer",
+    "description": "I'm a frontend developer passionate about crafting clean, responsive, and user-friendly web interfaces. With a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React, I build seamless digital experiences that are both functional and visually engaging",
+    "buttonText": "Learn More",
+    "buttonLink": "#about"
+  },
+  "about": {
+    "mainTitle": "Shortly about me",
+    "description": "Starting in December 2024, I am an intern at a startup with an international team, where I develop a frontend part of a web platform using React, TypeScript, and AntDesign. My responsibilities include creating responsive and visually appealing pages based on Figma designs, collaborating closely with the designer, and addressing various inquiries throughout development. I use Git for version control to ensure smooth project management and team collaboration",
+    "buttonText": "My projects",
+    "buttonLink": "#projects"
+  },
+  "projects": {
+    "mainTitle": "My Development Journey",
+    "description": "Built and integrated user registration/login flows:\nRegistration, login, forgot/reset password, email confirmation\nRouting setup with React Router, including NotFound pages for invalid users/companies\nDesigned and implemented complex form flows, including:\nCustom field rendering by type (text, date, file, GeoJSON, etc.)\nDynamic validation and conditional logic\nIntegration with HubSpot for form submissions and CRM pipelines\nMerged form logic with both the backend (Strapi) and HubSpot workflows to display, store, and process client data (confirmation emails, quote requests, contact info)"
+  }
+}

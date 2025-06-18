@@ -9,6 +9,7 @@ import Burger from './icons/burger.svg?react'
 import Facebook from './icons/fb.svg?react'
 import Instagram from './icons/instagram.svg?react'
 import LinkedIn from './icons/linkedin.svg?react'
+import Git from './icons/git.svg?react'
 
 export type IconTypes = 'main-whale'
     | 'menu-home'
@@ -19,8 +20,9 @@ export type IconTypes = 'main-whale'
     | 'facebook'
     | 'instagram'
     | 'linkedin'
+    | 'git'
 
-type IconColor = 'green' | 'red'
+// type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     'main-whale': MainWhale,
@@ -32,9 +34,10 @@ const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     'facebook': Facebook,
     'instagram': Instagram,
     'linkedin': LinkedIn,
+    'git': Git,
 } as const
 
-type Props = SVGProps<SVGSVGElement> & { type: IconTypes, color?: IconColor }
+type Props = SVGProps<SVGSVGElement> & { type: IconTypes }
 
 const SvgIcon: FC<Props> = ({type, color, ...svgProps}) => {
 
