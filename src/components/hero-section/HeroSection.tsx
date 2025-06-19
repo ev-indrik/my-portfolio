@@ -5,13 +5,14 @@ import {Col, Row, Typography} from "antd";
 
 import WebsiteButton from "../custom-button/WebsiteButton.tsx";
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
+import TextListItem from "../text-list-item/TextListItem";
 
 const {Title, Paragraph} = Typography;
 
 type HeroSectionProps = {
     mainTitle: string;
     subTitle?: string;
-    description: string;
+    description: string | string[];
     buttonText?: string;
     buttonLink?: string;
     isMainButton?: boolean;
@@ -43,7 +44,14 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                         {subTitle && <Title level={4}>{subTitle}</Title>}
 
-                        <Paragraph>{description}</Paragraph>
+                        {Array.isArray(description) ? (
+                            description.map((item, index) => (
+                                <TextListItem key={index} text={item} />
+                            ))
+                        ) : (
+                            <Paragraph>{description}</Paragraph>
+                        )}
+
 
                         {isMainButton && (<Row style={{paddingTop: 50}}>
                             <WebsiteButton btnType={'primary'} text={buttonText} size={'large'}/>

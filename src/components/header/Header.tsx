@@ -29,6 +29,7 @@ const items: MenuItem[] = [
     },
 ]
 
+// ===>> popup for Dark&Light modes, eng&ua
 // const content = (
 //     <Space direction={'vertical'}>
 //         <Button type={'default'} block>{'Go to Ukrainian'}</Button>
@@ -49,13 +50,17 @@ const Header: FC = () => {
         navigate(`/${e.key}`)
     };
 
+    const onLogoClick = ()=>{
+        navigate('/home')
+    }
+
     return (
         <div className={'header-wrapper'}>
             <div className={'container'}>
 
                 <Row justify={'space-between'}>
                     <Col>
-                        <Button type={'text'} className={'logo-btn'}>
+                        <Button type={'text'} className={'logo-btn'} onClick={onLogoClick}>
                             <div className={'header-logo-bg'}>
                                 <img src={greenBg} alt={"Green background"}/>
                             </div>
@@ -73,6 +78,7 @@ const Header: FC = () => {
                                 items={items}
                                 overflowedIndicator={false}
                             />
+                            {/*===>> popup for Dark&Light modes, eng&ua*/}
                             {/*<Popover content={content} placement={'bottomRight'} arrow={false}>*/}
                             {/*    <Button type={'text'}>*/}
                             {/*        <SvgIcon type={'burger'}/>*/}

@@ -14,6 +14,14 @@
   },
   "projects": {
     "mainTitle": "My Development Journey",
-    "description": "Built and integrated user registration/login flows:\nRegistration, login, forgot/reset password, email confirmation\nRouting setup with React Router, including NotFound pages for invalid users/companies\nDesigned and implemented complex form flows, including:\nCustom field rendering by type (text, date, file, GeoJSON, etc.)\nDynamic validation and conditional logic\nIntegration with HubSpot for form submissions and CRM pipelines\nMerged form logic with both the backend (Strapi) and HubSpot workflows to display, store, and process client data (confirmation emails, quote requests, contact info)"
+    "description": [
+      "Creating responsive web pages based on Figma designs and implementing adaptive layouts for major screen sizes",
+      "Building and integrating user registration/login flows: registration, login, forgot/reset password, email confirmation",
+      "Routing setup with React Router, including NotFound pages for invalid users/companies",
+      "Designing and implementing complex form flows, including: custom field rendering by type (text, date, file, GeoJSON, etc); dynamic validation and conditional logic",
+      "Integration with HubSpot for form submissions and CRM pipelines",
+      "Merging form logic with both the backend (Strapi) and HubSpot workflows to display, store, and process client data (confirmation emails, quote requests, contact info)",
+      "And more"
+    ]
   }
 }

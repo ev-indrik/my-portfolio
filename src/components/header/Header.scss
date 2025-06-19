@@ -19,6 +19,10 @@
     padding: 4px;
     z-index: 4;
 
+    &.ant-btn:hover {
+      background-color: transparent;
+    }
+
     .header-logo-bg {
       position: absolute;
       width: 190px;

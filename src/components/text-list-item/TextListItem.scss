@@ -1,0 +1,23 @@
+@use '../../variables';
+
+.text-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-family: variables.$main-font;
+
+  .bullet {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    margin-top: 8px;
+    background-color: variables.$primary-blue;
+  }
+
+  span {
+    word-break: break-word;
+  }
+}
