@@ -5,7 +5,7 @@ import {SvgIcon} from "../icon/SvgIcon.tsx";
 
 const SocialButtons: FC = () => {
     return (
-        <Row style={{paddingTop: 50}}>
+        <Row style={{paddingTop: 50}} >
             <Space>
                 <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'git'}/>} link={'https://github.com/ev-indrik'}/>
                 <WebsiteButton btnType={'icon'} icon={<SvgIcon type={'linkedin'}/>} link={'https://www.linkedin.com/in/evindrik/'}/>

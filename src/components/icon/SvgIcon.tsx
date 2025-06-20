@@ -10,6 +10,11 @@ import Facebook from './icons/fb.svg?react'
 import Instagram from './icons/instagram.svg?react'
 import LinkedIn from './icons/linkedin.svg?react'
 import Git from './icons/git.svg?react'
+import GitSmall from './icons/gitsmall.svg?react'
+import Plane from './icons/plane.svg?react'
+import At from './icons/at.svg?react'
+import Geo from './icons/geo.svg?react'
+import Tel from './icons/tel.svg?react'
 
 export type IconTypes = 'main-whale'
     | 'menu-home'
@@ -20,7 +25,12 @@ export type IconTypes = 'main-whale'
     | 'facebook'
     | 'instagram'
     | 'linkedin'
+    | 'git-small'
+    | 'plane'
+    | 'at'
     | 'git'
+    | 'geo'
+    | 'tel'
 
 // type IconColor = 'green' | 'red'
 
@@ -35,6 +45,11 @@ const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     'instagram': Instagram,
     'linkedin': LinkedIn,
     'git': Git,
+    'git-small': GitSmall,
+    'plane': Plane,
+    'geo': Geo,
+    'tel': Tel,
+    'at': At,
 } as const
 
 type Props = SVGProps<SVGSVGElement> & { type: IconTypes }

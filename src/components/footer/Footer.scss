@@ -3,4 +3,24 @@
 .footer-wrapper {
   background: variables.$primary-blue;
   min-height: 160px;
+
+  .ant-typography {
+    color: #FFFFFF;
+
+    a {
+      color: #FFFFFF;
+    }
+  }
+
+  .ant-space-item {
+    color: #FFFFFF;
+  }
+
+  .contact-item-box {
+    display: flex;
+  }
+
+  .signature-container {
+    border-top: 1px solid white;
+  }
 }
