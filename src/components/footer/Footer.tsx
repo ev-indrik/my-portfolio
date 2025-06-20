@@ -70,7 +70,7 @@ const Footer: FC = () => {
                             {contactInfo.map((it) =>
                                 <div key={it.id} className={'contact-item-box'}>
                                     <SvgIcon type={it.iconType}/>
-                                    <Paragraph>{it.text}</Paragraph>
+                                    <Paragraph style={{paddingLeft: 12}}>{it.text}</Paragraph>
                                 </div>
                             )}
                         </Space>

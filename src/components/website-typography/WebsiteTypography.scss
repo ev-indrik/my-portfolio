@@ -1,0 +1,96 @@
+@use '../../variables';
+
+body,
+#root {
+  .ant-typography {
+    font-family: variables.$main-font;
+
+    &.lh-md {
+      line-height: 1.2;
+    }
+
+    &.lh-lg {
+      line-height: 1.5;
+    }
+
+    &.sm {
+      font-size: 12px;
+    }
+
+    &.md {
+      font-size: 14px;
+    }
+
+    &.lg {
+      font-size: 16px;
+    }
+
+    &.w300 {
+      font-weight: 300;
+    }
+
+    &.w400 {
+      font-weight: 400;
+    }
+
+    &.w500 {
+      font-weight: 500;
+    }
+
+    &.w600 {
+      font-weight: 600;
+    }
+
+    &.w700 {
+      font-weight: 700;
+    }
+
+    &.primary {
+      color: variables.$primary-blue;
+    }
+
+    &.black {
+      color: #000;
+    }
+    &.white {
+      color: #FFFFFF;
+    }
+
+    &.centered {
+      text-align: center;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &.ant-typography {
+      font-weight: 400;
+      font-family: variables.$main-font;
+    }
+  }
+
+  h1.ant-typography {
+    font-size: 80px;
+  }
+
+  h2.ant-typography {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  h3.ant-typography {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  h4.ant-typography {
+    font-size: 20px;
+  }
+
+  h5.ant-typography {
+    font-size: 16px;
+  }
+}
