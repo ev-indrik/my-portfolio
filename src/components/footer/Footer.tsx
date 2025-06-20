@@ -6,6 +6,7 @@ import {Link} from "react-router";
 import WebsiteButton from "../custom-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
 import SocialButtons from '../social-buttons/SocialButtons';
+import bgPetalsImg from './images/footer-petals-img.png';
 
 const {Paragraph} = Typography;
 
@@ -92,6 +93,11 @@ const Footer: FC = () => {
                     </Paragraph>
                 </Row>
             </div>
+
+            <div className={'footer-img-wrapper'}>
+                <img src={bgPetalsImg} alt={"illustration"}/>
+            </div>
+
         </div>
     )
         ;
