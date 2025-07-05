@@ -1,13 +1,15 @@
 import './HeroSection.scss';
 
 import {type FC} from 'react';
-import {Col, Row, Typography} from "antd";
+import { Col, Row } from "antd";
 
 import WebsiteButton from "../custom-button/WebsiteButton.tsx";
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
 import TextListItem from "../text-list-item/TextListItem";
 
-const {Title, Paragraph} = Typography;
+import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+
+const {Title, Paragraph} = WebsiteTypography;
 
 type HeroSectionProps = {
     mainTitle: string;

@@ -1,14 +1,15 @@
 import {type FC} from 'react';
 
 import './Footer.scss'
-import {Col, Row, Space, Typography} from "antd";
+import {Col, Row, Space} from "antd";
 import {Link} from "react-router";
 import WebsiteButton from "../custom-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
 import SocialButtons from '../social-buttons/SocialButtons';
 import bgPetalsImg from './images/footer-petals-img.png';
 
-const {Paragraph} = Typography;
+import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+const {Paragraph} = WebsiteTypography;
 
 type ContactItem = {
     id: number;
@@ -57,7 +58,7 @@ const Footer: FC = () => {
                 <Row justify={'space-between'} align={'stretch'} wrap={false} style={{paddingTop: 32, paddingBottom: 16}}>
                     <Col span={6}>
                             <Space direction={'vertical'} size={'middle'} style={{paddingBottom: 20}}>
-                                <Paragraph>{'Menu'}</Paragraph>
+                                <Paragraph color={'white'} size={'lg'}>{'Menu'}</Paragraph>
                                 <Link to="/home">{'Home'}</Link>
                                 <Link to="/about">{'About'}</Link>
                                 <Link to="/projects">{'Projects'}</Link>
@@ -65,12 +66,12 @@ const Footer: FC = () => {
                             <SocialButtons/>
                     </Col>
                     <Col span={6}>
-                        <Paragraph>{'Contact info'}</Paragraph>
+                        <Paragraph color={'white'} size={'lg'}>{'Contact info'}</Paragraph>
                         <Space direction={'vertical'} style={{paddingTop: 15}}>
                             {contactInfo.map((it) =>
                                 <div key={it.id} className={'contact-item-box'}>
                                     <SvgIcon type={it.iconType}/>
-                                    <Paragraph style={{paddingLeft: 12}}>{it.text}</Paragraph>
+                                    <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
                                 </div>
                             )}
                         </Space>
@@ -83,7 +84,7 @@ const Footer: FC = () => {
                 </Row>
 
                 <Row className={'signature-container'} justify={'center'} style={{paddingTop: 16}}>
-                    <Paragraph>
+                    <Paragraph color={'white'}>
                         {'Coded by '}
                         <a href={"https://github.com/ev-indrik"} target="_blank"
                            rel="noopener noreferrer">

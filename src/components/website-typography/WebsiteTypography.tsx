@@ -67,6 +67,6 @@ const Text: FC<Partial<WebsiteTextProps>> = ({
     />
 )
 
-
 const WebsiteTypography = { Title, Paragraph, Text }
-export default WebsiteTypography;
+
+export default WebsiteTypography

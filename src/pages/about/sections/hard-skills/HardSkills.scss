@@ -1,0 +1,59 @@
+@use '../../../../variables';
+
+.hard-skills-wrapper {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+
+  .title-box {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 48px;
+
+    .hard-skills-img-wrapper {
+      width: 120px;
+      height: auto;
+
+      img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      }
+    }
+  }
+
+  .skills-div-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(9, auto);
+    margin-bottom: 48px;
+    gap: 16px;
+    grid-template-areas:
+    "react        typescript  typescript    html         html"
+    "react        typescript  typescript    html         html"
+    "react        antd        antd          antd         antd"
+    "react        antd        antd          antd         antd"
+    "javascript   javascript  sass          sass         css"
+    "javascript   javascript  sass          sass         css"
+    "javascript   javascript  strapi        strapi       strapi"
+    "javascript   javascript  strapi        strapi       strapi"
+    "javascript   javascript  .             .            .     ";
+
+    .react      { grid-area: react; }
+    .typescript { grid-area: typescript; }
+    .html       { grid-area: html; }
+    .antd       { grid-area: antd; }
+    .javascript { grid-area: javascript; }
+    .sass       { grid-area: sass; }
+    .css        { grid-area: css; }
+    .strapi     { grid-area: strapi; }
+
+    .card {
+      border: 1px solid #4b4b4b;
+      padding: 16px;
+      border-radius: 36px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
