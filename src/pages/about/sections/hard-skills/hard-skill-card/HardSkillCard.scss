@@ -1,0 +1,24 @@
+
+.hard-skill-item-wrapper {
+  border: 1px solid #4b4b4b;
+  padding: 32px;
+  border-radius: 36px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  white-space: pre-line;
+
+  .skill-title-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .logo-img-wrapper {
+      width: 72px;
+
+      img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      }
+    }
+  }
+}

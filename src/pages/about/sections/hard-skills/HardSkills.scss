@@ -48,12 +48,5 @@
     .sass       { grid-area: sass; }
     .css        { grid-area: css; }
     .strapi     { grid-area: strapi; }
-
-    .card {
-      border: 1px solid #4b4b4b;
-      padding: 16px;
-      border-radius: 36px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
   }
 }
