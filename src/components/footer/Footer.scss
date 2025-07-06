@@ -1,0 +1,42 @@
+@use '../../variables';
+
+.footer-wrapper {
+  background: variables.$primary-blue;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+
+  .ant-typography {
+    color: #FFFFFF;
+
+    a {
+      color: #FFFFFF;
+    }
+  }
+
+  .ant-space-item {
+    color: #FFFFFF;
+  }
+
+  .contact-item-box {
+    display: flex;
+  }
+
+  .signature-container {
+    border-top: 1px solid white;
+  }
+
+  .footer-img-wrapper {
+    position: absolute;
+    width: auto;
+    height: 480px;
+    top: -70px;
+    right: 0;
+
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+  }
+}

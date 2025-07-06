@@ -2,16 +2,17 @@
 @use 'variables';
 
 :root {
-  font-family: "Quicksand", sans-serif;
+  font-family: variables.$main-font;
   font-optical-sizing: auto;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  body {
-    font-family: inherit;
-  }
+body {
+  font-family: inherit;
+  background: variables.$primary-bg-color;
 }
 
