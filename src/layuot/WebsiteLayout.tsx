@@ -5,7 +5,7 @@ import {Outlet, useLocation} from "react-router";
 
 const WebsiteLayout: FC = () => {
     const location = useLocation();
-    const isHome = location.pathname === '/home';
+    const isHome = ['/home', '/'].includes(location.pathname);
 
     return (
         <div className={'layout-wrapper'}>
