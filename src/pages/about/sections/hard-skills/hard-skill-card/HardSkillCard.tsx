@@ -3,35 +3,76 @@ import './HardSkillCard.scss'
 import {type FC} from 'react';
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 
-import logoImg from '../images/logos/react.png'
+import type {hardSkillsType} from "@/type/types";
+import hardSkillImages from "@/pages/about/sections/hard-skills/hard-skill-card/hardSkillImages";
 
 const {Title, Paragraph} = WebsiteTypography;
 
-const HardSkillCard: FC = () => {
+type Props = {
+    content: hardSkillsType
+}
+
+const HardSkillCard: FC<Props> = ({ content }) => {
+
+    const { id, image, title, paragraph, isLogoStandsAlone } = content
+    const imageSrc = hardSkillImages[image];
+
+    if (isLogoStandsAlone) {
+        return (
+            <div className={`hard-skill-item-wrapper ${id} alone-logo`}>
+
+                <div className={'logo-img-wrapper'}>
+                    <img src={imageSrc} alt={`${title} logo`} />
+                </div>
+
+                <div className={'content-alone-logo-wrapper'} style={{width: '100%'}}>
+
+                    <div className={'skill-title-box'}>
+                        <Title
+                            level={3}
+                        >
+                            {title}
+                        </Title>
+                    </div>
+
+                    <Paragraph>
+                        {paragraph.split('\n').map((line, index) => (
+                            <span key={index}>
+                        {line}
+                                <br />
+                    </span>
+                        ))}
+                    </Paragraph>
+                </div>
+            </div>
+        )
+    }
+
     return (
-        <div className={'hard-skill-item-wrapper'}>
+        <div className={`hard-skill-item-wrapper ${id}`}>
             <div className={'skill-title-box'}>
                 <div className={'logo-img-wrapper'}>
-                    <img src={logoImg} alt={"React logo"}/>
+                    <img src={imageSrc} alt={`${title} logo`} />
                 </div>
                 <Title
                     level={3}
-                    style={{paddingLeft: 16}}
+                    style={{ paddingLeft: 16 }}
                 >
-                    {'React'}
+                    {title}
                 </Title>
             </div>
 
             <Paragraph>
-                {'Built and integrated user registration/login flows:\n' +
-                    '\n' +
-                    'Registration, login, forgot/reset password, email confirmation\n' +
-                    '\n' +
-                    'Routing setup with React Router, including NotFound pages for invalid users/companies\n'}
+                {paragraph.split('\n').map((line, index) => (
+                    <span key={index}>
+                        {line}
+                        <br />
+                    </span>
+                ))}
             </Paragraph>
-
         </div>
     );
 };
+
 
 export default HardSkillCard;

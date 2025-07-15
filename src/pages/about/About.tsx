@@ -5,6 +5,7 @@ import heroSectionContent from '../../data/heroSectionContent.json'
 const sectionData = heroSectionContent['about'];
 import imageSrc from '../../components/hero-section/images/about-hero-img.png'
 import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
+import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
 
 const About: FC = () => {
     return (
@@ -16,6 +17,7 @@ const About: FC = () => {
                 imageSrc={imageSrc}
             />
             <HardSkills />
+            <WorkExperience />
         </>
     );
 };

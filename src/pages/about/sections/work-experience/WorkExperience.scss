@@ -1,0 +1,30 @@
+.work-experience-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 0 80px;
+
+  .container {
+    background: #E3F0FF;
+    border-bottom-right-radius: 90px;
+    border-top-left-radius: 90px;
+    position: relative;
+    padding: 40px 0 70px;
+
+    .experiences-box {
+
+    }
+
+    .bg-img-wrapper {
+      width: 360px;
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
