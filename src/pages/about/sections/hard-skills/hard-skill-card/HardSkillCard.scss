@@ -1,10 +1,40 @@
 
 .hard-skill-item-wrapper {
   border: 1px solid #4b4b4b;
-  padding: 32px;
+  padding: 24px 24px 8px;
   border-radius: 36px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   white-space: pre-line;
+
+  &.alone-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+
+    .logo-img-wrapper {
+      flex-shrink: 0;
+      align-self: start;
+      width: 72px;
+      height: 72px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .content-alone-logo-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .skill-title-box {
+      margin-bottom: 8px;
+    }
+  }
 
   .skill-title-box {
     display: flex;
@@ -13,6 +43,8 @@
 
     .logo-img-wrapper {
       width: 72px;
+      height: 72px;
+      flex-shrink: 0;
 
       img {
       width: 100%;

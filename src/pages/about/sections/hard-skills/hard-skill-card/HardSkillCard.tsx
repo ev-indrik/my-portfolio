@@ -18,7 +18,34 @@ const HardSkillCard: FC<Props> = ({ content }) => {
     const imageSrc = hardSkillImages[image];
 
     if (isLogoStandsAlone) {
-        return <h2>Hello world</h2>;
+        return (
+            <div className={`hard-skill-item-wrapper ${id} alone-logo`}>
+
+                <div className={'logo-img-wrapper'}>
+                    <img src={imageSrc} alt={`${title} logo`} />
+                </div>
+
+                <div className={'content-alone-logo-wrapper'} style={{width: '100%'}}>
+
+                    <div className={'skill-title-box'}>
+                        <Title
+                            level={3}
+                        >
+                            {title}
+                        </Title>
+                    </div>
+
+                    <Paragraph>
+                        {paragraph.split('\n').map((line, index) => (
+                            <span key={index}>
+                        {line}
+                                <br />
+                    </span>
+                        ))}
+                    </Paragraph>
+                </div>
+            </div>
+        )
     }
 
     return (
