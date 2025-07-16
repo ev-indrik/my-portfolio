@@ -6,6 +6,8 @@ import imageSrc from '../../components/hero-section/images/about-hero-img.png'
 import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
 import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
 import experienceImg from '@/pages/about/images/experience-summary.png';
+import wavesImg from './images/waves-img.png'
+
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
 
@@ -18,14 +20,18 @@ const About: FC = () => {
                 buttonText={sectionData.buttonText}
                 imageSrc={imageSrc}
             />
-            <HardSkills />
-            <WorkExperience />
+            <HardSkills/>
+            <WorkExperience/>
             <HeroSection
                 mainTitle={sectionDataExperience.mainTitle}
                 description={sectionDataExperience.description}
                 buttonText={sectionDataExperience.buttonText}
                 imageSrc={experienceImg}
-
+                isReversed={true}
+                isBgImg={true}
+                bgImg={wavesImg}
+                spanNumber={12}
+                svgType={'pdf'}
             />
         </>
     );

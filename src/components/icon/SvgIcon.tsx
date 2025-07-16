@@ -15,6 +15,7 @@ import Plane from './icons/plane.svg?react'
 import At from './icons/at.svg?react'
 import Geo from './icons/geo.svg?react'
 import Tel from './icons/tel.svg?react'
+import Pdf from './icons/pdf.svg?react'
 
 export type IconTypes = 'main-whale'
     | 'menu-home'
@@ -31,10 +32,12 @@ export type IconTypes = 'main-whale'
     | 'git'
     | 'geo'
     | 'tel'
+    | 'pdf'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'pdf': Pdf,
     'main-whale': MainWhale,
     'menu-home': MenuHome,
     'menu-about': MenuAbout,
