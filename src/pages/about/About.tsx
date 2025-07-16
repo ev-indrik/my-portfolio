@@ -5,8 +5,8 @@ import heroSectionContent from '../../data/heroSectionContent.json'
 import imageSrc from '../../components/hero-section/images/about-hero-img.png'
 import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
 import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
-import experienceImg from '@/pages/about/images/experience-summary.png';
-import wavesImg from './images/waves-img.png'
+import experienceImg from '@/pages/about/assets/experience-summary.png';
+import wavesImg from '@/pages/about/assets/waves-img.png'
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];

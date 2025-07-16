@@ -12,6 +12,7 @@ const Projects: FC = () => {
             description={sectionData.description}
             imageSrc={imageSrc}
             isMainButton={false}
+            spanNumber={12}
         />
     );
 };

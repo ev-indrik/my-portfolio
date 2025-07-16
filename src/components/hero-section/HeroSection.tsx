@@ -44,7 +44,12 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                svgType,
                                            }) => {
 
-    console.log('===>>>', svgType);
+    const onPdfClick = ()=>{
+        const link = document.createElement('a');
+        link.href = '/2025_cv_ev-indrik.pdf';
+        link.download = 'cv-yevheniia.pdf'; // назва при збереженні
+        link.click();
+    }
 
     return (
         <div className={'hero-section-wrapper'}>
@@ -77,9 +82,19 @@ const HeroSection: FC<HeroSectionProps> = ({
 
 
                         {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 50}}>
-                            {svgType ? <WebsiteButton btnType={'primary'} icon={<SvgIcon type={svgType as IconTypes}/>}
-                                                      text={buttonText} size={'large'}/> :
-                                <WebsiteButton btnType={'primary'} text={buttonText} size={'large'}/>}
+                            {svgType ? <WebsiteButton
+                                    btnType={'primary'}
+                                    icon={<SvgIcon type={svgType as IconTypes}/>}
+                                    text={buttonText}
+                                    size={'large'}
+                                    onClick={onPdfClick}
+                                /> :
+                                <WebsiteButton
+                                    btnType={'primary'}
+                                    text={buttonText}
+                                    size={'large'}
+                                    onClick={onPdfClick}
+                                />}
                         </Row>)}
 
                         {isSocialButtons && <SocialButtons/>}
