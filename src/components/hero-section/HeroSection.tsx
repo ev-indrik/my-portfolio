@@ -42,9 +42,9 @@ const HeroSection: FC<HeroSectionProps> = ({
                         span={8}
                         className={'texts-container'}
                     >
-                        <Title level={2}>{mainTitle}</Title>
+                        <Title level={2} style={{ paddingBottom: subTitle ? 2 : 24 }}>{mainTitle}</Title>
 
-                        {subTitle && <Title level={4}>{subTitle}</Title>}
+                        {subTitle && <Title level={3} style={{paddingBottom: 24}}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
