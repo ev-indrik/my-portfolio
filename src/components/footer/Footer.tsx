@@ -78,7 +78,7 @@ const Footer: FC = () => {
                     </Col>
                     <Col span={6}>
                         <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16}}>
-                            <WebsiteButton btnType={'secondary'} text={'Contact Form'}/>
+                            <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}/>
                         </Row>
                     </Col>
                 </Row>
@@ -100,8 +100,7 @@ const Footer: FC = () => {
             </div>
 
         </div>
-    )
-        ;
+    );
 };
 
 export default Footer;
