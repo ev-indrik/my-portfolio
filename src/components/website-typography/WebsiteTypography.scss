@@ -4,6 +4,7 @@ body,
 #root {
   .ant-typography {
     font-family: variables.$main-font;
+    margin: 0;
 
     &.lh-md {
       line-height: 1.4;

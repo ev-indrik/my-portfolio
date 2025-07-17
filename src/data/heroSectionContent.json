@@ -23,5 +23,19 @@
       "Merging form logic with both the backend (Strapi) and HubSpot workflows to display, store, and process client data (confirmation emails, quote requests, contact info)",
       "And more"
     ]
+  },
+  "experience": {
+    "mainTitle": "My experience summary",
+    "description": [
+        "Worked on the layout of web pages based on existing designs",
+        "Administered and moderated websites, ensuring smooth operations and user engagement",
+        "Managed brand pages on social media platforms, including Facebook and Instagram",
+        "Wrote engaging infotainment content and translated business correspondence and other materials to/from English and Ukrainian",
+        "Gathered analytical data based on specific criteria, and compiled detailed reports",
+        "Provided online user support and maintained communication with customers",
+        "Managed databases and archives using specialized software and MS Office tools"
+    ],
+    "buttonText": "Download PDF Resume"
   }
+
 }

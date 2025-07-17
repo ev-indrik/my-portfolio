@@ -10,6 +10,15 @@
   border: none;
   outline: none;
   box-shadow: unset;
+  padding: 8px 32px;
+
+  span.ant-btn-icon {
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 
   &.ant-btn-default {
     min-height: 42px;
@@ -42,7 +51,7 @@
   }
 
   &.secondary {
-    background-color: #FFFFFF;
+    background-color: #DDFF9E;
     border-radius: 30px;
     color: variables.$primary-blue;
 
@@ -52,8 +61,24 @@
     }
   }
 
+  &.ghost {
+    background-color: transparent;
+    border-radius: 30px;
+    color: variables.$primary-blue;
+    border: 1px solid variables.$primary-blue;
+
+    &:hover {
+      color: #171724!important;
+      font-weight: 500;
+      border: 1px solid variables.$primary-blue!important;
+    }
+  }
+
   &.icon {
     background-color: transparent;
+    padding: 0;
+    width: 42px;
+    height: 42px;
 
     .ant-btn-icon {
       display: flex;

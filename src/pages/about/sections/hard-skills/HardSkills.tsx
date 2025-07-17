@@ -2,7 +2,7 @@ import './HardSkills.scss'
 
 import {type FC} from 'react';
 
-import hardSkillsImg from './images/hard-skills.png'
+import hardSkillsImg from '@/components/title-icon-group/images/hard-skills.png'
 
 import HardSkillCard from "@/pages/about/sections/hard-skills/hard-skill-card/HardSkillCard";
 import hardSkillContent from '../../../../data/hardSkilss.json'

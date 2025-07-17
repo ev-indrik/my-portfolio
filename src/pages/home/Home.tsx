@@ -6,8 +6,12 @@ import heroSectionContent from '../../data/heroSectionContent.json';
 const sectionData = heroSectionContent['home'];
 
 import imageSrc from '../../components/hero-section/images/home-hero-img.png'
+import {useNavigate} from "react-router";
 
 const Home: FC = () => {
+
+    const navigate = useNavigate()
+    const onLearnMoreClick = () => navigate('/about')
 
     return (
             <HeroSection
@@ -17,6 +21,7 @@ const Home: FC = () => {
                 description={sectionData.description}
                 buttonText={sectionData.buttonText}
                 imageSrc={imageSrc}
+                onClick={onLearnMoreClick}
             />
     );
 };

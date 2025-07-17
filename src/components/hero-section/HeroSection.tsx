@@ -1,13 +1,15 @@
 import './HeroSection.scss';
 
 import {type FC} from 'react';
-import { Col, Row } from "antd";
+import {Col, Row} from "antd";
 
-import WebsiteButton from "../custom-button/WebsiteButton.tsx";
+import WebsiteButton from "../website-button/WebsiteButton.tsx";
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
 import TextListItem from "../text-list-item/TextListItem";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import {SvgIcon} from "@/components/icon/SvgIcon";
+import type {IconTypes} from "@/components/icon/SvgIcon";
 
 const {Title, Paragraph} = WebsiteTypography;
 
@@ -15,11 +17,18 @@ type HeroSectionProps = {
     mainTitle: string;
     subTitle?: string;
     description: string | string[];
+    imageSrc: string;
     buttonText?: string;
     buttonLink?: string;
     isMainButton?: boolean;
     isSocialButtons?: boolean;
-    imageSrc: string;
+    isReversed?: boolean;
+    isBgImg?: boolean;
+    bgImg?: string;
+    spanNumber?: number;
+    svgType?: IconTypes;
+    paddingBtm?: number;
+    onClick?: ()=>void;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -30,40 +39,66 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                imageSrc,
                                                isSocialButtons = false,
                                                isMainButton = true,
+                                               isReversed = false,
+                                               isBgImg = false,
+                                               bgImg,
+                                               spanNumber = 8,
+                                               svgType,
+                                               paddingBtm,
+                                               onClick
                                            }) => {
 
-    return (
-        <div className={'hero-section-wrapper'}>
 
+    return (
+        <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
             <div className={'container'}>
+
+                {isBgImg &&
+                    <div className={'hero-section-bg-wrapper'}>
+                        <img src={bgImg} alt={"background illustration"}/>
+                    </div>}
+
                 <Row wrap={false} gutter={24} className={'hero-section-content-wrapper'}>
 
                     <Col
-                        span={8}
+                        span={spanNumber}
                         className={'texts-container'}
+                        order={isReversed ? 2 : 1}
                     >
-                        <Title level={2}>{mainTitle}</Title>
+                        <Title level={2} style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
 
-                        {subTitle && <Title level={4}>{subTitle}</Title>}
+                        {subTitle && <Title level={3} style={{paddingBottom: 24}}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
-                                <TextListItem key={index} text={item} />
+                                <TextListItem key={index} text={item}/>
                             ))
                         ) : (
                             <Paragraph>{description}</Paragraph>
                         )}
 
 
-                        {isMainButton && (<Row style={{paddingTop: 50}}>
-                            <WebsiteButton btnType={'primary'} text={buttonText} size={'large'}/>
+                        {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 50}}>
+                            {svgType ? <WebsiteButton
+                                    btnType={'primary'}
+                                    icon={<SvgIcon type={svgType as IconTypes}/>}
+                                    text={buttonText}
+                                    size={'large'}
+                                    onClick={onClick}
+                                /> :
+                                <WebsiteButton
+                                    btnType={'primary'}
+                                    text={buttonText}
+                                    size={'large'}
+                                    onClick={onClick}
+                                />}
                         </Row>)}
 
                         {isSocialButtons && <SocialButtons/>}
 
                     </Col>
 
-                    <Col flex={'auto'}>
+                    <Col flex={'auto'} order={isReversed ? 1 : 2}>
                         <Row justify={'end'} align={'bottom'} style={{height: '100%'}}>
                             <div className={'image-container'}>
                                 <img src={imageSrc} alt={'illustration of developer'}/>

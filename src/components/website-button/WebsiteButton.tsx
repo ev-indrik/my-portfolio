@@ -52,7 +52,7 @@ const WebsiteButton: FC<WebButtonProps & ButtonProps> = ({
     };
 
     return (
-        <AntButton icon={icon} className={btnClasses} {...props} onClick={handleClick}>
+        <AntButton icon={icon ? icon : null} className={btnClasses} {...props} onClick={handleClick}>
             {text}
             {children ? children : null}
         </AntButton>

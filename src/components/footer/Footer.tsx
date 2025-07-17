@@ -3,12 +3,13 @@ import {type FC} from 'react';
 import './Footer.scss'
 import {Col, Row, Space} from "antd";
 import {Link} from "react-router";
-import WebsiteButton from "../custom-button/WebsiteButton";
+import WebsiteButton from "../website-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
 import SocialButtons from '../social-buttons/SocialButtons';
 import bgPetalsImg from './images/footer-petals-img.png';
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+
 const {Paragraph} = WebsiteTypography;
 
 type ContactItem = {
@@ -55,21 +56,29 @@ const Footer: FC = () => {
     return (
         <div className={'footer-wrapper'}>
             <div className={'container'}>
-                <Row justify={'space-between'} align={'stretch'} wrap={false} style={{paddingTop: 32, paddingBottom: 16}}>
+                <Row justify={'space-between'} align={'stretch'} wrap={false}
+                     style={{paddingTop: 50, paddingBottom: 24}}>
                     <Col span={6}>
-                            <Space direction={'vertical'} size={'middle'} style={{paddingBottom: 20}}>
-                                <Paragraph color={'white'} size={'lg'}>{'Menu'}</Paragraph>
-                                <Link to="/home">{'Home'}</Link>
-                                <Link to="/about">{'About'}</Link>
-                                <Link to="/projects">{'Projects'}</Link>
+                            <Space direction={'vertical'}>
+                                <Paragraph color={'white'} size={'lg'} weight={'w700'}>{'Menu'}</Paragraph>
+                                <Paragraph style={{paddingTop: 16}}>
+                                    <Link to="/home">{'Home'}</Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link to="/about">{'About'}</Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link to="/projects">{'Projects'}</Link>
+                                </Paragraph>
                             </Space>
-                            <SocialButtons/>
+
+                        <SocialButtons/>
                     </Col>
                     <Col span={6}>
-                        <Paragraph color={'white'} size={'lg'}>{'Contact info'}</Paragraph>
-                        <Space direction={'vertical'} style={{paddingTop: 15}}>
+                        <Space direction={'vertical'}>
+                        <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
                             {contactInfo.map((it) =>
-                                <div key={it.id} className={'contact-item-box'}>
+                                <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
                                     <SvgIcon type={it.iconType}/>
                                     <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
                                 </div>
@@ -77,13 +86,13 @@ const Footer: FC = () => {
                         </Space>
                     </Col>
                     <Col span={6}>
-                        <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16}}>
-                            <WebsiteButton btnType={'secondary'} text={'Contact Form'}/>
+                        <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16 }}>
+                            <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}/>
                         </Row>
                     </Col>
                 </Row>
 
-                <Row className={'signature-container'} justify={'center'} style={{paddingTop: 16}}>
+                <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 24}}>
                     <Paragraph color={'white'}>
                         {'Coded by '}
                         <a href={"https://github.com/ev-indrik"} target="_blank"
@@ -100,8 +109,7 @@ const Footer: FC = () => {
             </div>
 
         </div>
-    )
-        ;
+    );
 };
 
 export default Footer;

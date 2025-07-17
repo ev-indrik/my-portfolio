@@ -24,14 +24,17 @@
 
   .signature-container {
     border-top: 1px solid white;
+    display: flex;
+    align-items: center;
   }
 
   .footer-img-wrapper {
     position: absolute;
     width: auto;
-    height: 480px;
+    height: 360px;
     top: -70px;
     right: 0;
+    pointer-events: none;
 
     img {
     width: 100%;
