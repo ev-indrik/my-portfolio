@@ -28,6 +28,7 @@ type HeroSectionProps = {
     spanNumber?: number;
     svgType?: IconTypes;
     paddingBtm?: number;
+    onClick?: ()=>void;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -43,15 +44,10 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                bgImg,
                                                spanNumber = 8,
                                                svgType,
-                                               paddingBtm
+                                               paddingBtm,
+                                               onClick
                                            }) => {
 
-    const onPdfClick = ()=>{
-        const link = document.createElement('a');
-        link.href = '/2025_cv_ev-indrik.pdf';
-        link.download = 'cv-yevheniia.pdf'; // naming on save
-        link.click();
-    }
 
     return (
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
@@ -88,13 +84,13 @@ const HeroSection: FC<HeroSectionProps> = ({
                                     icon={<SvgIcon type={svgType as IconTypes}/>}
                                     text={buttonText}
                                     size={'large'}
-                                    onClick={onPdfClick}
+                                    onClick={onClick}
                                 /> :
                                 <WebsiteButton
                                     btnType={'primary'}
                                     text={buttonText}
                                     size={'large'}
-                                    onClick={onPdfClick}
+                                    onClick={onClick}
                                 />}
                         </Row>)}
 

@@ -11,6 +11,13 @@ import wavesImg from '@/pages/about/assets/waves-img.png'
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
 
+const onPdfClick = ()=>{
+    const link = document.createElement('a');
+    link.href = '/2025_cv_ev-indrik.pdf';
+    link.download = 'cv-yevheniia.pdf'; // naming on save
+    link.click();
+}
+
 const About: FC = () => {
     return (
         <>
@@ -33,6 +40,7 @@ const About: FC = () => {
                 spanNumber={12}
                 svgType={'pdf'}
                 paddingBtm={60}
+                onClick={onPdfClick}
             />
         </>
     );
