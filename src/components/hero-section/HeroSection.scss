@@ -3,7 +3,7 @@
   min-height: calc(100vh - 150px);
   height: auto;
   z-index: 1;
-  //padding: 0 0 60px;
+  overflow: visible;
 
   .container {
     position: relative;
@@ -13,6 +13,7 @@
       bottom: -30px;
       left: 0;
       width: 105%;
+      overflow: visible;
 
       img {
       width: 100%;
@@ -33,6 +34,7 @@
   .image-container {
     position: relative;
     width: 760px;
+    overflow: visible;
 
     img {
     width: 100%;

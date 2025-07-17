@@ -57,7 +57,7 @@ const Footer: FC = () => {
         <div className={'footer-wrapper'}>
             <div className={'container'}>
                 <Row justify={'space-between'} align={'stretch'} wrap={false}
-                     style={{paddingTop: 32, paddingBottom: 24}}>
+                     style={{paddingTop: 50, paddingBottom: 24}}>
                     <Col span={6}>
                             <Space direction={'vertical'}>
                                 <Paragraph color={'white'} size={'lg'} weight={'w700'}>{'Menu'}</Paragraph>

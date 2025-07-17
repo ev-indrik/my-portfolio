@@ -49,13 +49,12 @@ const HeroSection: FC<HeroSectionProps> = ({
     const onPdfClick = ()=>{
         const link = document.createElement('a');
         link.href = '/2025_cv_ev-indrik.pdf';
-        link.download = 'cv-yevheniia.pdf'; // назва при збереженні
+        link.download = 'cv-yevheniia.pdf'; // naming on save
         link.click();
     }
 
     return (
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
-
             <div className={'container'}>
 
                 {isBgImg &&

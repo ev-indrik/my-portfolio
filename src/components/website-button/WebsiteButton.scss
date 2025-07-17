@@ -61,6 +61,19 @@
     }
   }
 
+  &.ghost {
+    background-color: transparent;
+    border-radius: 30px;
+    color: variables.$primary-blue;
+    border: 1px solid variables.$primary-blue;
+
+    &:hover {
+      color: #171724!important;
+      font-weight: 500;
+      border: 1px solid variables.$primary-blue!important;
+    }
+  }
+
   &.icon {
     background-color: transparent;
     padding: 0;
