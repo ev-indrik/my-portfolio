@@ -3,16 +3,16 @@
   min-height: calc(100vh - 150px);
   height: auto;
   z-index: 1;
-  padding: 40px 0 60px;
+  //padding: 0 0 60px;
 
   .container {
     position: relative;
 
     .hero-section-bg-wrapper {
       position: absolute;
-      bottom: 0;
+      bottom: -30px;
       left: 0;
-      width: 100%;
+      width: 105%;
 
       img {
       width: 100%;

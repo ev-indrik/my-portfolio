@@ -10,6 +10,15 @@
   border: none;
   outline: none;
   box-shadow: unset;
+  padding: 8px 32px;
+
+  span.ant-btn-icon {
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 
   &.ant-btn-default {
     min-height: 42px;
@@ -54,6 +63,9 @@
 
   &.icon {
     background-color: transparent;
+    padding: 0;
+    width: 42px;
+    height: 42px;
 
     .ant-btn-icon {
       display: flex;

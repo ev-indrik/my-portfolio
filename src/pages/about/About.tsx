@@ -32,6 +32,7 @@ const About: FC = () => {
                 bgImg={wavesImg}
                 spanNumber={12}
                 svgType={'pdf'}
+                paddingBtm={60}
             />
         </>
     );

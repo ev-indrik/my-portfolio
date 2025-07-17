@@ -3,7 +3,7 @@ import './HeroSection.scss';
 import {type FC} from 'react';
 import {Col, Row} from "antd";
 
-import WebsiteButton from "../custom-button/WebsiteButton.tsx";
+import WebsiteButton from "../website-button/WebsiteButton.tsx";
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
 import TextListItem from "../text-list-item/TextListItem";
 
@@ -27,6 +27,7 @@ type HeroSectionProps = {
     bgImg?: string;
     spanNumber?: number;
     svgType?: IconTypes;
+    paddingBtm?: number;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -42,6 +43,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                bgImg,
                                                spanNumber = 8,
                                                svgType,
+                                               paddingBtm
                                            }) => {
 
     const onPdfClick = ()=>{
@@ -52,7 +54,7 @@ const HeroSection: FC<HeroSectionProps> = ({
     }
 
     return (
-        <div className={'hero-section-wrapper'}>
+        <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
 
             <div className={'container'}>
 

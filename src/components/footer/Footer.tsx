@@ -3,7 +3,7 @@ import {type FC} from 'react';
 import './Footer.scss'
 import {Col, Row, Space} from "antd";
 import {Link} from "react-router";
-import WebsiteButton from "../custom-button/WebsiteButton";
+import WebsiteButton from "../website-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
 import SocialButtons from '../social-buttons/SocialButtons';
 import bgPetalsImg from './images/footer-petals-img.png';

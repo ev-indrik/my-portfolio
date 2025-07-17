@@ -1,6 +1,6 @@
 import {type FC} from 'react';
 import {Row, Space} from "antd";
-import WebsiteButton from "../custom-button/WebsiteButton.tsx";
+import WebsiteButton from "../website-button/WebsiteButton.tsx";
 import {SvgIcon} from "../icon/SvgIcon.tsx";
 
 const SocialButtons: FC = () => {
