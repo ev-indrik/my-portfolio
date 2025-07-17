@@ -1,0 +1,40 @@
+@use '../../variables';
+
+.divider-wrapper {
+  position: relative;
+  height: 1px;
+  margin: 40px 0;
+
+  &.black {
+    border-bottom: 1px solid #000000;
+  }
+
+  &.white {
+    border-bottom: 1px solid #FFFFFF;
+  }
+
+  &.blue {
+    border-bottom: 1px solid variables.$primary-blue;
+  }
+
+  .img-whale-wrapper {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    padding: 0 6px 0 8px;
+
+    &.reversed {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+  }
+}

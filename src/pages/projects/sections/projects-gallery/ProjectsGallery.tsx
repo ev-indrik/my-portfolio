@@ -9,6 +9,7 @@ import easetechBgImg from './images/bg-images/easetech-ellipse.png'
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
+import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 const {Title, Paragraph} = WebsiteTypography
 
 const ProjectsGallery: FC = () => {
@@ -48,6 +49,8 @@ const ProjectsGallery: FC = () => {
                     </div>
 
                     <div className={'lower-bg-img-wrapper'}></div>
+
+                    <WebsiteDivider />
 
                 </div>
             </div>
