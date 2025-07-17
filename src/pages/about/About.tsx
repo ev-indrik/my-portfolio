@@ -7,18 +7,23 @@ import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
 import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
 import experienceImg from '@/pages/about/assets/experience-summary.png';
 import wavesImg from '@/pages/about/assets/waves-img.png'
+import {useNavigate} from "react-router";
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
 
-const onPdfClick = ()=>{
-    const link = document.createElement('a');
-    link.href = '/2025_cv_ev-indrik.pdf';
-    link.download = 'cv-yevheniia.pdf'; // naming on save
-    link.click();
-}
-
 const About: FC = () => {
+
+    const navigate = useNavigate()
+    const onProjectsClick = () => navigate('/projects')
+
+    const onPdfClick = ()=>{
+        const link = document.createElement('a');
+        link.href = '/2025_cv_ev-indrik.pdf';
+        link.download = 'cv-yevheniia.pdf'; // naming on save
+        link.click();
+    }
+
     return (
         <>
             <HeroSection
@@ -26,6 +31,7 @@ const About: FC = () => {
                 description={sectionData.description}
                 buttonText={sectionData.buttonText}
                 imageSrc={imageSrc}
+                onClick={onProjectsClick}
             />
             <HardSkills/>
             <WorkExperience/>
