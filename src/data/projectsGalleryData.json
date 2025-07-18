@@ -31,8 +31,8 @@
     "title": "Geometrical Calculator",
     "description": "A React-based calculator for computing basic geometric properties based on sides or coordinate points.",
     "projectImg": "calcImg",
-    "bgImgUpper": "geocalcEllipse",
     "bgImgLower": "geocalcEllipse2",
+    "bgSectionImg": "geocalcEllipse",
     "isDivider": false,
     "onClickRoute": "/project4",
     "isReversed": true

@@ -16,16 +16,27 @@ type ProjectItemProps = {
     onClick?: () => void;
     bgImgUpper?: string;
     bgImgLower?: string;
+    bgSectionImg?: string;
     isDivider?: boolean;
     isDividerReversed?: boolean;
 }
 
-const ProjectItem: FC<ProjectItemProps> = ({isReversed=false, title, description, onClick, projectImg, isDivider = true, bgImgUpper, bgImgLower}) => {
+const ProjectItem: FC<ProjectItemProps> = ({
+                                               isReversed = false,
+                                               title,
+                                               description,
+                                               onClick,
+                                               projectImg,
+                                               isDivider = true,
+                                               bgImgUpper,
+                                               bgImgLower,
+                                               bgSectionImg
+                                           }) => {
     return (
         <>
             <div className={`project-item-wrapper ${isReversed && 'reversed'}`}>
 
-            {bgImgUpper && <div className={'upper-bg-img-wrapper'}>
+                {bgImgUpper && <div className={'upper-bg-img-wrapper'}>
                     <img src={bgImgUpper} alt={"background illustration"}/>
                 </div>}
 
@@ -51,11 +62,15 @@ const ProjectItem: FC<ProjectItemProps> = ({isReversed=false, title, description
                             <img src={projectImg} alt={'screenshot of project website'}/>
                         </div>
                     </div>
-            {isDivider && <WebsiteDivider isReversed={isReversed}/>}
+                    {isDivider && <WebsiteDivider isReversed={isReversed}/>}
                 </div>
 
                 {bgImgLower && <div className={'lower-bg-img-wrapper'}>
-                    <img src={bgImgLower} alt="background illustration"/>
+                    <img src={bgImgLower} alt={"background illustration"}/>
+                </div>}
+
+                {bgSectionImg && <div className={'section-bg-wrapper'}>
+                    <img src={bgSectionImg} alt={"background illustration"}/>
                 </div>}
             </div>
         </>

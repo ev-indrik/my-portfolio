@@ -54,6 +54,7 @@ const ProjectsGallery: FC = () => {
                             projectImg={imagesMap[item.projectImg]}
                             bgImgUpper={item.bgImgUpper ? imagesMap[item.bgImgUpper] : undefined}
                             bgImgLower={item.bgImgLower ? imagesMap[item.bgImgLower] : undefined}
+                            bgSectionImg={item.bgSectionImg ? imagesMap[item.bgSectionImg] : undefined}
                             isDivider={item.isDivider}
                             isReversed={item.isReversed}
                             onClick={() => navigate(item.onClickRoute)}
