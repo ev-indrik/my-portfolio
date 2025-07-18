@@ -8,9 +8,16 @@ import HardSkillCard from "@/pages/about/sections/hard-skills/hard-skill-card/Ha
 import hardSkillContent from '../../../../data/hardSkilss.json'
 import TitleIconGroup from "@/components/title-icon-group/TitleIconGroup";
 
+import hardskillsPetals from './images/petals-skills.png';
+
 const HardSkills: FC = () => {
     return (
         <div className={'hard-skills-wrapper '}>
+
+            <div className={'hard-skills--bgimg-wrapper'}>
+                <img src={hardskillsPetals} alt={"background illustration"}/>
+            </div>
+
             <div className={'container'}>
 
                 <TitleIconGroup content={{title: 'My hard skills', image: hardSkillsImg}}/>

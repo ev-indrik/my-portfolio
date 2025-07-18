@@ -26,9 +26,10 @@
     transform: translate(-50%, -50%);
     background-color: #FFFFFF;
     padding: 0 6px 0 8px;
+    border-radius: 230px 30px 230px 30px;
 
     &.reversed {
-      transform: translate(-50%, -50%) rotate(180deg);
+      transform: translate(-50%, -50%) rotateY(180deg);
     }
 
     svg {
