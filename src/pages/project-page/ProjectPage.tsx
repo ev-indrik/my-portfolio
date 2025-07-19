@@ -6,14 +6,6 @@ import WebsiteTypography from "@/components/website-typography/WebsiteTypography
 
 const {Title, Paragraph} = WebsiteTypography;
 
-const contentStyle: React.CSSProperties = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
-
 const ProjectPage: FC = () => {
 
     return (
@@ -24,18 +16,14 @@ const ProjectPage: FC = () => {
                     <Title level={2} color={'primary'}>{'Easetech'}</Title>
                 </Row>
 
-                <Carousel autoplay>
-                    <div>
-                        <h3 style={contentStyle}>1</h3>
+                <Carousel
+                    // autoplay
+                >
+                    <div className={'slider-item-wrapper'}>
+                        <h3>1</h3>
                     </div>
-                    <div>
-                        <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>4</h3>
+                    <div className={'slider-item-wrapper'}>
+                        <h3>2</h3>
                     </div>
                 </Carousel>
 
