@@ -62,11 +62,11 @@ const Header: FC = () => {
                 <Row justify={'space-between'}>
                     <Col>
                         <Button type={'text'} className={'logo-btn'} onClick={onLogoClick}>
-                            <div className={'header-logo-bg'}>
-                                <img src={greenBg} alt={"Green background"}/>
-                            </div>
                             <SvgIcon type={'main-whale'} />
                         </Button>
+                        <div className={'header-logo-bg'}>
+                            <img src={greenBg} alt={"Green background"}/>
+                        </div>
                     </Col>
 
                     <Col>
