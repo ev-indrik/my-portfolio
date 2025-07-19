@@ -4,56 +4,63 @@ import type {FC} from 'react';
 import TitleIconGroup from "@/components/title-icon-group/TitleIconGroup";
 import logoImg from '../../../../components/title-icon-group/images/hard-skills.png'
 
-import easetechImg from './images/easetech.png'
-import easetechBgImg from './images/bg-images/easetech-ellipse.png'
-
-import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
-import WebsiteButton from "@/components/website-button/WebsiteButton";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
-const {Title, Paragraph} = WebsiteTypography
+import ProjectItem from "@/pages/projects/sections/projects-gallery/project-item/ProjectItem";
+import {useNavigate} from "react-router";
+
+import projectsData from '../../../../data/projectsGalleryData.json';
+import easetechImg from './images/easetech.png';
+import easetechEllipseImg from './images/bg-images/easetech-ellipse.png';
+
+import shopImg from './images/store.png';
+import shopEllipseImg from './images/bg-images/store-ellipse.png';
+
+import volunteersImg from './images/database.png';
+import storeBgImg from './images/bg-images/database-ellipse.png';
+
+import calcImg from './images/geo-calc.png';
+import geocalcEllipse from './images/bg-images/geocalc-ellipse.png';
+import geocalcEllipse2 from './images/bg-images/geocalc-ellipse2.png';
+
+const imagesMap: Record<string, string> = {
+    easetechImg,
+    easetechEllipseImg,
+    shopImg,
+    shopEllipseImg,
+    volunteersImg,
+    storeBgImg,
+    calcImg,
+    geocalcEllipse,
+    geocalcEllipse2,
+};
 
 const ProjectsGallery: FC = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className={'projects-gallery-wrapper'}>
-            <div className={'container'}>
 
                 <TitleIconGroup content={{title: 'My Projects', image: logoImg}}/>
-
-                <div className={'gallery-wrapper'}>
-
-                    <div className={'upper-bg-img-wrapper'}>
-                        <img src={easetechBgImg} alt={"background illustration"}/>
-                    </div>
-
-                    <div className={'project-item-wrapper'}>
-
-                        <div className={'project-content-wrapper'}>
-                          <div className={'text-box'}>
-                              <Title level={2} color={'primary'} style={{paddingBottom: 16, paddingTop: 150}}>
-                                  {'Easetech'}
-                              </Title>
-
-                              <Paragraph color={'primary'} >
-                                  {'Development of a modern platform that facilitates document and wayleave workflows between organizations and clients. The system includes user registration, quote requests, document handling, and geospatial data interactions.'}
-                              </Paragraph>
-                          </div>
-
-                            <div>
-                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Read more'}/>
-                            </div>
-                        </div>
-
-                        <div className={'project-img-wrapper'}>
-                            <img src={easetechImg} alt={'screenshot of project website'}/>
-                        </div>
-                    </div>
-
-                    <div className={'lower-bg-img-wrapper'}></div>
-
-                    <WebsiteDivider />
-
+                <div className={'container'}>
+                    <WebsiteDivider isReversed={true}/>
                 </div>
-            </div>
+                <div className={'gallery-wrapper'}>
+                    {projectsData.map((item, idx) => (
+                        <ProjectItem
+                            key={idx}
+                            title={item.title}
+                            description={item.description}
+                            projectImg={imagesMap[item.projectImg]}
+                            bgImgUpper={item.bgImgUpper ? imagesMap[item.bgImgUpper] : undefined}
+                            bgImgLower={item.bgImgLower ? imagesMap[item.bgImgLower] : undefined}
+                            bgSectionImg={item.bgSectionImg ? imagesMap[item.bgSectionImg] : undefined}
+                            isDivider={item.isDivider}
+                            isReversed={item.isReversed}
+                            onClick={() => navigate(item.onClickRoute)}
+                        />
+                    ))}
+                </div>
         </div>
     );
 };

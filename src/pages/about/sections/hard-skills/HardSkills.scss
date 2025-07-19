@@ -1,12 +1,28 @@
 @use '../../../../variables';
 
 .hard-skills-wrapper {
+  position: relative;
   width: 100%;
   height: auto;
-  z-index: 1;
   padding-top: 40px;
 
+  .hard-skills--bgimg-wrapper {
+    position: absolute;
+    top: 300px;
+    left: -100px;
+    width: 700px;
+    z-index: 1;
+
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+  }
+
   .skills-div-container {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(8, minmax(100px, auto));
     grid-template-rows: repeat(8, minmax(60px, auto));
@@ -30,6 +46,5 @@
     .sass       { grid-area: sass; }
     .css        { grid-area: css; }
     .strapi     { grid-area: strapi; }
-
   }
 }
