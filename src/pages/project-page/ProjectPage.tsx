@@ -1,19 +1,26 @@
 import type {FC} from 'react';
 import './ProjectPage.scss'
-import {Row, Carousel, Col} from "antd";
+import {Carousel, Col, Row} from "antd";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
-
-const {Title, Paragraph} = WebsiteTypography;
-
 import img1 from '../projects/sections/projects-gallery/images/easetech.png'
 import img2 from '../projects/sections/projects-gallery/images/geo-calc.png'
 
 import TechLogoItem from "@/components/tech-logo-item/TechLogoItem";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
+import WebsiteButton from "@/components/website-button/WebsiteButton";
+import {useNavigate} from "react-router";
+
+const {Title, Paragraph} = WebsiteTypography;
 
 const ProjectPage: FC = () => {
+
+    const navigate = useNavigate()
+
+    const backToGalleryClick = () => {
+        navigate(-1)
+    };
 
     return (
         <div className={'project-page-wrapper'}>
@@ -41,8 +48,12 @@ const ProjectPage: FC = () => {
                         <Title level={3} color={'primary'} centered>{'Project Description'}</Title>
                     </Col>
                     <Col span={16}>
-                        <Paragraph centered
-                                   color={'primary'}>{'Development of a modern platform that facilitates document and wayleave workflows between organizations and clients. The system includes user registration, quote requests, document handling, and geospatial data interactions.'}</Paragraph>
+                        <Paragraph
+                            centered
+                            color={'primary'}
+                        >
+                            {'Development of a modern platform that facilitates document and wayleave workflows between organizations and clients. The system includes user registration, quote requests, document handling, and geospatial data interactions.'}
+                        </Paragraph>
                     </Col>
                 </Row>
 
@@ -71,7 +82,7 @@ const ProjectPage: FC = () => {
                         <Title level={3} centered color={'primary'}>{'Main Features'}</Title>
                     </Col>
 
-                    <Col span={22} style={{paddingTop: 32}}>
+                    <Col span={22} style={{paddingTop: 32, paddingBottom: 64}}>
                         <Row justify={'center'}>
                             <Col span={20}>
                                 <Row justify={'center'} align={'stretch'} gutter={[8, 8]}>
@@ -155,12 +166,47 @@ const ProjectPage: FC = () => {
                                 </Row>
                             </Col>
 
-                            <Col span={20}></Col>
                         </Row>
                     </Col>
                 </Row>
 
                 <WebsiteDivider color={'blue'}/>
+
+                <Row justify={'center'}>
+                    <Col span={12}>
+                        <Row justify={'center'} gutter={16} style={{width: '100%'}}>
+                            <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
+                                <WebsiteButton
+                                    btnType={'ghost'}
+                                    icon={<SvgIcon type={'github-ghost'}/>}
+                                    text={'See Project on Github'}
+                                    size={'large'}
+                                    block
+                                />
+                            </Col>
+                            <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
+                                <WebsiteButton
+                                    btnType={'secondary'}
+                                    icon={<SvgIcon type={'rocket-ghost'}/>}
+                                    text={'See deployed project'}
+                                    size={'large'}
+                                    block
+                                />
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+
+                <Row justify={'center'} style={{paddingTop: 64}}>
+                    <WebsiteButton
+                        btnType={'text'}
+                        icon={<SvgIcon type={'arrow-short'}/>}
+                        text={'Back to Projects Gallery'}
+                        color={'primary'}
+                        size={'large'}
+                        onClick={backToGalleryClick}
+                    />
+                </Row>
 
             </div>
         </div>

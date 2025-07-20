@@ -18,6 +18,9 @@ import Tel from './icons/tel.svg?react'
 import Pdf from './icons/pdf.svg?react'
 import LittleWhale from './icons/little-whale.svg?react'
 import TickedSquare from './icons/ticked-square.svg?react'
+import RocketGhost from './icons/rocket-ghost.svg?react'
+import GithubGhost from './icons/github-ghost.svg?react'
+import ArrowShort from './icons/arrow-short.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -38,10 +41,16 @@ export type IconTypes =
     | 'pdf'
     | 'little-whale'
     | 'ticked-square'
+    | 'github-ghost'
+    | 'rocket-ghost'
+    | 'arrow-short'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'arrow-short': ArrowShort,
+    'github-ghost': GithubGhost,
+    'rocket-ghost': RocketGhost,
     'ticked-square': TickedSquare,
     'little-whale': LittleWhale,
     'pdf': Pdf,
