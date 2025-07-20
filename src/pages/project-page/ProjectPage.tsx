@@ -3,8 +3,11 @@ import './ProjectPage.scss'
 import {Carousel, Col, Row} from "antd";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
-import img1 from '../projects/sections/projects-gallery/images/easetech.png'
-import img2 from '../projects/sections/projects-gallery/images/geo-calc.png'
+
+import upperBgImg from './images/upper-petals-project.png'
+import lowerBgImg from './images/lower-petals-project.png'
+
+import projectImg from '../projects/sections/projects-gallery/images/easetech.png'
 
 import TechLogoItem from "@/components/tech-logo-item/TechLogoItem";
 import {SvgIcon} from "@/components/icon/SvgIcon";
@@ -24,6 +27,11 @@ const ProjectPage: FC = () => {
 
     return (
         <div className={'project-page-wrapper'}>
+
+            <div className={'upper-project-img-wrapper'}>
+                <img src={upperBgImg} alt={"background illustration"}/>
+            </div>
+
             <div className={'container'}>
 
                 <Row justify={'center'}>
@@ -36,10 +44,10 @@ const ProjectPage: FC = () => {
                     autoplaySpeed={5000}
                 >
                     <div className={'slider-item-wrapper'}>
-                        <img src={img1} alt=""/>
+                        <img src={projectImg} alt={"project screenshot"}/>
                     </div>
                     <div className={'slider-item-wrapper'}>
-                        <img src={img2} alt=""/>
+                        <img src={projectImg} alt={'project screenshot'}/>
                     </div>
                 </Carousel>
 
@@ -82,7 +90,7 @@ const ProjectPage: FC = () => {
                         <Title level={3} centered color={'primary'}>{'Main Features'}</Title>
                     </Col>
 
-                    <Col span={22} style={{paddingTop: 32, paddingBottom: 64}}>
+                    <Col span={20} style={{paddingTop: 32, paddingBottom: 64}}>
                         <Row justify={'center'}>
                             <Col span={20}>
                                 <Row justify={'center'} align={'stretch'} gutter={[8, 8]}>
@@ -207,8 +215,12 @@ const ProjectPage: FC = () => {
                         onClick={backToGalleryClick}
                     />
                 </Row>
-
             </div>
+
+            <div className={'lower-project-img-wrapper'}>
+                <img src={lowerBgImg} alt={"background illustration"}/>
+            </div>
+
         </div>
     );
 };
