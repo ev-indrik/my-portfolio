@@ -11,10 +11,26 @@
 
   &.white {
     border-bottom: 1px solid #FFFFFF;
+
+    .img-whale-wrapper {
+
+      path {
+        fill: #FFFFFF;
+        stroke: #FFFFFF;
+      }
+    }
   }
 
   &.blue {
     border-bottom: 1px solid variables.$primary-blue;
+
+    .img-whale-wrapper {
+
+      path {
+        fill: variables.$primary-blue;
+        stroke: variables.$primary-blue;
+      }
+    }
   }
 
   .img-whale-wrapper {
@@ -33,9 +49,9 @@
     }
 
     svg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }

@@ -22,6 +22,29 @@
     object-fit: cover;
     }
   }
+
+  .ticked-box-wrapper {
+    width: 100%;
+    border: 1px solid #83A9D5;
+    border-radius: 11px;
+    padding: 24px;
+
+    .header-title-box {
+      display: flex;
+      align-items: center;
+
+      .svg-box {
+        width: 24px;
+        height: 24px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
 }
 
 //===>> Carousel styles
