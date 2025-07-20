@@ -43,7 +43,6 @@ type TechContent = {
 }
 
 const TechLogoItem: FC<TechContent> = ({logoKey, title}) => {
-    console.log(logoKey) // 'tsImg'
     return (
         <div className={'tech-pair-wrapper'}>
             <div className={'tech-logo-wrapper'}>

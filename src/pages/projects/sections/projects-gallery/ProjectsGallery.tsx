@@ -6,9 +6,8 @@ import logoImg from '../../../../components/title-icon-group/images/hard-skills.
 
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import ProjectItem from "@/pages/projects/sections/projects-gallery/project-item/ProjectItem";
-import {useNavigate} from "react-router";
 
-import projectsData from '../../../../data/projectsGalleryData.json';
+import projectsData from '../../../../data/projectsData.json';
 import easetechImg from './images/easetech.png';
 import easetechEllipseImg from './images/bg-images/easetech-ellipse.png';
 
@@ -36,7 +35,7 @@ const imagesMap: Record<string, string> = {
 
 const ProjectsGallery: FC = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <div className={'projects-gallery-wrapper'}>
@@ -48,6 +47,7 @@ const ProjectsGallery: FC = () => {
                 <div className={'gallery-wrapper'}>
                     {projectsData.map((item, idx) => (
                         <ProjectItem
+                            id={item.id}
                             key={idx}
                             title={item.title}
                             description={item.description}
@@ -57,7 +57,7 @@ const ProjectsGallery: FC = () => {
                             bgSectionImg={item.bgSectionImg ? imagesMap[item.bgSectionImg] : undefined}
                             isDivider={item.isDivider}
                             isReversed={item.isReversed}
-                            onClick={() => navigate(item.onClickRoute)}
+                            // onClick={() => navigate(item.onClickRoute)}
                         />
                     ))}
                 </div>

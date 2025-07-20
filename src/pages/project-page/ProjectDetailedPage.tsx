@@ -1,5 +1,5 @@
 import type {FC} from 'react';
-import './ProjectPage.scss'
+import './ProjectDetailedPage.scss'
 import {Carousel, Col, Row} from "antd";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
@@ -13,17 +13,38 @@ import TechLogoItem from "@/components/tech-logo-item/TechLogoItem";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
-import {useNavigate} from "react-router";
+import {useNavigate, useParams} from "react-router";
+import type {ProjectItemProps} from "@/pages/projects/sections/projects-gallery/project-item/ProjectItem";
 
 const {Title, Paragraph} = WebsiteTypography;
+import projects from '../../data/projectsData.json'
 
-const ProjectPage: FC = () => {
+// type Props = {
+//     projectId: string;
+// }
 
-    const navigate = useNavigate()
+const ProjectDetailedPage: FC = () => {
+
+    const { projectId } = useParams();
+
+    if (!projectId) {
+        return
+        // return <Page404/>
+    }
+
+    const navigate = useNavigate();
+
+    const getProjectById = (id: string) => {
+        return projects.find(project => project.id === id)
+    }
+
+    const project: ProjectItemProps | undefined = getProjectById(projectId || '')
 
     const backToGalleryClick = () => {
         navigate(-1)
     };
+
+    if (!project) return <div>Project not found</div>;
 
     return (
         <div className={'project-page-wrapper'}>
@@ -225,4 +246,4 @@ const ProjectPage: FC = () => {
     );
 };
 
-export default ProjectPage;
+export default ProjectDetailedPage;

@@ -5,36 +5,45 @@ import WebsiteButton from "@/components/website-button/WebsiteButton";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import {useNavigate} from "react-router";
 
 const {Title, Paragraph} = WebsiteTypography
 
-type ProjectItemProps = {
-    isReversed?: boolean;
+export type ProjectItemProps = {
+    id: string;
     title: string;
     description: string;
     projectImg: string;
-    onClick?: () => void;
+    // onClick?: () => void;
     bgImgUpper?: string;
     bgImgLower?: string;
     bgSectionImg?: string;
+    isReversed?: boolean;
     isDivider?: boolean;
     isDividerReversed?: boolean;
 }
 
 const ProjectItem: FC<ProjectItemProps> = ({
+                                               id,
                                                isReversed = false,
                                                title,
                                                description,
-                                               onClick,
                                                projectImg,
                                                isDivider = true,
                                                bgImgUpper,
                                                bgImgLower,
                                                bgSectionImg
                                            }) => {
+
+    const navigate = useNavigate();
+
+    const handleReadMore = () => {
+        navigate(`/projects/${id}`)
+    };
+
     return (
         <>
-            <div className={`project-item-wrapper ${isReversed && 'reversed'}`}>
+            <div id={id} className={`project-item-wrapper ${isReversed && 'reversed'}`}>
 
                 {bgImgUpper && <div className={'upper-bg-img-wrapper'}>
                     <img src={bgImgUpper} alt={"background illustration"}/>
@@ -54,7 +63,8 @@ const ProjectItem: FC<ProjectItemProps> = ({
                             </div>
 
                             <div>
-                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Read more'} onClick={onClick}/>
+                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Read more'}
+                                               onClick={handleReadMore}/>
                             </div>
                         </div>
 
