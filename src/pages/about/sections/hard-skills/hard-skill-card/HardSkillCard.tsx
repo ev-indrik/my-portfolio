@@ -28,9 +28,7 @@ const HardSkillCard: FC<Props> = ({ content }) => {
                 <div className={'content-alone-logo-wrapper'} style={{width: '100%'}}>
 
                     <div className={'skill-title-box'}>
-                        <Title
-                            level={3}
-                        >
+                        <Title level={3}>
                             {title}
                         </Title>
                     </div>

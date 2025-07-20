@@ -17,8 +17,10 @@ import Geo from './icons/geo.svg?react'
 import Tel from './icons/tel.svg?react'
 import Pdf from './icons/pdf.svg?react'
 import LittleWhale from './icons/little-whale.svg?react'
+import TickedSquare from './icons/ticked-square.svg?react'
 
-export type IconTypes = 'main-whale'
+export type IconTypes =
+    'main-whale'
     | 'menu-home'
     | 'menu-about'
     | 'menu-projects'
@@ -35,10 +37,12 @@ export type IconTypes = 'main-whale'
     | 'tel'
     | 'pdf'
     | 'little-whale'
+    | 'ticked-square'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'ticked-square': TickedSquare,
     'little-whale': LittleWhale,
     'pdf': Pdf,
     'main-whale': MainWhale,
