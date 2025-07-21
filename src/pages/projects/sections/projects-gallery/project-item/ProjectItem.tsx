@@ -6,34 +6,12 @@ import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import {useNavigate} from "react-router";
+import type {ProjectItemProps} from "@/type/types";
 
 const {Title, Paragraph} = WebsiteTypography
 
-export type ProjectItemProps = {
-    id: string;
-    title: string;
-    description: string;
-    projectImg: string;
-    // onClick?: () => void;
-    bgImgUpper?: string;
-    bgImgLower?: string;
-    bgSectionImg?: string;
-    isReversed?: boolean;
-    isDivider?: boolean;
-    isDividerReversed?: boolean;
-}
 
-const ProjectItem: FC<ProjectItemProps> = ({
-                                               id,
-                                               isReversed = false,
-                                               title,
-                                               description,
-                                               projectImg,
-                                               isDivider = true,
-                                               bgImgUpper,
-                                               bgImgLower,
-                                               bgSectionImg
-                                           }) => {
+const ProjectItem: FC<ProjectItemProps> = ({id, isReversed, bgImgUpper, bgImgLower, title, description, projectImgs, isDivider, bgSectionImg}) => {
 
     const navigate = useNavigate();
 
@@ -69,7 +47,7 @@ const ProjectItem: FC<ProjectItemProps> = ({
                         </div>
 
                         <div className={'project-img-wrapper'}>
-                            <img src={projectImg} alt={'screenshot of project website'}/>
+                            <img src={projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
                     </div>
                     {isDivider && <WebsiteDivider isReversed={isReversed}/>}

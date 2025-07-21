@@ -8,7 +8,7 @@ const About = lazy<FC>(() => import('../pages/about/About.tsx'))
 const Projects = lazy<FC>(() => import('../pages/projects/Projects.tsx'))
 const Contact = lazy<FC>(() => import('../pages/contact/Contact.tsx'))
 const NotFound = lazy<FC>(() => import('../pages/not-found/NotFound.tsx'))
-const ProjectDetailedPage = lazy<FC>(()=> import('./project-page/ProjectDetailedPage'))
+const ProjectDetailedPage = lazy<FC>(()=> import('./project-detailed-page/ProjectDetailedPage'))
 
 const routes: RouteObject[] = [
     {

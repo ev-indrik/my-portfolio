@@ -37,7 +37,7 @@ const techImages: Record<TechImageKey, string> = {
 
 type LogoTitle = 'AntDesign' | 'Sass/Less' | 'HTML' | 'JavaScript' | 'React' | 'CSS' | 'Strapi' | 'TypeScript';
 
-type TechContent = {
+export type TechContent = {
     logoKey: TechImageKey;
     title: LogoTitle;
 }

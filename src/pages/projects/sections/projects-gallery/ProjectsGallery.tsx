@@ -11,31 +11,29 @@ import projectsData from '../../../../data/projectsData.json';
 import easetechImg from './images/easetech.png';
 import easetechEllipseImg from './images/bg-images/easetech-ellipse.png';
 
-import shopImg from './images/store.png';
+import storeImg from './images/store.png';
 import shopEllipseImg from './images/bg-images/store-ellipse.png';
 
-import volunteersImg from './images/database.png';
+import databaseImg from './images/database.png';
 import storeBgImg from './images/bg-images/database-ellipse.png';
 
-import calcImg from './images/geo-calc.png';
+import calculatorImg from './images/geo-calc.png';
 import geocalcEllipse from './images/bg-images/geocalc-ellipse.png';
 import geocalcEllipse2 from './images/bg-images/geocalc-ellipse2.png';
 
 const imagesMap: Record<string, string> = {
     easetechImg,
     easetechEllipseImg,
-    shopImg,
+    storeImg,
     shopEllipseImg,
-    volunteersImg,
+    databaseImg,
     storeBgImg,
-    calcImg,
+    calculatorImg,
     geocalcEllipse,
     geocalcEllipse2,
 };
 
 const ProjectsGallery: FC = () => {
-
-    // const navigate = useNavigate();
 
     return (
         <div className={'projects-gallery-wrapper'}>
@@ -45,19 +43,18 @@ const ProjectsGallery: FC = () => {
                     <WebsiteDivider isReversed={true}/>
                 </div>
                 <div className={'gallery-wrapper'}>
-                    {projectsData.map((item, idx) => (
+                    {projectsData.map((item) => (
                         <ProjectItem
                             id={item.id}
-                            key={idx}
+                            key={item.id}
                             title={item.title}
                             description={item.description}
-                            projectImg={imagesMap[item.projectImg]}
+                            projectImgs={item.projectImgs.map((key) => imagesMap[key])}
                             bgImgUpper={item.bgImgUpper ? imagesMap[item.bgImgUpper] : undefined}
                             bgImgLower={item.bgImgLower ? imagesMap[item.bgImgLower] : undefined}
                             bgSectionImg={item.bgSectionImg ? imagesMap[item.bgSectionImg] : undefined}
                             isDivider={item.isDivider}
                             isReversed={item.isReversed}
-                            // onClick={() => navigate(item.onClickRoute)}
                         />
                     ))}
                 </div>
