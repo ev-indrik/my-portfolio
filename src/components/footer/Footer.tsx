@@ -9,6 +9,7 @@ import SocialButtons from '../social-buttons/SocialButtons';
 import bgPetalsImg from './images/footer-petals-img.png';
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
 const {Paragraph} = WebsiteTypography;
 
@@ -91,6 +92,8 @@ const Footer: FC = () => {
                         </Row>
                     </Col>
                 </Row>
+
+                <WebsiteDivider color={'white'} marginNumber={10}/>
 
                 <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 24}}>
                     <Paragraph color={'white'}>
