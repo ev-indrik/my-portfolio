@@ -15,7 +15,7 @@ export type TickedBox = {
 
 // ===>> Project description
 
-export type ProjectItemProps = {
+export type ProjectItem = {
     id: string;
     title: string;
     description: string;
@@ -32,16 +32,3 @@ export type ProjectItemProps = {
     isDivider?: boolean;
     isDividerReversed?: boolean;
 }
-
-// export type ProjectItemProps = {
-//     id: string;
-//     title: string;
-//     description: string;
-//     projectImg: string;
-//     bgImgUpper?: string;
-//     bgImgLower?: string;
-//     bgSectionImg?: string;
-//     isReversed?: boolean;
-//     isDivider?: boolean;
-//     isDividerReversed?: boolean;
-// }

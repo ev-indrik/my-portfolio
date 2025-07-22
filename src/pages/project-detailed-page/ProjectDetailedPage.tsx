@@ -65,7 +65,7 @@ const imageMap: Record<string, string> = {
 
 const {Title, Paragraph} = WebsiteTypography;
 import projects from '../../data/projectsData.json'
-import type {ProjectItemProps} from "@/type/types";
+import type {ProjectItem} from "@/type/types";
 
 const ProjectDetailedPage: FC = () => {
 
@@ -84,10 +84,9 @@ const ProjectDetailedPage: FC = () => {
 
     // ===>> ProjectItem receving
 
-    const project = getProjectById(projectId || '') as ProjectItemProps & {
+    const project = getProjectById(projectId || '') as ProjectItem & {
         techLogos: TechContent[];
     };
-    // const project: ProjectItemProps | undefined = getProjectById(projectId || '')
 
     const onGithubClick = () => {
         if (!project?.githubUrl) return;
