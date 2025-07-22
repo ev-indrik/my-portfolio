@@ -17,6 +17,7 @@ import {useNavigate, useParams} from "react-router";
 const {Title, Paragraph} = WebsiteTypography;
 import projects from '../../data/projectsData.json'
 import type {ProjectItemType} from "@/type/types";
+import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
 const ProjectDetailedPage: FC = () => {
 
@@ -197,4 +198,4 @@ const ProjectDetailedPage: FC = () => {
     );
 };
 
-export default ProjectDetailedPage;
+export default ScrollToTop(ProjectDetailedPage);
