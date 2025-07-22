@@ -103,7 +103,7 @@
     "title": "Volunteers Database",
     "description": "A project using Grid and pure JavaScript with database integration, supporting simultaneous filtering by multiple parameters.",
     "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181710/database_tw8of8.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database2_fex3fj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database3_kbd4m3.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database4_iqpcqc.png"],
+    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181710/database_tw8of8.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database2_fex3fj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database3_kbd4m3.png"],
     "techLogos": [
       {
         "logoKey": "reactImg",
