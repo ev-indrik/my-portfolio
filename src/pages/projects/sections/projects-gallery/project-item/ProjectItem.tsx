@@ -6,12 +6,12 @@ import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import {useNavigate} from "react-router";
-import type {ProjectItemProps} from "@/type/types";
+import type {ProjectItemType} from "@/type/types";
 
 const {Title, Paragraph} = WebsiteTypography
 
 
-const ProjectItem: FC<ProjectItemProps> = ({id, isReversed, bgImgUpper, bgImgLower, title, description, projectImgs, isDivider, bgSectionImg}) => {
+const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLower, title, description, projectImgs, isDivider, bgSectionImg}) => {
 
     const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const ProjectItem: FC<ProjectItemProps> = ({id, isReversed, bgImgUpper, bgImgLow
                             </div>
 
                             <div>
-                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Read more'}
+                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Go to Project Page'}
                                                onClick={handleReadMore}/>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export type TickedBox = {
 
 // ===>> Project description
 
-export type ProjectItem = {
+export type ProjectItemType = {
     id: string;
     title: string;
     description: string;

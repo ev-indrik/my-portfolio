@@ -21,6 +21,7 @@ const Home: FC = () => {
                 buttonText={sectionData.buttonText}
                 imageSrc={imageSrc}
                 onClick={onLearnMoreClick}
+                paddingBtm={8}
             />
     );
 };

@@ -14,58 +14,9 @@ import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 import {useNavigate, useParams} from "react-router";
 
-// ===>>> Projects images
-import easetechImg from '../projects/sections/projects-gallery/images/easetech.png'
-import easetech2Img from './images/projects-images/easetech2.png'
-import easetech3Img from './images/projects-images/easetech3.png'
-import easetech4Img from './images/projects-images/easetech4.png'
-import easetech5Img from './images/projects-images/easetech5.png'
-
-import calculatorImg from '../projects/sections/projects-gallery/images/geo-calc.png'
-import calculator2Img from './images/projects-images/calc2.png'
-import calculator3Img from './images/projects-images/calc3.png'
-import calculator4Img from './images/projects-images/calc4.png'
-
-import storeImg from '../projects/sections/projects-gallery/images/store.png'
-import store2Img from './images/projects-images/shop2.png'
-import store3Img from './images/projects-images/shop3.png'
-import store4Img from './images/projects-images/shop4.png'
-import store5Img from './images/projects-images/shop5.png'
-
-import databaseImg from '../projects/sections/projects-gallery/images/database.png'
-import database2Img from './images/projects-images/database2.png'
-import database3Img from './images/projects-images/database3.png'
-import database4Img from './images/projects-images/database4.png'
-
-const imageMap: Record<string, string> = {
-    easetechImg,
-    easetech2Img,
-    easetech3Img,
-    easetech4Img,
-    easetech5Img,
-
-    calculatorImg,
-    calculator2Img,
-    calculator3Img,
-    calculator4Img,
-
-    storeImg,
-    store2Img,
-    store3Img,
-    store4Img,
-    store5Img,
-
-    databaseImg,
-    database2Img,
-    database3Img,
-    database4Img,
-};
-
-// ===>>> Projects images end
-
 const {Title, Paragraph} = WebsiteTypography;
 import projects from '../../data/projectsData.json'
-import type {ProjectItem} from "@/type/types";
+import type {ProjectItemType} from "@/type/types";
 
 const ProjectDetailedPage: FC = () => {
 
@@ -84,7 +35,7 @@ const ProjectDetailedPage: FC = () => {
 
     // ===>> ProjectItem receving
 
-    const project = getProjectById(projectId || '') as ProjectItem & {
+    const project = getProjectById(projectId || '') as ProjectItemType & {
         techLogos: TechContent[];
     };
 
@@ -122,9 +73,9 @@ const ProjectDetailedPage: FC = () => {
                     autoplay
                     autoplaySpeed={5000}
                 >
-                    {project.projectImgs.map((imgKey, idx) => (
+                    {project.projectImgs.map((imgUrl, idx) => (
                         <div className={'slider-item-wrapper'} key={idx}>
-                            <img src={imageMap[imgKey]} alt={`project screenshot ${idx + 1}`} />
+                            <img src={imgUrl} alt={`project screenshot`} />
                         </div>
                     ))}
 
@@ -202,7 +153,7 @@ const ProjectDetailedPage: FC = () => {
                 <Row justify={'center'}>
                     <Col span={12}>
                         <Row justify={'center'} gutter={16} style={{width: '100%'}}>
-                            <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
+                            {project.githubUrl && <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
                                 <WebsiteButton
                                     btnType={'ghost'}
                                     icon={<SvgIcon type={'github-ghost'}/>}
@@ -211,7 +162,7 @@ const ProjectDetailedPage: FC = () => {
                                     block
                                     onClick={onGithubClick}
                                 />
-                            </Col>
+                            </Col>}
                             <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
                                 <WebsiteButton
                                     btnType={'secondary'}
