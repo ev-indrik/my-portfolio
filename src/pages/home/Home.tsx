@@ -15,7 +15,6 @@ const Home: FC = () => {
 
     return (
             <HeroSection
-                isSocialButtons={true}
                 mainTitle={sectionData.mainTitle}
                 subTitle={sectionData.subTitle}
                 description={sectionData.description}
