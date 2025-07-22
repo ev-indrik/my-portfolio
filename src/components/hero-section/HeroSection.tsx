@@ -78,7 +78,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                         )}
 
 
-                        {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 50}}>
+                        {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 64}}>
                             {svgType ? <WebsiteButton
                                     btnType={'primary'}
                                     icon={<SvgIcon type={svgType as IconTypes}/>}

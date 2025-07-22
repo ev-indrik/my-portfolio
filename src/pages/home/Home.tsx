@@ -15,13 +15,13 @@ const Home: FC = () => {
 
     return (
             <HeroSection
-                isSocialButtons={true}
                 mainTitle={sectionData.mainTitle}
                 subTitle={sectionData.subTitle}
                 description={sectionData.description}
                 buttonText={sectionData.buttonText}
                 imageSrc={imageSrc}
                 onClick={onLearnMoreClick}
+                paddingBtm={8}
             />
     );
 };

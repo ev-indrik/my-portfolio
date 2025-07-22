@@ -5,36 +5,23 @@ import WebsiteButton from "@/components/website-button/WebsiteButton";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import {useNavigate} from "react-router";
+import type {ProjectItemType} from "@/type/types";
 
 const {Title, Paragraph} = WebsiteTypography
 
-type ProjectItemProps = {
-    isReversed?: boolean;
-    title: string;
-    description: string;
-    projectImg: string;
-    onClick?: () => void;
-    bgImgUpper?: string;
-    bgImgLower?: string;
-    bgSectionImg?: string;
-    isDivider?: boolean;
-    isDividerReversed?: boolean;
-}
 
-const ProjectItem: FC<ProjectItemProps> = ({
-                                               isReversed = false,
-                                               title,
-                                               description,
-                                               onClick,
-                                               projectImg,
-                                               isDivider = true,
-                                               bgImgUpper,
-                                               bgImgLower,
-                                               bgSectionImg
-                                           }) => {
+const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLower, title, description, projectImgs, isDivider, bgSectionImg}) => {
+
+    const navigate = useNavigate();
+
+    const handleReadMore = () => {
+        navigate(`/projects/${id}`)
+    };
+
     return (
         <>
-            <div className={`project-item-wrapper ${isReversed && 'reversed'}`}>
+            <div id={id} className={`project-item-wrapper ${isReversed && 'reversed'}`}>
 
                 {bgImgUpper && <div className={'upper-bg-img-wrapper'}>
                     <img src={bgImgUpper} alt={"background illustration"}/>
@@ -54,12 +41,13 @@ const ProjectItem: FC<ProjectItemProps> = ({
                             </div>
 
                             <div>
-                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Read more'} onClick={onClick}/>
+                                <WebsiteButton btnType={'ghost'} size={'large'} text={'Go to Project Page'}
+                                               onClick={handleReadMore}/>
                             </div>
                         </div>
 
                         <div className={'project-img-wrapper'}>
-                            <img src={projectImg} alt={'screenshot of project website'}/>
+                            <img src={projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
                     </div>
                     {isDivider && <WebsiteDivider isReversed={isReversed}/>}

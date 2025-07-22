@@ -1,41 +1,77 @@
 @use '../../variables';
 
-.divider-wrapper {
-  position: relative;
-  height: 1px;
-  margin: 40px 0;
+  .divider-wrapper {
+    position: relative;
 
-  &.black {
-    border-bottom: 1px solid #000000;
-  }
+    .divider-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
 
-  &.white {
-    border-bottom: 1px solid #FFFFFF;
-  }
+      .line {
+        height: 1px;
+        flex-grow: 1;
+        background-color: transparent;
+        min-width: 30px;
+      }
 
-  &.blue {
-    border-bottom: 1px solid variables.$primary-blue;
-  }
+      &.black {
+        .line {
+          background-color: #000000;
+        }
+        .img-whale-wrapper {
 
-  .img-whale-wrapper {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFFFFF;
-    padding: 0 6px 0 8px;
-    border-radius: 230px 30px 230px 30px;
+          path {
+            fill: #000000;
+            stroke: #000000;
+          }
+        }
+      }
 
-    &.reversed {
-      transform: translate(-50%, -50%) rotateY(180deg);
+      &.white {
+        .line {
+          background-color: #ffffff;
+        }
+
+        .img-whale-wrapper {
+
+          path {
+            fill: #ffffff;
+            stroke: #ffffff;
+          }
+        }
+      }
+
+      &.blue {
+
+        .line {
+          background-color: variables.$primary-blue;
+        }
+
+        .img-whale-wrapper {
+
+          path {
+            fill: variables.$primary-blue;
+            stroke: variables.$primary-blue;
+          }
+        }
+      }
+
+      .img-whale-wrapper {
+        width: 38px;
+        height: 38px;
+        padding: 0 6px 0 8px;
+
+        &.reversed {
+          transform: rotateY(180deg);
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
     }
-
-    svg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    }
   }
-}
