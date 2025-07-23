@@ -5,8 +5,17 @@
   border-radius: 8px;
   padding: 4px 8px;
 
+  .ant-typography.menu-item-text {
+    color: #9d9d9d;
+  }
+
+  .ant-typography {
+    font-weight: 700 !important;
+  }
+
   &:hover {
-    .ant-typography {
+
+   .ant-typography {
       font-weight: 700 !important;
     }
   }
@@ -21,8 +30,12 @@
   }
 }
 
+.ant-menu-item-selected .menu-item-text {
+  color: #000000 !important;
+}
 
 .ant-menu-item {
+
   &::after {
     border-bottom: none !important;
     transition: none !important;
