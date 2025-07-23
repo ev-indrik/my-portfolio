@@ -8,6 +8,7 @@ import WorkExperience from "@/pages/about/sections/work-experience/WorkExperienc
 import experienceImg from '@/pages/about/assets/experience-summary.png';
 import wavesImg from '@/pages/about/assets/waves-img.png'
 import {useNavigate} from "react-router";
+import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
@@ -52,4 +53,4 @@ const About: FC = () => {
     );
 };
 
-export default About;
+export default ScrollToTop(About);

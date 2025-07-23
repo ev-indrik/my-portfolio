@@ -1,4 +1,4 @@
-import {type FC, useState} from 'react';
+import {type FC, useEffect, useState} from 'react';
 import {Button, Col, Menu, type MenuProps, Row} from "antd";
 
 import {useLocation, useNavigate} from "react-router";
@@ -45,6 +45,11 @@ const Header: FC = () => {
     const currentLocation = pathname.split('/')[1]
 
     const [current, setCurrent] = useState(currentLocation);
+
+    useEffect(() => {
+
+        setCurrent(currentLocation)
+    }, [currentLocation])
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCurrent(e.key);

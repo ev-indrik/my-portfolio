@@ -1,4 +1,5 @@
 import {type FC} from 'react';
+import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
 const Contact: FC = () => {
     return (
@@ -8,4 +9,4 @@ const Contact: FC = () => {
     );
 };
 
-export default Contact;
+export default ScrollToTop(Contact);

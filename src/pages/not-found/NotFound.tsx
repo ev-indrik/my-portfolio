@@ -1,4 +1,5 @@
 import {type FC} from 'react';
+import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
 const NotFound: FC = () => {
     return (
@@ -8,4 +9,4 @@ const NotFound: FC = () => {
     );
 };
 
-export default NotFound;
+export default ScrollToTop(NotFound);

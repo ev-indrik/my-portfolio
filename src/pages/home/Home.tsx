@@ -7,6 +7,7 @@ const sectionData = heroSectionContent['home'];
 
 import imageSrc from '../../components/hero-section/images/home-hero-img.png'
 import {useNavigate} from "react-router";
+import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
 const Home: FC = () => {
 
@@ -26,4 +27,4 @@ const Home: FC = () => {
     );
 };
 
-export default Home;
+export default ScrollToTop(Home);
