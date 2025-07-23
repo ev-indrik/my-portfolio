@@ -4,6 +4,7 @@ import {type FC} from 'react';
 import {Col, Row} from "antd";
 
 import WebsiteButton from "../website-button/WebsiteButton.tsx";
+import type {WebsiteButtonType} from "../website-button/WebsiteButton"
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
 import TextListItem from "../text-list-item/TextListItem";
 
@@ -18,6 +19,7 @@ type HeroSectionProps = {
     subTitle?: string;
     description: string | string[];
     imageSrc: string;
+    btnType?: WebsiteButtonType;
     buttonText?: string;
     buttonLink?: string;
     isMainButton?: boolean;
@@ -28,13 +30,15 @@ type HeroSectionProps = {
     spanNumber?: number;
     svgType?: IconTypes;
     paddingBtm?: number;
-    onClick?: ()=>void;
+    onClick?: () => void;
+    isDisabled?: boolean;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
                                                mainTitle,
                                                subTitle,
                                                description,
+                                               btnType = 'primary',
                                                buttonText,
                                                imageSrc,
                                                isSocialButtons = false,
@@ -45,7 +49,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                spanNumber = 8,
                                                svgType,
                                                paddingBtm,
-                                               onClick
+                                               onClick,
+                                               isDisabled = false
                                            }) => {
 
 
@@ -80,17 +85,19 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                         {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 64}}>
                             {svgType ? <WebsiteButton
-                                    btnType={'primary'}
+                                    btnType={btnType}
                                     icon={<SvgIcon type={svgType as IconTypes}/>}
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    disabled={isDisabled}
                                 /> :
                                 <WebsiteButton
-                                    btnType={'primary'}
+                                    btnType={btnType}
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    disabled={isDisabled}
                                 />}
                         </Row>)}
 

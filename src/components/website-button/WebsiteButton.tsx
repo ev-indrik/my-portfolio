@@ -4,8 +4,9 @@ import classNames from 'classnames';
 
 import './WebsiteButton.scss'
 
+export type WebsiteButtonType = "primary" | "secondary" | 'ghost' | 'text' | 'icon';
 type WebButtonProps = {
-    btnType?: "primary" | "secondary" | 'ghost' | 'text' | 'icon';
+    btnType?: WebsiteButtonType
     icon?: ReactNode;
     text?: string;
     children?: ReactNode;
@@ -43,13 +44,14 @@ const WebsiteButton: FC<WebButtonProps & ButtonProps> = ({
     );
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-        if (link) {
-            window.open(link, '_blank', 'noopener,noreferrer');
-        }
         if (onClick) {
             onClick(e);
         }
+        if (link) {
+            window.open(link, '_blank', 'noopener,noreferrer');
+        }
     };
+
 
     return (
         <AntButton icon={icon ? icon : null} className={btnClasses} {...props} onClick={handleClick}>
