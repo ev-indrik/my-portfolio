@@ -21,6 +21,7 @@ import TickedSquare from './icons/ticked-square.svg?react'
 import RocketGhost from './icons/rocket-ghost.svg?react'
 import GithubGhost from './icons/github-ghost.svg?react'
 import ArrowShort from './icons/arrow-short.svg?react'
+import BlackWhale from './icons/black-whale.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -44,10 +45,13 @@ export type IconTypes =
     | 'github-ghost'
     | 'rocket-ghost'
     | 'arrow-short'
+    | 'waves-whale'
+    | 'black-whale'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'black-whale': BlackWhale,
     'arrow-short': ArrowShort,
     'github-ghost': GithubGhost,
     'rocket-ghost': RocketGhost,

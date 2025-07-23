@@ -95,7 +95,7 @@ const Footer: FC = () => {
 
                 <WebsiteDivider color={'white'} marginNumber={10}/>
 
-                <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 24}}>
+                <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 48}}>
                     <Paragraph color={'white'}>
                         {'Coded by '}
                         <a href={"https://github.com/ev-indrik"} target="_blank"
