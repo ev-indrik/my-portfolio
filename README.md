@@ -28,7 +28,7 @@ Project in progress – setting up layout, initial structure, routing, and langu
 
 - [ ] Multi-page navigation with React Router
 - [ ] Project gallery
-- [ ] Contact form
+- [ ] Contacts form
 - [ ] Responsive design
 - [ ] English and Ukrainian language support
 - [ ] Light and Dark modes

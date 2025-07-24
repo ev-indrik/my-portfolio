@@ -25,8 +25,8 @@ const items: MenuItem[] = [
         key: 'projects',
     },
     {
-        label: <MenuItem label={'Contact'} iconType={'menu-contacts'}/>,
-        key: 'contact',
+        label: <MenuItem label={'Contacts'} iconType={'menu-contacts'}/>,
+        key: 'contacts',
     },
 ]
 
@@ -49,6 +49,11 @@ const Header: FC = () => {
     useEffect(() => {
 
         setCurrent(currentLocation)
+
+        if(!currentLocation){
+            setCurrent('home')
+        }
+
     }, [currentLocation])
 
     const onClick: MenuProps['onClick'] = (e) => {

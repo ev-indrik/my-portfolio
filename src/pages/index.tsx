@@ -6,7 +6,7 @@ import WebsiteLayout from "../layuot/WebsiteLayout.tsx";
 const Home = lazy<FC>(() => import('../pages/home/Home.tsx'))
 const About = lazy<FC>(() => import('../pages/about/About.tsx'))
 const Projects = lazy<FC>(() => import('../pages/projects/Projects.tsx'))
-const Contact = lazy<FC>(() => import('../pages/contact/Contact.tsx'))
+const Contacts = lazy<FC>(() => import('./contacts/Contacts.tsx'))
 const NotFound = lazy<FC>(() => import('../pages/not-found/NotFound.tsx'))
 const ProjectDetailedPage = lazy<FC>(()=> import('./project-detailed-page/ProjectDetailedPage'))
 
@@ -32,8 +32,8 @@ const routes: RouteObject[] = [
                 element: <Projects />,
             },
             {
-                path: 'contact',
-                element: <Contact />,
+                path: 'contacts',
+                element: <Contacts />,
             },
             {
                 path: 'projects/:projectId',

@@ -5,9 +5,10 @@ import HeroSection from "@/components/hero-section/HeroSection";
 import meImg from '../../components/hero-section/images/me-img.png'
 import heroSectionContent from "@/data/heroSectionContent.json";
 import {message} from "antd";
+import ContactsBlock from "@/pages/contacts/sections/contacs-block/ContactsBlock";
 const sectionData = heroSectionContent['contact'];
 
-const Contact: FC = () => {
+const Contacts: FC = () => {
 
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -45,8 +46,9 @@ const Contact: FC = () => {
                 svgType={'share'}
                 onClick={onShareClick}
             />
+            <ContactsBlock />
         </>
     );
 };
 
-export default ScrollToTop(Contact);
+export default ScrollToTop(Contacts);
