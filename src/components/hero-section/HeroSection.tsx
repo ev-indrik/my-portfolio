@@ -33,11 +33,12 @@ type HeroSectionProps = {
     paddingBtm?: number;
     onClick?: () => void;
     isDisabled?: boolean;
+    imgBottomSpace?: number;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
                                                mainTitle,
-                                               titleColor = 'black',
+                                               titleColor = 'primary',
                                                subTitle,
                                                description,
                                                btnType = 'primary',
@@ -52,7 +53,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                svgType,
                                                paddingBtm,
                                                onClick,
-                                               isDisabled = false
+                                               isDisabled = false,
+                                               imgBottomSpace
                                            }) => {
 
 
@@ -109,7 +111,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                     </Col>
 
                     <Col flex={'auto'} order={isReversed ? 1 : 2}>
-                        <Row justify={'end'} align={'bottom'} style={{height: '100%'}}>
+                        <Row justify={'end'} align={'bottom'} style={{ height: '100%', paddingBottom: `${imgBottomSpace ?? 0}px` }}>
                             <div className={'image-container'}>
                                 <img src={imageSrc} alt={'illustration of developer'}/>
                             </div>

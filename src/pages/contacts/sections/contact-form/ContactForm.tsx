@@ -33,7 +33,7 @@ const ContactForm: FC = () => {
 
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.8, //===>> an element is considered a "viewport" if x0% is visible
+        threshold: 0.6, //===>> an element is considered a "viewport" if x0% is visible
     });
 
     ////===>> animation starting
@@ -61,6 +61,7 @@ const ContactForm: FC = () => {
             });
             messageApi.success("Thank you! Your message just landed in my inbox — I’ll be in touch soon");
             form.resetFields();
+            handleClick();
         } catch (error) {
             messageApi.error("Something went wrong. Please try again.");
         }
