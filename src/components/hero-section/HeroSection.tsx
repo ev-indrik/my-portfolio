@@ -16,6 +16,7 @@ const {Title, Paragraph} = WebsiteTypography;
 
 type HeroSectionProps = {
     mainTitle: string;
+    titleColor?: 'primary' | 'black' | 'white';
     subTitle?: string;
     description: string | string[];
     imageSrc: string;
@@ -36,6 +37,7 @@ type HeroSectionProps = {
 
 const HeroSection: FC<HeroSectionProps> = ({
                                                mainTitle,
+                                               titleColor = 'black',
                                                subTitle,
                                                description,
                                                btnType = 'primary',
@@ -70,7 +72,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
-                        <Title level={2} style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
+                        <Title level={2} color={titleColor}
+                               style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
 
                         {subTitle && <Title level={3} style={{paddingBottom: 24}}>{subTitle}</Title>}
 

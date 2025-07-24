@@ -6,6 +6,7 @@ import meImg from '../../components/hero-section/images/me-img.png'
 import heroSectionContent from "@/data/heroSectionContent.json";
 import {message} from "antd";
 import ContactsBlock from "@/pages/contacts/sections/contacs-block/ContactsBlock";
+import ContactForm from "@/pages/contacts/sections/contact-form/ContactForm";
 const sectionData = heroSectionContent['contact'];
 
 const Contacts: FC = () => {
@@ -38,6 +39,7 @@ const Contacts: FC = () => {
             {contextHolder}
             <HeroSection
                 mainTitle={sectionData.mainTitle}
+                titleColor={'primary'}
                 description={sectionData.description}
                 imageSrc={meImg}
                 buttonText={sectionData.buttonText}
@@ -47,6 +49,7 @@ const Contacts: FC = () => {
                 onClick={onShareClick}
             />
             <ContactsBlock />
+            <ContactForm />
         </>
     );
 };
