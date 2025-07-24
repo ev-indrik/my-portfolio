@@ -1,9 +1,21 @@
 @use '../../../../variables';
 
 .contact-form-section-wrapper {
-  padding: 0 0 40px;
+  position: relative;
+  padding: 0 0 160px;
   white-space: pre-line;
 
+  .container {
+    position: relative;
+
+    .signature-wrapper {
+      position: absolute;
+      height: 520px;
+      width: auto;
+      bottom: -180px;
+      right: -130px;
+    }
+  }
 }
 
 .contact-form-wrapper {

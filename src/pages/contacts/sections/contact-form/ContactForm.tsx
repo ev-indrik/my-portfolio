@@ -1,5 +1,6 @@
 import './ContactForm.scss'
 
+import {useEffect, useRef} from 'react';
 import type {FC} from 'react';
 import {Form, Input, Row, Col} from 'antd'
 import type {FormProps} from 'antd';
@@ -8,6 +9,11 @@ import TextArea from "antd/es/input/TextArea";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import { useMessageApi } from '@/context/MessageContext';
+// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import Lottie from 'lottie-react';
+import type {LottieRefCurrentProps} from 'lottie-react';
+import { useInView } from 'react-intersection-observer';
+import catSignature from '../../../../assets/lottie-animation/cat-signature.json';
 
 const {Title, Paragraph} = WebsiteTypography
 
@@ -22,6 +28,28 @@ const ContactForm: FC = () => {
     const [form] = Form.useForm();
     const messageApi = useMessageApi();
 
+    const hasBeenInViewRef = useRef(false);
+    const animationRef = useRef<LottieRefCurrentProps>(null);
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.8, //===>> an element is considered a "viewport" if x0% is visible
+    });
+
+    ////===>> animation starting
+    useEffect(() => {
+        if (inView && !hasBeenInViewRef.current) {
+            hasBeenInViewRef.current = true;
+            animationRef.current?.play();
+        }
+    }, [inView]);
+
+    const handleClick = () => {
+
+        animationRef.current?.stop();
+        animationRef.current?.play();
+    };
+
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         try {
             await fetch("https://formspree.io/f/mqalqzer", {
@@ -31,7 +59,7 @@ const ContactForm: FC = () => {
                 },
                 body: JSON.stringify(values)
             });
-            messageApi.success("Message sent!");
+            messageApi.success("Thank you! Your message just landed in my inbox — I’ll be in touch soon");
             form.resetFields();
         } catch (error) {
             messageApi.error("Something went wrong. Please try again.");
@@ -91,6 +119,15 @@ const ContactForm: FC = () => {
                         </Form>
                     </Col>
                 </Row>
+
+                <div ref={ref} className="signature-wrapper" onClick={handleClick} style={{ cursor: 'pointer' }}>
+                    <Lottie
+                        lottieRef={animationRef}
+                        animationData={catSignature}
+                        loop={false}
+                        autoplay={false}
+                    />
+                </div>
 
             </div>
         </div>
