@@ -46,6 +46,7 @@ const Contacts: FC = () => {
                 btnType={'secondary'}
                 svgType={'share'}
                 onClick={onShareClick}
+                imgBottomSpace={24}
             />
             <ContactsBlock />
             <ContactForm />
