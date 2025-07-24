@@ -36,6 +36,12 @@
         "Managed databases and archives using specialized software and MS Office tools"
     ],
     "buttonText": "Download PDF Resume"
+  },
+  "contact": {
+    "mainTitle": "Let’s Get in Touch",
+    "subTitle": "Frontend developer",
+    "description": "Thank you for taking the time to learn more about me and explore my projects. I truly appreciate your interest.\n\nIf you’d like to connect, collaborate, or simply have a question, feel free to reach out in any way that’s most convenient for you.",
+    "buttonText": "Share Link to Portfolio",
+    "buttonLink": "https://ev-indrik-portfolio.netlify.app/"
   }
-
 }

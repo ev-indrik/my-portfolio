@@ -4,6 +4,7 @@ import {type FC} from 'react';
 import {Col, Row} from "antd";
 
 import WebsiteButton from "../website-button/WebsiteButton.tsx";
+import type {WebsiteButtonType} from "../website-button/WebsiteButton"
 import SocialButtons from "../social-buttons/SocialButtons.tsx";
 import TextListItem from "../text-list-item/TextListItem";
 
@@ -15,9 +16,11 @@ const {Title, Paragraph} = WebsiteTypography;
 
 type HeroSectionProps = {
     mainTitle: string;
+    titleColor?: 'primary' | 'black' | 'white';
     subTitle?: string;
     description: string | string[];
     imageSrc: string;
+    btnType?: WebsiteButtonType;
     buttonText?: string;
     buttonLink?: string;
     isMainButton?: boolean;
@@ -28,13 +31,16 @@ type HeroSectionProps = {
     spanNumber?: number;
     svgType?: IconTypes;
     paddingBtm?: number;
-    onClick?: ()=>void;
+    onClick?: () => void;
+    isDisabled?: boolean;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
                                                mainTitle,
+                                               titleColor = 'black',
                                                subTitle,
                                                description,
+                                               btnType = 'primary',
                                                buttonText,
                                                imageSrc,
                                                isSocialButtons = false,
@@ -45,7 +51,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                spanNumber = 8,
                                                svgType,
                                                paddingBtm,
-                                               onClick
+                                               onClick,
+                                               isDisabled = false
                                            }) => {
 
 
@@ -65,7 +72,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
-                        <Title level={2} style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
+                        <Title level={2} color={titleColor}
+                               style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
 
                         {subTitle && <Title level={3} style={{paddingBottom: 24}}>{subTitle}</Title>}
 
@@ -80,17 +88,19 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                         {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 64}}>
                             {svgType ? <WebsiteButton
-                                    btnType={'primary'}
+                                    btnType={btnType}
                                     icon={<SvgIcon type={svgType as IconTypes}/>}
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    disabled={isDisabled}
                                 /> :
                                 <WebsiteButton
-                                    btnType={'primary'}
+                                    btnType={btnType}
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    disabled={isDisabled}
                                 />}
                         </Row>)}
 
