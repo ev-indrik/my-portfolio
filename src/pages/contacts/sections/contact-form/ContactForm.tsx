@@ -1,12 +1,13 @@
 import './ContactForm.scss'
 
 import type {FC} from 'react';
-import {Form, Input, Row, Col, message} from 'antd'
+import {Form, Input, Row, Col} from 'antd'
 import type {FormProps} from 'antd';
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import TextArea from "antd/es/input/TextArea";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 import {SvgIcon} from "@/components/icon/SvgIcon";
+import { useMessageApi } from '@/context/MessageContext';
 
 const {Title, Paragraph} = WebsiteTypography
 
@@ -19,6 +20,7 @@ type FieldType = {
 const ContactForm: FC = () => {
 
     const [form] = Form.useForm();
+    const messageApi = useMessageApi();
 
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         try {
@@ -29,10 +31,10 @@ const ContactForm: FC = () => {
                 },
                 body: JSON.stringify(values)
             });
-            message.success("Message sent!");
+            messageApi.success("Message sent!");
             form.resetFields();
         } catch (error) {
-            message.error("Something went wrong. Please try again.");
+            messageApi.error("Something went wrong. Please try again.");
         }
     };
 

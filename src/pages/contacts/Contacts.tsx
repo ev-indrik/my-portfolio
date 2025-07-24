@@ -4,14 +4,14 @@ import HeroSection from "@/components/hero-section/HeroSection";
 
 import meImg from '../../components/hero-section/images/me-img.png'
 import heroSectionContent from "@/data/heroSectionContent.json";
-import {message} from "antd";
 import ContactsBlock from "@/pages/contacts/sections/contacs-block/ContactsBlock";
 import ContactForm from "@/pages/contacts/sections/contact-form/ContactForm";
+import {useMessageApi} from "@/context/MessageContext";
 const sectionData = heroSectionContent['contact'];
 
 const Contacts: FC = () => {
 
-    const [messageApi, contextHolder] = message.useMessage();
+    const messageApi = useMessageApi();
 
     const onShareClick = async () => {
         try {
@@ -36,7 +36,6 @@ const Contacts: FC = () => {
 
     return (
         <>
-            {contextHolder}
             <HeroSection
                 mainTitle={sectionData.mainTitle}
                 titleColor={'primary'}

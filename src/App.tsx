@@ -1,12 +1,13 @@
-import Pages from "./pages"
-
-import './App.scss'
+import './App.scss';
+import Pages from './pages';
+import {MessageProvider} from './context/MessageContext';
 
 function App() {
-
     return (
-        <Pages/>
-    )
+        <MessageProvider>
+            <Pages/>
+        </MessageProvider>
+    );
 }
 
-export default App
+export default App;
