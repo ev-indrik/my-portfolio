@@ -19,7 +19,7 @@ type ContactItem = {
     text: string;
 }
 
-const contactInfo: ContactItem[] = [
+export const contactInfo: ContactItem[] = [
     {
         id: 1,
         iconType: 'geo',
