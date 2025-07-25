@@ -9,7 +9,6 @@ import TextArea from "antd/es/input/TextArea";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import { useMessageApi } from '@/context/MessageContext';
-// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Lottie from 'lottie-react';
 import type {LottieRefCurrentProps} from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
