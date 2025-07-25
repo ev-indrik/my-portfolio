@@ -28,7 +28,7 @@ const NotFound: FC = () => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate('/home')
+        navigate('/projects')
     }
 
     return (
@@ -49,12 +49,19 @@ const NotFound: FC = () => {
                             </Paragraph>
 
                             <Col span={18} style={{paddingTop: 16}}>
-                                <Lottie
-                                    lottieRef={lottieRef}
-                                    animationData={catAnimation}
-                                    loop
-                                    autoplay
-                                />
+                                <div className={'lottie-box'}>
+
+                                    <div className={'not-found-horizontal-bg-wrapper'}>
+                                        <img src={bgHorizontalImg} alt={"illustration of the carpet"}/>
+                                    </div>
+
+                                    <Lottie
+                                        lottieRef={lottieRef}
+                                        animationData={catAnimation}
+                                        loop
+                                        autoplay
+                                    />
+                                </div>
                             </Col>
 
                             <Col span={8}>
@@ -72,11 +79,6 @@ const NotFound: FC = () => {
                         </Row>
                     </Col>
                 </Row>
-
-
-                <div className={'not-found-horizontal-bg-wrapper'}>
-                    <img src={bgHorizontalImg} alt={"illustration of the carpet"}/>
-                </div>
             </div>
         </div>
     );

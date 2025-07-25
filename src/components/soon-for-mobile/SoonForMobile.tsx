@@ -15,7 +15,7 @@ import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const SoonForMobile: FC = () => {
 
-    const {xxl, xl, lg, md, sm, xs} = useBreakpoint()
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
 
     const onPdfClick = () => {
         const link = document.createElement('a');
@@ -78,7 +78,7 @@ const SoonForMobile: FC = () => {
                                         color={"white"}
                                         centered
                                     >
-                                        {'I really appreciate your patience — the mobile version will be available shortly!'}
+                                        {'I really appreciate your patience. The mobile version will be available shortly!'}
                                     </Paragraph>
                                 </Col>
                             </Row>

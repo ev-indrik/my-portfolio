@@ -26,9 +26,6 @@
     overflow: hidden;
     border-radius: 30px;
 
-    @include mixins.md-max {
-    }
-
     img {
     width: 100%;
     height: 100%;

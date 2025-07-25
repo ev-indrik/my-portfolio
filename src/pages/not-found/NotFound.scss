@@ -17,14 +17,16 @@
     }
   }
 
-  .container {
+  .lottie-box {
     position: relative;
+    z-index: 3;
 
     .not-found-horizontal-bg-wrapper {
       position: absolute;
-      top: 330px;
-      right: 330px;
+      bottom: 20px;
+      right: 0;
       width: 500px;
+      z-index: -1;
 
       img {
         width: 100%;
