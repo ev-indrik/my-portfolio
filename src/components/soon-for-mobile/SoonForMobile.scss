@@ -1,4 +1,5 @@
-@use '../../variables';
+@use '../../abstracts/variables';
+@use '../../abstracts/mixins';
 
 .soon-for-mobile-wrapper {
   position: relative;
@@ -24,6 +25,9 @@
     width: 500px;
     overflow: hidden;
     border-radius: 30px;
+
+    @include mixins.md-max {
+    }
 
     img {
     width: 100%;

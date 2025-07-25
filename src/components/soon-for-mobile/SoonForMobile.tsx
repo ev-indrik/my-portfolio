@@ -11,8 +11,11 @@ const {Title, Paragraph} = WebsiteTypography
 import profileImg from './images/jane-portrait.png';
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import {contactInfo} from "@/components/footer/Footer";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const SoonForMobile: FC = () => {
+
+    const {xxl, xl, lg, md, sm, xs} = useBreakpoint()
 
     const onPdfClick = () => {
         const link = document.createElement('a');
@@ -26,7 +29,7 @@ const SoonForMobile: FC = () => {
             <div className={'container'}>
 
                 <Row justify={'center'}>
-                    <Col span={14}>
+                    <Col xxl={16} xl={16} lg={16} md={16} sm={22} xs={24}>
 
                         <Row justify={'center'} style={{width: "100%"}}>
 
@@ -37,7 +40,7 @@ const SoonForMobile: FC = () => {
                             </Col>
 
                             <Col span={24} style={{paddingBottom: 24}}>
-                                <Title level={2} color={'white'} centered>
+                                <Title level={(xxl||xl||lg||md||sm ? 2 : 3)} color={'white'} centered>
                                     {'Mobile Version Coming Soon...'}
                                 </Title>
                             </Col>
@@ -50,7 +53,7 @@ const SoonForMobile: FC = () => {
                             </Paragraph>
 
                             <Row justify={'center'} style={{width: '100%', paddingTop: 32}}>
-                                <Col span={14}>
+                                <Col span={14} md={14} sm={16} xs={24}>
                                     <WebsiteButton
                                         btnType={'white-ghost'}
                                         icon={<SvgIcon type={'pdf'}/>}
@@ -63,9 +66,11 @@ const SoonForMobile: FC = () => {
 
                             <Row justify={'center'} style={{width: '100%'}}>
                                 <Col span={24} style={{paddingTop: 40}}>
-                                    <div className={'soon-image-wrapper'}>
-                                        <img src={profileImg} alt={"illustration of developer coding with cats"}/>
-                                    </div>
+                                    <Row justify={'center'}>
+                                        <div className={'soon-image-wrapper'}>
+                                            <img src={profileImg} alt={"illustration of developer coding with cats"}/>
+                                        </div>
+                                    </Row>
                                 </Col>
 
                                 <Col span={24} style={{paddingTop: 32}}>
@@ -89,7 +94,15 @@ const SoonForMobile: FC = () => {
                    <Row justify={'center'} style={{width: '100%'}}>
                        <Col>
                            <Space direction={'vertical'} style={{width: '100%'}}>
-                               <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
+                               <Paragraph
+                                   color={'white'}
+                                   size={'lg'}
+                                   weight={'w700'}
+                                   style={{paddingBottom: 16}}
+                                   centered={!(xxl||xl||lg||md||sm)}
+                               >
+                                   {'Contact info'}
+                               </Paragraph>
                                {contactInfo.map((it) =>
                                    <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
                                        <SvgIcon type={it.iconType}/>

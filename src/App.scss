@@ -1,4 +1,6 @@
-@use './variables';
+@use 'abstracts/variables';
+@use 'abstracts/breakpoints';
+@use 'abstracts/mixins';
 
 body {
   font-family: inherit;
