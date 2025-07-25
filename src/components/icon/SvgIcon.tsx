@@ -24,6 +24,7 @@ import ArrowShort from './icons/arrow-short.svg?react'
 import BlackWhale from './icons/black-whale.svg?react'
 import Share from './icons/share.svg?react'
 import BlackPlane from './icons/black-plane.svg?react'
+import InBoxes from './icons/inboxes.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -51,10 +52,12 @@ export type IconTypes =
     | 'black-whale'
     | 'share'
     | 'black-plane'
+    | 'in-boxes'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'in-boxes': InBoxes,
     'black-plane': BlackPlane,
     'share': Share,
     'black-whale': BlackWhale,

@@ -39,12 +39,16 @@ const routes: RouteObject[] = [
                 path: 'projects/:projectId',
                 element: <ProjectDetailedPage/>,
             },
-        ],
-    },
-    {
-        path: '*',
-        element: <NotFound />,
-    },
+            {
+                path: '*',
+                element: <NotFound />,
+            },
+        ]
+    }
+    // {
+    //     path: '*',
+    //     element: <NotFound />,
+    // },
 ];
 
 const Router = () => <RouterProvider router={createBrowserRouter(routes)}/>

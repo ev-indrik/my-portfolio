@@ -1,0 +1,36 @@
+.not-found-wrapper {
+  position: relative;
+  padding: 60px 0 0;
+  white-space: pre-line;
+  height: 100vh;
+
+  .not-found-bg-wrapper {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    height: 800px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .container {
+    position: relative;
+
+    .not-found-horizontal-bg-wrapper {
+      position: absolute;
+      top: 330px;
+      right: 330px;
+      width: 500px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
