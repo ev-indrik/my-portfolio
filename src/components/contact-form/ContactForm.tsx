@@ -78,8 +78,10 @@ const ContactForm: FC<Props> = ({handleAnimationClick}) => {
 
                     <Row justify={'center'} style={{paddingTop: 24}}>
                         <Col span={10}>
-                            <WebsiteButton size={'large'} icon={<SvgIcon type={'black-plane'}/>} block
-                                           btnType={'secondary'} htmlType={"submit"} text={'Send Message'}/>
+                            <Row justify={'center'}>
+                                <WebsiteButton size={'large'} icon={<SvgIcon type={'black-plane'}/>} block
+                                               btnType={'secondary'} htmlType={"submit"} text={'Send Message'}/>
+                            </Row>
                         </Col>
                     </Row>
                 </Form>
