@@ -1,5 +1,5 @@
 @use 'reset';
-@use 'variables';
+@use 'abstracts/variables';
 
 :root {
   font-family: variables.$main-font;

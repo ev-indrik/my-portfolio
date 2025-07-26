@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import './WebsiteButton.scss'
 
-export type WebsiteButtonType = "primary" | "secondary" | 'ghost' | 'text' | 'icon';
+export type WebsiteButtonType = "primary" | "secondary" | 'ghost' | 'white-ghost' | 'text' | 'icon';
 type WebButtonProps = {
     btnType?: WebsiteButtonType
     icon?: ReactNode;
@@ -33,6 +33,7 @@ const WebsiteButton: FC<WebButtonProps & ButtonProps> = ({
             'primary': btnType === 'primary',
             'secondary': btnType === 'secondary',
             'ghost': btnType === 'ghost',
+            'white-ghost': btnType === 'white-ghost',
             'text': btnType === 'text',
             'icon': btnType === 'icon',
         },

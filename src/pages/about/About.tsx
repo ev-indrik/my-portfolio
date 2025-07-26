@@ -5,8 +5,8 @@ import heroSectionContent from '../../data/heroSectionContent.json'
 import imageSrc from '../../components/hero-section/images/about-hero-img.png'
 import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
 import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
-import experienceImg from '@/pages/about/assets/experience-summary.png';
-import wavesImg from '@/pages/about/assets/waves-img.png'
+import experienceAnimation from '@/assets/lottie-animation/cat-coding.json';
+import leaveHorizontalImg from '@/pages/about/assets/horizontal_leave.png'
 import {useNavigate} from "react-router";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 
@@ -40,10 +40,10 @@ const About: FC = () => {
                 mainTitle={sectionDataExperience.mainTitle}
                 description={sectionDataExperience.description}
                 buttonText={sectionDataExperience.buttonText}
-                imageSrc={experienceImg}
+                animationSrc={experienceAnimation}
                 isReversed={true}
                 isBgImg={true}
-                bgImg={wavesImg}
+                bgImg={leaveHorizontalImg}
                 spanNumber={12}
                 svgType={'pdf'}
                 paddingBtm={60}

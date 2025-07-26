@@ -3,6 +3,7 @@ import {type FC} from 'react';
 import './Footer.scss'
 import {Col, Row, Space} from "antd";
 import {Link} from "react-router";
+import {useContactModal} from '@/context/ContactModalContext';
 import WebsiteButton from "../website-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
 import SocialButtons from '../social-buttons/SocialButtons';
@@ -19,7 +20,7 @@ type ContactItem = {
     text: string;
 }
 
-const contactInfo: ContactItem[] = [
+export const contactInfo: ContactItem[] = [
     {
         id: 1,
         iconType: 'geo',
@@ -50,6 +51,8 @@ const contactInfo: ContactItem[] = [
 
 const Footer: FC = () => {
 
+    const {openModal} = useContactModal();
+
     const startYear = 2025;
     const currentYear = new Date().getFullYear();
     const displayYear = currentYear > startYear ? `${startYear}-${currentYear}` : `${startYear}`;
@@ -60,24 +63,25 @@ const Footer: FC = () => {
                 <Row justify={'space-between'} align={'stretch'} wrap={false}
                      style={{paddingTop: 50, paddingBottom: 24}}>
                     <Col span={6}>
-                            <Space direction={'vertical'}>
-                                <Paragraph color={'white'} size={'lg'} weight={'w700'}>{'Menu'}</Paragraph>
-                                <Paragraph style={{paddingTop: 16}}>
-                                    <Link to="/home">{'Home'}</Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link to="/about">{'About'}</Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link to="/projects">{'Projects'}</Link>
-                                </Paragraph>
-                            </Space>
+                        <Space direction={'vertical'}>
+                            <Paragraph color={'white'} size={'lg'} weight={'w700'}>{'Menu'}</Paragraph>
+                            <Paragraph style={{paddingTop: 16}}>
+                                <Link to="/home">{'Home'}</Link>
+                            </Paragraph>
+                            <Paragraph>
+                                <Link to="/about">{'About'}</Link>
+                            </Paragraph>
+                            <Paragraph>
+                                <Link to="/projects">{'Projects'}</Link>
+                            </Paragraph>
+                        </Space>
 
                         <SocialButtons/>
                     </Col>
                     <Col span={6}>
                         <Space direction={'vertical'}>
-                        <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
+                            <Paragraph color={'white'} size={'lg'} weight={'w700'}
+                                       style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
                             {contactInfo.map((it) =>
                                 <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
                                     <SvgIcon type={it.iconType}/>
@@ -87,8 +91,9 @@ const Footer: FC = () => {
                         </Space>
                     </Col>
                     <Col span={6}>
-                        <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16 }}>
-                            <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}/>
+                        <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16}}>
+                            <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
+                                           onClick={openModal}/>
                         </Row>
                     </Col>
                 </Row>

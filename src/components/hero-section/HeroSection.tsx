@@ -1,7 +1,11 @@
 import './HeroSection.scss';
 
+import { useRef, useEffect } from 'react';
 import {type FC} from 'react';
 import {Col, Row} from "antd";
+
+import Lottie from 'lottie-react';
+import type { LottieRefCurrentProps } from 'lottie-react';
 
 import WebsiteButton from "../website-button/WebsiteButton.tsx";
 import type {WebsiteButtonType} from "../website-button/WebsiteButton"
@@ -19,7 +23,8 @@ type HeroSectionProps = {
     titleColor?: 'primary' | 'black' | 'white';
     subTitle?: string;
     description: string | string[];
-    imageSrc: string;
+    imageSrc?: string;
+    animationSrc?: object;
     btnType?: WebsiteButtonType;
     buttonText?: string;
     buttonLink?: string;
@@ -33,7 +38,8 @@ type HeroSectionProps = {
     paddingBtm?: number;
     onClick?: () => void;
     isDisabled?: boolean;
-    imgBottomSpace?: number;
+    offsetNumber?: number;
+    imgPaddingBottom?: number;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -44,6 +50,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                btnType = 'primary',
                                                buttonText,
                                                imageSrc,
+                                               animationSrc,
                                                isSocialButtons = false,
                                                isMainButton = true,
                                                isReversed = false,
@@ -54,9 +61,17 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                paddingBtm,
                                                onClick,
                                                isDisabled = false,
-                                               imgBottomSpace
+                                               offsetNumber,
+                                               imgPaddingBottom
                                            }) => {
 
+    const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+    useEffect(() => {
+        if (lottieRef.current) {
+            lottieRef.current.setSpeed(1);
+        }
+    }, []);
 
     return (
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
@@ -110,10 +125,19 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                     </Col>
 
-                    <Col flex={'auto'} order={isReversed ? 1 : 2}>
-                        <Row justify={'end'} align={'bottom'} style={{ height: '100%', paddingBottom: `${imgBottomSpace ?? 0}px` }}>
-                            <div className={'image-container'}>
-                                <img src={imageSrc} alt={'illustration of developer'}/>
+                    <Col flex={'auto'} order={isReversed ? 1 : 2} offset={offsetNumber}>
+                        <Row justify={'end'} align={'bottom'}
+                             style={{height: '100%'}}>
+                            <div className={'image-container'} style={{paddingBottom: imgPaddingBottom}}>
+                                {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
+
+                                {animationSrc &&
+                                    <Lottie
+                                        lottieRef={lottieRef}
+                                        animationData={animationSrc}
+                                        loop
+                                        autoplay
+                                />}
                             </div>
                         </Row>
                     </Col>

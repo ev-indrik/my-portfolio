@@ -40,7 +40,7 @@ const contactsBlockContent: ContactItemType[] = [
     {
         imgUrl: emailImg,
         title: 'Email',
-        description: '+380 68 355 58 48'
+        description: 'delfinmur@gmail.com'
     },
 ]
 

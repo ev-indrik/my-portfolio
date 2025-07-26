@@ -1,22 +1,4 @@
-@use '../../../../variables';
-
-.contact-form-section-wrapper {
-  position: relative;
-  padding: 0 0 160px;
-  white-space: pre-line;
-
-  .container {
-    position: relative;
-
-    .signature-wrapper {
-      position: absolute;
-      height: 520px;
-      width: auto;
-      bottom: -180px;
-      right: -130px;
-    }
-  }
-}
+@use '../../abstracts/variables';
 
 .contact-form-wrapper {
   font-family: variables.$main-font;

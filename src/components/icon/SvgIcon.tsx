@@ -22,8 +22,10 @@ import RocketGhost from './icons/rocket-ghost.svg?react'
 import GithubGhost from './icons/github-ghost.svg?react'
 import ArrowShort from './icons/arrow-short.svg?react'
 import BlackWhale from './icons/black-whale.svg?react'
+import WhiteWhale from './icons/white-whale.svg?react'
 import Share from './icons/share.svg?react'
 import BlackPlane from './icons/black-plane.svg?react'
+import InBoxes from './icons/inboxes.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -49,15 +51,19 @@ export type IconTypes =
     | 'arrow-short'
     | 'waves-whale'
     | 'black-whale'
+    | 'white-whale'
     | 'share'
     | 'black-plane'
+    | 'in-boxes'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'in-boxes': InBoxes,
     'black-plane': BlackPlane,
     'share': Share,
     'black-whale': BlackWhale,
+    'white-whale': WhiteWhale,
     'arrow-short': ArrowShort,
     'github-ghost': GithubGhost,
     'rocket-ghost': RocketGhost,
