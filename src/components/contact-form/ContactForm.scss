@@ -31,4 +31,15 @@
   .ant-form-item-label > label.ant-form-item-required::before {
     color: variables.$primary-blue !important;
   }
+
+  &.white {
+
+    label {
+      color: #FFFFFF!important;
+    }
+
+    .ant-form-item-label > label.ant-form-item-required::before {
+      color: #FFFFFF!important;
+    }
+  }
 }

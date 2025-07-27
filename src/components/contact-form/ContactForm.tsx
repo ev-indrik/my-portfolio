@@ -14,11 +14,15 @@ type FieldType = {
     message?: string;
 };
 
+type labelBeforeColorType = 'white'
+
 type Props = {
     handleAnimationClick?: ()=>void;
+    mainColNumber?: number;
+    labelBeforeColor?: labelBeforeColorType
 }
 
-const ContactForm: FC<Props> = ({handleAnimationClick}) => {
+const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBeforeColor}) => {
 
     const [form] = Form.useForm();
     const messageApi = useMessageApi();
@@ -44,14 +48,14 @@ const ContactForm: FC<Props> = ({handleAnimationClick}) => {
     };
 
     return (
-        <Row justify={'center'} style={{paddingTop: 64}}>
-            <Col span={14}>
+        <Row justify={'center'} style={{paddingTop: 40}}>
+            <Col span={mainColNumber}>
                 <Form
                     form={form}
                     layout="vertical"
                     onFinish={onFinish}
                     autoComplete={"off"}
-                    className={'contact-form-wrapper'}
+                    className={`contact-form-wrapper ${labelBeforeColor === 'white' ? 'white' : ''}`}
                 >
                     <Form.Item<FieldType>
                         label="Name"
@@ -77,7 +81,7 @@ const ContactForm: FC<Props> = ({handleAnimationClick}) => {
                     </Form.Item>
 
                     <Row justify={'center'} style={{paddingTop: 24}}>
-                        <Col span={10}>
+                        <Col span={12}>
                             <Row justify={'center'}>
                                 <WebsiteButton size={'large'} icon={<SvgIcon type={'black-plane'}/>} block
                                                btnType={'secondary'} htmlType={"submit"} text={'Send Message'}/>
