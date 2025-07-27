@@ -30,7 +30,7 @@ const ModalContactForm = () => {
                             <Title level={2} color={'white'} centered style={{paddingTop: 32}}>
                                 {'Contact Form'}
                             </Title>
-                            <ContactForm />
+                            <ContactForm mainColNumber={20} labelBeforeColor={'white'}/>
                         </div>
                     </div>
                 </Modal>
