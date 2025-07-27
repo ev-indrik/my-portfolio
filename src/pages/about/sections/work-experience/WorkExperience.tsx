@@ -51,29 +51,6 @@ const WorkExperience: FC = () => {
                             description={item.description}
                         />
                     ))}
-
-                    {/*<div className={'experience-item-wrapper'}>*/}
-                    {/*   <div className={'experience-content'}>*/}
-                    {/*       <Title level={3}>*/}
-                    {/*           {'2024 – now'}*/}
-                    {/*       </Title>*/}
-
-                    {/*       <Paragraph className={'paragraph-wrapper'}>{'Frontend Developer (trainee)\n' +*/}
-                    {/*           'Pritster Holdings (Pty) Ltd t/a Groundwork Solutions'}</Paragraph>*/}
-                    {/*   </div>*/}
-                    {/*</div>*/}
-
-                    {/*<div className={'experience-item-wrapper even'}>*/}
-                    {/*    <div className={'experience-content even-content'}>*/}
-                    {/*        <Title level={3}>*/}
-                    {/*            {'2024 – now'}*/}
-                    {/*        </Title>*/}
-
-                    {/*        <Paragraph className={'paragraph-wrapper'}>{'Frontend Developer (trainee)\n' +*/}
-                    {/*            'Pritster Holdings (Pty) Ltd t/a Groundwork Solutions'}</Paragraph>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
                 </div>
 
             </div>

@@ -49,11 +49,11 @@
     "isDividerReversed": true
   },
   {
-    "id": "store-project",
-    "title": "Online Store",
-    "description": "An online clothing store project with a cart and payment system, built using React, React Router, and Redux.",
+    "id": "geometrical-calculator-project",
+    "title": "Geometrical Calculator",
+    "description": "A React-based calculator for computing basic geometric properties based on sides or coordinate points.",
     "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/store_t2tlt5.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop5_i6cawj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop2_hkyqvs.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop3_ohxslz.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop4_byg87g.png"],
+    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/calc2_btz2tf.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc4_jss1gu.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"],
     "techLogos": [
       {
         "logoKey": "reactImg",
@@ -90,15 +90,15 @@
         "tickedDescription": "Website is adjusted to different displays' sizes"
       }
     ],
-    "githubUrl": "https://github.com/ev-indrik/2024-08_shopping_app_redux",
-    "deployedUrl": "https://shopping-dreams.netlify.app/",
-    "bgImgLower": "shopEllipseImg",
-    "onClickRoute": "/project2",
-    "isDivider": true,
-    "isReversed": true,
-    "isDividerReversed": false
+    "githubUrl": "https://github.com/ev-indrik/geometry-calculator",
+    "deployedUrl": "https://geo-metry-calculation.netlify.app/",
+    "bgImgLower": "geocalcEllipse2",
+    "bgSectionImg": "geocalcEllipse",
+    "isDivider": false,
+    "onClickRoute": "/project4",
+    "isReversed": true
   },
-  {
+    {
     "id": "volunteers-database-project",
     "title": "Volunteers Database",
     "description": "A project using Grid and pure JavaScript with database integration, supporting simultaneous filtering by multiple parameters.",
@@ -149,11 +149,11 @@
     "isDividerReversed": true
   },
   {
-    "id": "geometrical-calculator-project",
-    "title": "Geometrical Calculator",
-    "description": "A React-based calculator for computing basic geometric properties based on sides or coordinate points.",
+    "id": "store-project",
+    "title": "Online Store",
+    "description": "An online clothing store project with a cart and payment system, built using React, React Router, and Redux.",
     "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/calc2_btz2tf.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc4_jss1gu.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"],
+    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/store_t2tlt5.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop5_i6cawj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop2_hkyqvs.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop3_ohxslz.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop4_byg87g.png"],
     "techLogos": [
       {
         "logoKey": "reactImg",
@@ -190,12 +190,12 @@
         "tickedDescription": "Website is adjusted to different displays' sizes"
       }
     ],
-    "githubUrl": "https://github.com/ev-indrik/geometry-calculator",
-    "deployedUrl": "https://geo-metry-calculation.netlify.app/",
-    "bgImgLower": "geocalcEllipse2",
-    "bgSectionImg": "geocalcEllipse",
-    "isDivider": false,
-    "onClickRoute": "/project4",
-    "isReversed": true
+    "githubUrl": "https://github.com/ev-indrik/2024-08_shopping_app_redux",
+    "deployedUrl": "https://shopping-dreams.netlify.app/",
+    "bgImgLower": "shopEllipseImg",
+    "onClickRoute": "/project2",
+    "isDivider": true,
+    "isReversed": true,
+    "isDividerReversed": false
   }
 ]

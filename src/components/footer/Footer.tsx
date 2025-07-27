@@ -11,6 +11,7 @@ import bgPetalsImg from './images/footer-petals-img.png';
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
+import DownloadPdfBtn from "@/components/download-pfd-btn/DownloadPdfBtn";
 
 const {Paragraph} = WebsiteTypography;
 
@@ -59,6 +60,11 @@ const Footer: FC = () => {
 
     return (
         <div className={'footer-wrapper'}>
+
+            <div className={'footer-img-wrapper'}>
+                <img src={bgPetalsImg} alt={"illustration"}/>
+            </div>
+
             <div className={'container'}>
                 <Row justify={'space-between'} align={'stretch'} wrap={false}
                      style={{paddingTop: 50, paddingBottom: 24}}>
@@ -91,9 +97,14 @@ const Footer: FC = () => {
                         </Space>
                     </Col>
                     <Col span={6}>
-                        <Row justify={'end'} align={'bottom'} style={{height: '100%', paddingBottom: 16}}>
-                            <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
-                                           onClick={openModal}/>
+                        <Row justify={'end'} align={'top'} style={{ paddingBottom: 16}}>
+
+                            <Space direction={'vertical'} size={'large'}>
+                                <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
+                                               onClick={openModal} block/>
+                                <DownloadPdfBtn btnType={'ghost-white'} />
+                            </Space>
+
                         </Row>
                     </Col>
                 </Row>
@@ -111,11 +122,6 @@ const Footer: FC = () => {
                     </Paragraph>
                 </Row>
             </div>
-
-            <div className={'footer-img-wrapper'}>
-                <img src={bgPetalsImg} alt={"illustration"}/>
-            </div>
-
         </div>
     );
 };

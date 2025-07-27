@@ -9,6 +9,7 @@ import experienceAnimation from '@/assets/lottie-animation/cat-coding.json';
 import leaveHorizontalImg from '@/pages/about/assets/horizontal_leave.png'
 import {useNavigate} from "react-router";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
+import {onPdfClick} from "@/components/download-pfd-btn/DownloadPdfBtn";
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
@@ -18,12 +19,12 @@ const About: FC = () => {
     const navigate = useNavigate()
     const onProjectsClick = () => navigate('/projects')
 
-    const onPdfClick = ()=>{
-        const link = document.createElement('a');
-        link.href = '/2025_cv_ev-indrik.pdf';
-        link.download = 'cv-yevheniia.pdf'; // naming on save
-        link.click();
-    }
+    // const onPdfClick = ()=>{
+    //     const link = document.createElement('a');
+    //     link.href = '/2025_cv_ev-indrik.pdf';
+    //     link.download = 'cv-yevheniia.pdf'; // naming on save
+    //     link.click();
+    // }
 
     return (
         <>
