@@ -1,5 +1,6 @@
 import {type FC, type SVGProps} from 'react';
 import './SvgIcon.scss'
+import classnames from "classnames";
 
 import MainWhale from './icons/main-whale.svg?react'
 import MenuHome from './icons/menu-home.svg?react'
@@ -28,7 +29,8 @@ import Share from './icons/share.svg?react'
 import BlackPlane from './icons/black-plane.svg?react'
 import InBoxes from './icons/inboxes.svg?react'
 import ArrowUp from './icons/arrow-up.svg?react'
-import classnames from "classnames";
+import Refresh from './icons/redo.svg?react'
+import Home from './icons/home.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -59,10 +61,14 @@ export type IconTypes =
     | 'black-plane'
     | 'in-boxes'
     | 'arrow-up'
+    | 'refresh'
+    | 'home'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'home': Home,
+    'refresh': Refresh,
     'arrow-up': ArrowUp,
     'in-boxes': InBoxes,
     'black-plane': BlackPlane,

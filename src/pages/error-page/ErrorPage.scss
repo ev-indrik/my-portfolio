@@ -1,0 +1,39 @@
+@use '../../abstracts/variables';
+
+.error-page-wrapper {
+  position: relative;
+  padding: 30px 0;
+  white-space: pre-line;
+  height: 100vh;
+
+  .home-button {
+    .ant-btn-icon {
+
+      svg {
+        path {
+          stroke: variables.$primary-blue;
+        }
+      }
+    }
+  }
+
+  .refresh-button {
+
+    .ant-btn-icon {
+
+      svg {
+        path {
+          stroke: #FFFFFF;
+        }
+      }
+    }
+  }
+
+  .lottie-box {
+    position: relative;
+    z-index: 3;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 460px;
+  }
+}
