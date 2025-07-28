@@ -24,6 +24,14 @@
     min-height: 42px;
     height: 42px;
 
+    span.ant-btn-icon {
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
     &.ant-btn-lg {
       min-width: 200px;
       min-height: 58px;
@@ -33,6 +41,14 @@
     &.ant-btn-sm {
       min-height: 36px;
       height: 36px;
+
+      span.ant-btn-icon {
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
   }
 
