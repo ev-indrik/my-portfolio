@@ -18,14 +18,15 @@ const {Title, Paragraph} = WebsiteTypography;
 import projects from '../../data/projectsData.json'
 import type {ProjectItemType} from "@/type/types";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
+import NotFound from "@/pages/not-found/NotFound";
+import ReadMoreComponent from "@/components/read-more-component/ReadMoreComponent";
 
 const ProjectDetailedPage: FC = () => {
 
     const {projectId} = useParams();
 
     if (!projectId) {
-        return
-        // return <Page404/>
+        return <NotFound />
     }
 
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const ProjectDetailedPage: FC = () => {
         return projects.find(project => project.id === id)
     }
 
-    // ===>> ProjectItem receving
+    // ===>> ProjectItem receiving
 
     const project = getProjectById(projectId || '') as ProjectItemType & {
         techLogos: TechContent[];
@@ -87,12 +88,14 @@ const ProjectDetailedPage: FC = () => {
                         <Title level={3} color={'primary'} centered>{'Project Description'}</Title>
                     </Col>
                     <Col span={16}>
-                        <Paragraph
-                            centered
-                            color={'primary'}
-                        >
-                            {project.detailedDescription}
-                        </Paragraph>
+
+                       <ReadMoreComponent text={project.detailedDescription} />
+                        {/*<Paragraph*/}
+                        {/*    centered*/}
+                        {/*    color={'primary'}*/}
+                        {/*>*/}
+                        {/*    {project.detailedDescription}*/}
+                        {/*</Paragraph>*/}
                     </Col>
                 </Row>
 
