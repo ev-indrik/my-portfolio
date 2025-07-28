@@ -26,6 +26,7 @@ import WhiteWhale from './icons/white-whale.svg?react'
 import Share from './icons/share.svg?react'
 import BlackPlane from './icons/black-plane.svg?react'
 import InBoxes from './icons/inboxes.svg?react'
+import ArrowUp from './icons/arrow-up.svg?react'
 
 export type IconTypes =
     'main-whale'
@@ -55,10 +56,12 @@ export type IconTypes =
     | 'share'
     | 'black-plane'
     | 'in-boxes'
+    | 'arrow-up'
 
 // type IconColor = 'green' | 'red'
 
 const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
+    'arrow-up': ArrowUp,
     'in-boxes': InBoxes,
     'black-plane': BlackPlane,
     'share': Share,

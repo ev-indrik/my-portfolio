@@ -8,14 +8,15 @@ type DividerColor = 'black' | 'white' | 'blue'
 type DividerProps = {
     color?: DividerColor;
     isReversed?: boolean;
-    marginNumber?: number;
+    paddingTop?: number;
+    paddingBottom?: number;
 }
 
-const WebsiteDivider: FC<DividerProps> = ({color = 'black', isReversed = false, marginNumber = 40}) => {
+const WebsiteDivider: FC<DividerProps> = ({color = 'black', isReversed = false, paddingTop=32, paddingBottom=32}) => {
     return (
             <div
                 className={'divider-wrapper'}
-                style={{marginTop: marginNumber, marginBottom: marginNumber}}
+                style={{paddingTop: paddingTop, paddingBottom: paddingBottom}}
             >
                     <div className={`divider-content ${color}`}>
                         <div className="line" />
