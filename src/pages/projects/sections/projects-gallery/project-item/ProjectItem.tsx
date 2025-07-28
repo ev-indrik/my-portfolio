@@ -50,7 +50,7 @@ const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLowe
                             <img src={projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
                     </div>
-                    {isDivider && <WebsiteDivider isReversed={isReversed}/>}
+                    {isDivider && <WebsiteDivider isReversed={isReversed} paddingTop={64} paddingBottom={0}/>}
                 </div>
 
                 {bgImgLower && <div className={'lower-bg-img-wrapper'}>

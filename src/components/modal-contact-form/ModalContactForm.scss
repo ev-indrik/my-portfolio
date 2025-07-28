@@ -2,8 +2,8 @@
 
 .ant-modal {
   overflow: hidden;
-  border-radius: 30px;
-  width: 700px!important;
+  //border-radius: 30px;
+  //width: 700px!important;
 
   .ant-modal-content {
     background: transparent;
@@ -23,7 +23,7 @@
   .modal-border-wrapper {
     background: rgba(161, 177, 196, 0.4);
     backdrop-filter: blur(12px);
-    border-radius: 40px;
+    border-radius: 34px;
     padding: 18px;
     position: relative;
     overflow: hidden;
@@ -32,7 +32,7 @@
       position: relative;
       overflow: hidden;
       background-color: variables.$primary-blue;
-      border-radius: 30px;
+      border-radius: 16px;
       padding: 16px 0 40px;
 
       .modal-bg-wrapper {

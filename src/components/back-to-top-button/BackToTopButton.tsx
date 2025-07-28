@@ -33,7 +33,7 @@ const BackToTopButton: FC = () => {
                 btnType={'icon'}
                 className={`back-to-top-button ${backToTopButton ? 'visible' : ''}`}
                 onClick={scrollUp}>
-                <SvgIcon type={'black-whale'}/>
+                <SvgIcon type={'arrow-up'}/>
             </WebsiteButton>
         </>
     );

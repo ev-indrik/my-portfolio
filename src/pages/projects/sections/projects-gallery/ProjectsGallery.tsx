@@ -32,7 +32,7 @@ const ProjectsGallery: FC = () => {
 
                 <TitleIconGroup content={{title: 'My Projects', image: logoImg}}/>
                 <div className={'container'}>
-                    <WebsiteDivider isReversed={true}/>
+                    <WebsiteDivider isReversed={true} paddingTop={0}/>
                 </div>
                 <div className={'gallery-wrapper'}>
                     {projectsData.map((item) => (

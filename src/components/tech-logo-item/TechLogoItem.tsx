@@ -13,6 +13,8 @@ import reactImg from '../../pages/about/sections/hard-skills/hard-skill-card/log
 import sassImg from '../../pages/about/sections/hard-skills/hard-skill-card/logos/sass.png';
 import strapiImg from '../../pages/about/sections/hard-skills/hard-skill-card/logos/strapi.png';
 import tsImg from '../../pages/about/sections/hard-skills/hard-skill-card/logos/ts.png';
+import mapboxImg from '../../pages/about/sections/hard-skills/hard-skill-card/logos/mapbox.png';
+import hubspotImg from '../../pages/about/sections/hard-skills/hard-skill-card/logos/hubspot.png';
 
 type TechImageKey =
     | 'antdImg'
@@ -22,7 +24,9 @@ type TechImageKey =
     | 'reactImg'
     | 'sassImg'
     | 'strapiImg'
-    | 'tsImg';
+    | 'tsImg'
+    | 'mapboxImg'
+    | 'hubspotImg';
 
 const techImages: Record<TechImageKey, string> = {
     antdImg,
@@ -33,9 +37,11 @@ const techImages: Record<TechImageKey, string> = {
     sassImg,
     strapiImg,
     tsImg,
+    mapboxImg,
+    hubspotImg
 };
 
-type LogoTitle = 'AntDesign' | 'Sass/Less' | 'HTML' | 'JavaScript' | 'React' | 'CSS' | 'Strapi' | 'TypeScript';
+type LogoTitle = 'AntDesign' | 'Sass/Less' | 'HTML' | 'JavaScript' | 'React' | 'CSS' | 'Strapi' | 'TypeScript' | 'HubSpot' | 'MapBox';
 
 export type TechContent = {
     logoKey: TechImageKey;

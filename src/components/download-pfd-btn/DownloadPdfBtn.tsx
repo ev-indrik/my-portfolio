@@ -21,7 +21,7 @@ const DownloadPdfBtn: FC<Props> = ({btnType}) => {
     return (
         <WebsiteButton
             btnType={mappedBtnType}
-            icon={<SvgIcon type={'pdf'}/>}
+            icon={<SvgIcon type={'pdf'} color={'orange'}/>}
             text={'Download PDF Resume'}
             size={'large'}
             onClick={onPdfClick}

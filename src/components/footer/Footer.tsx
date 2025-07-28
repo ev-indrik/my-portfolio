@@ -2,7 +2,7 @@ import {type FC} from 'react';
 
 import './Footer.scss'
 import {Col, Row, Space} from "antd";
-import {Link} from "react-router";
+import {Link, useLocation} from "react-router";
 import {useContactModal} from '@/context/ContactModalContext';
 import WebsiteButton from "../website-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
@@ -51,6 +51,8 @@ export const contactInfo: ContactItem[] = [
 ]
 
 const Footer: FC = () => {
+    const location = useLocation();
+    const isAboutPage = location.pathname === '/about';
 
     const {openModal} = useContactModal();
 
@@ -69,40 +71,47 @@ const Footer: FC = () => {
                 <Row justify={'space-between'} align={'stretch'} wrap={false}
                      style={{paddingTop: 50, paddingBottom: 24}}>
                     <Col span={6}>
-                        <Space direction={'vertical'}>
-                            <Paragraph color={'white'} size={'lg'} weight={'w700'}>{'Menu'}</Paragraph>
-                            <Paragraph style={{paddingTop: 16}}>
+                        {/*<Space direction={'vertical'}>*/}
+                        <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Menu'}</Paragraph>
+
+                        <div className={'contact-item-box'}>
+                            <Paragraph>
                                 <Link to="/home">{'Home'}</Link>
                             </Paragraph>
+                        </div>
+                        <div className={'contact-item-box'}>
                             <Paragraph>
                                 <Link to="/about">{'About'}</Link>
                             </Paragraph>
+                        </div>
+                        <div className={'contact-item-box'}>
                             <Paragraph>
                                 <Link to="/projects">{'Projects'}</Link>
                             </Paragraph>
-                        </Space>
+                        </div>
+                        {/*</Space>*/}
 
                         <SocialButtons/>
                     </Col>
                     <Col span={6}>
-                        <Space direction={'vertical'}>
-                            <Paragraph color={'white'} size={'lg'} weight={'w700'}
-                                       style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
-                            {contactInfo.map((it) =>
-                                <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
-                                    <SvgIcon type={it.iconType}/>
-                                    <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
-                                </div>
-                            )}
-                        </Space>
+                        {/*<Space direction={'vertical'}>*/}
+                        <Paragraph color={'white'} size={'lg'} weight={'w700'}
+                                   style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
+                        {contactInfo.map((it) =>
+                            <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
+                                <SvgIcon type={it.iconType}/>
+                                <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
+                            </div>
+                        )}
+                        {/*</Space>*/}
                     </Col>
                     <Col span={6}>
-                        <Row justify={'end'} align={'top'} style={{ paddingBottom: 16}}>
+                        <Row justify={'end'} align={'top'} style={{paddingBottom: 16}}>
 
                             <Space direction={'vertical'} size={'large'}>
                                 <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
                                                onClick={openModal} block/>
-                                <DownloadPdfBtn btnType={'ghost-white'} />
+                                {!isAboutPage && (<DownloadPdfBtn btnType={'ghost-white'}/>)}
                             </Space>
 
                         </Row>

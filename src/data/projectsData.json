@@ -3,8 +3,13 @@
     "id": "easetech-project",
     "title": "Easetech",
     "description": "Development of a modern platform that facilitates document and wayleave workflows between organizations and clients. The system includes user registration, quote requests, document handling, and geospatial data interactions.",
-    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181713/easetech_bbz9fu.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181712/easetech2_zipo51.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181716/easetech3_tr4lnc.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181706/easetech4_jl4zkw.png"],
+    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. The system includes user registration of different types, quote requests, document handling, and geospatial data interactions. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.\n\nKey Responsibilities & Achievements:\n\nFront-End Development\nDeveloped multiple website pages, including marketing landing pages and functional views, based on initial wireframes and Figma designs.\n\nImplemented responsive layouts for all screen sizes, including ultra-small screens (≥280px width).\n\nBuilt and integrated user registration/login flows:\n- Registration, login, forgot/reset password, email confirmation\n- Routing setup with React Router, including NotFound pages for invalid users/companies\n\nDesigned and implemented complex form flows, including:\n- Custom field rendering by type (text, date, file, GeoJSON, etc.)\n- Dynamic validation and conditional logic\n- Integration with HubSpot for form submissions and CRM pipelines\n- Merged form logic with both the backend (Strapi) and HubSpot workflows to display, store, and process client data (confirmation emails, quote requests, contact info)\n\nMap & Geospatial Features\nIntegrated Mapbox map components with modal windows, drawing tools, and upload functionality (e.g., .kml file support)\n\nImplemented geometric calculations using Turf.js:\n- Recursive parsing of FeatureCollection, GeometryCollection, Polygon, LineString, Point\n- Automatic extraction of geo-features (area, length, number of points)\n- Conditional rendering and error handling for invalid uploads or drawings\n\nCMS & Backend (Strapi)\nDefined and structured dynamic content types in Strapi, including:\n- Forms, company data, user metadata, quote request storage\n\nConnected front-end forms to the Strapi backend via REST API\n\nTook first steps in backend development, including content type creation and testing of dynamic endpoints",
+    "projectImgs": [
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181713/easetech_bbz9fu.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181712/easetech2_zipo51.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181716/easetech3_tr4lnc.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181706/easetech4_jl4zkw.png"
+    ],
     "techLogos": [
       {
         "logoKey": "reactImg",
@@ -21,24 +26,32 @@
       {
         "logoKey": "sassImg",
         "title": "Sass/Less"
+      },
+      {
+        "logoKey": "mapboxImg",
+        "title": "MapBox"
+      },
+      {
+        "logoKey": "hubspotImg",
+        "title": "HubSpot"
       }
     ],
     "tickedBoxes": [
       {
-        "tickedTitle": "User Roles",
-        "tickedDescription": "Different access levels for admins, clients, and engineers"
+        "tickedTitle": "Custom Front-End Forms",
+        "tickedDescription": "Built dynamic forms with conditional fields, validation logic, and integration with HubSpot and Strapi"
       },
       {
-        "tickedTitle": "Map Integration",
-        "tickedDescription": "Interactive geospatial tools for land selection"
+        "tickedTitle": "Mapbox Integration",
+        "tickedDescription": "Implemented interactive maps with drawing tools, Turf.js-based geometry calculations, and .kml file support"
       },
       {
-        "tickedTitle": "Quote Request Workflow",
-        "tickedDescription": "Users can easily submit and track quote requests, ensuring clear communication and efficient response handling"
+        "tickedTitle": "CMS Setup in Strapi",
+        "tickedDescription": "Created content types and structured backend data storage for quotes, companies, and users"
       },
       {
-        "tickedTitle": "Responsiveness",
-        "tickedDescription": "Website is adjusted to different displays' sizes"
+        "tickedTitle": "Responsive UI Development",
+        "tickedDescription": "Developed responsive layouts for all screen sizes, including ultra-small displays (≥280px)"
       }
     ],
     "deployedUrl": "https://easetech.co.za/easetech/home",
@@ -52,8 +65,13 @@
     "id": "geometrical-calculator-project",
     "title": "Geometrical Calculator",
     "description": "A React-based calculator for computing basic geometric properties based on sides or coordinate points.",
-    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/calc2_btz2tf.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc4_jss1gu.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"],
+    "detailedDescription": "Geometry Calculator is a web tool designed to compute key properties of basic shapes including area and perimeter, using both direct numeric values and coordinate-based input. For now the app supports squares, rectangles, and circles aligned with the coordinate axes (axis-aligned geometry).\n\nBuilt with React, TypeScript, and Ant Design, the tool prioritizes accuracy, clarity, and performance. Users can input shape dimensions manually or by providing coordinates, and receive instant calculations along with timestamps for each action.\n\nThe system also includes coordinate validation logic, which detects incorrect or illogical input such as coordinates that do not match the selected shape or violate its expected position within the coordinate plane, and provides users with meaningful error feedback.",
+    "projectImgs": [
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/calc2_btz2tf.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc4_jss1gu.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"
+    ],
     "techLogos": [
       {
         "logoKey": "reactImg",
@@ -64,80 +82,72 @@
         "title": "TypeScript"
       },
       {
-        "logoKey": "strapiImg",
-        "title": "Strapi"
-      },
-      {
         "logoKey": "sassImg",
         "title": "Sass/Less"
       }
     ],
     "tickedBoxes": [
       {
-        "tickedTitle": "User Roles",
-        "tickedDescription": "Different access levels for admins, clients, and engineers"
+        "tickedTitle": "Custom Front-End Forms",
+        "tickedDescription": "Developed dynamic Ant Design forms supporting both numeric input and coordinate-based data entry."
       },
       {
-        "tickedTitle": "Map Integration",
-        "tickedDescription": "Interactive geospatial tools for land selection"
+        "tickedTitle": "Geometry Calculations",
+        "tickedDescription": "Implemented logic to compute area and perimeter of axis-aligned squares, rectangles, and circles."
       },
       {
-        "tickedTitle": "Quote Request Workflow",
-        "tickedDescription": "Users can easily submit and track quote requests, ensuring clear communication and efficient response handling"
+        "tickedTitle": "Coordinate Validation",
+        "tickedDescription": "Built validation to detect incorrect coordinates that don’t match expected shape rules or alignment."
       },
       {
-        "tickedTitle": "Responsiveness",
-        "tickedDescription": "Website is adjusted to different displays' sizes"
+        "tickedTitle": "Calculation History",
+        "tickedDescription": "Each calculation includes a visible timestamp to track user actions during a session."
       }
     ],
     "githubUrl": "https://github.com/ev-indrik/geometry-calculator",
     "deployedUrl": "https://geo-metry-calculation.netlify.app/",
     "bgImgLower": "geocalcEllipse2",
     "bgSectionImg": "geocalcEllipse",
-    "isDivider": false,
+    "isDivider": true,
     "onClickRoute": "/project4",
     "isReversed": true
   },
-    {
+  {
     "id": "volunteers-database-project",
     "title": "Volunteers Database",
     "description": "A project using Grid and pure JavaScript with database integration, supporting simultaneous filtering by multiple parameters.",
-    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181710/database_tw8of8.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database2_fex3fj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database3_kbd4m3.png"],
+    "detailedDescription": "This is a learning project built with JavaScript, HTML, and CSS, simulating the interaction with a database. The application displays a dataset and enables users to filter the data by multiple parameters simultaneously — mimicking real-world database query behavior.\n\nKey features include multi-criteria filtering (by name, skills, sex, country etc), dynamic data rendering, and a modular code structure separating data, UI components, and logic.",
+    "projectImgs": [
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181710/database_tw8of8.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database2_fex3fj.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181711/database3_kbd4m3.png"
+    ],
     "techLogos": [
       {
-        "logoKey": "reactImg",
-        "title": "React"
+        "logoKey": "htmlImg",
+        "title": "HTML"
       },
       {
-        "logoKey": "tsImg",
-        "title": "TypeScript"
+        "logoKey": "cssImg",
+        "title": "CSS"
       },
       {
-        "logoKey": "strapiImg",
-        "title": "Strapi"
-      },
-      {
-        "logoKey": "sassImg",
-        "title": "Sass/Less"
+        "logoKey": "jsImg",
+        "title": "JavaScript"
       }
     ],
     "tickedBoxes": [
       {
-        "tickedTitle": "User Roles",
-        "tickedDescription": "Different access levels for admins, clients, and engineers"
+        "tickedTitle": "Simulated Database Integration",
+        "tickedDescription": "Mimics real database search and filtering experience with JavaScript-based logic."
       },
       {
-        "tickedTitle": "Map Integration",
-        "tickedDescription": "Interactive geospatial tools for land selection"
+        "tickedTitle": "Modular Code Architecture",
+        "tickedDescription": "Separated concerns between UI rendering, data logic, and event handling."
       },
       {
-        "tickedTitle": "Quote Request Workflow",
-        "tickedDescription": "Users can easily submit and track quote requests, ensuring clear communication and efficient response handling"
-      },
-      {
-        "tickedTitle": "Responsiveness",
-        "tickedDescription": "Website is adjusted to different displays' sizes"
+        "tickedTitle": "Responsive Grid Layout",
+        "tickedDescription": "Used CSS Grid to create a complex layout according to design requirements"
       }
     ],
     "githubUrl": "https://github.com/ev-indrik/volunteer_database",
@@ -152,49 +162,51 @@
     "id": "store-project",
     "title": "Online Store",
     "description": "An online clothing store project with a cart and payment system, built using React, React Router, and Redux.",
-    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
-    "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/store_t2tlt5.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop5_i6cawj.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop2_hkyqvs.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop3_ohxslz.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop4_byg87g.png"],
+    "detailedDescription": "This is a learning project that simulates a clothing e-commerce store. Built with React, React Router, and Redux, the application allows users to browse products, view details, add items to a cart, and proceed to checkout. While the payment system is simulated, the logic mirrors real-world online store behavior.\n\nThe project demonstrates the implementation of global state management with Redux, dynamic routing with React Router, and conditional UI rendering based on user interaction. It includes cart logic (add, remove, calculate totals), product page filtering by categories, and a structured component-based layout.\n\nThis project showcases proficiency in managing complex application state and simulating real-world user flows in a modern React environment.",
+    "projectImgs": [
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/store_t2tlt5.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop5_i6cawj.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop2_hkyqvs.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop3_ohxslz.png",
+      "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/shop4_byg87g.png"
+    ],
     "techLogos": [
       {
         "logoKey": "reactImg",
         "title": "React"
       },
       {
-        "logoKey": "tsImg",
-        "title": "TypeScript"
-      },
-      {
-        "logoKey": "strapiImg",
-        "title": "Strapi"
-      },
-      {
         "logoKey": "sassImg",
         "title": "Sass/Less"
+      },
+      {
+        "logoKey": "jsImg",
+        "title": "JavaScript"
       }
     ],
     "tickedBoxes": [
       {
-        "tickedTitle": "User Roles",
-        "tickedDescription": "Different access levels for admins, clients, and engineers"
+        "tickedTitle": "State Management with Redux",
+        "tickedDescription": "Centralized logic for cart operations, totals, and user interaction"
       },
       {
-        "tickedTitle": "Map Integration",
-        "tickedDescription": "Interactive geospatial tools for land selection"
+        "tickedTitle": "Product Catalog & Filtering",
+        "tickedDescription": "Users can view and filter products by category"
       },
       {
-        "tickedTitle": "Quote Request Workflow",
-        "tickedDescription": "Users can easily submit and track quote requests, ensuring clear communication and efficient response handling"
+        "tickedTitle": "Simulated Cart & Checkout Flow",
+        "tickedDescription": "Interactive shopping experience with add-to-cart and order summary"
       },
       {
-        "tickedTitle": "Responsiveness",
-        "tickedDescription": "Website is adjusted to different displays' sizes"
+        "tickedTitle": "Dynamic Routing",
+        "tickedDescription": "Implemented page navigation using React Router"
       }
     ],
     "githubUrl": "https://github.com/ev-indrik/2024-08_shopping_app_redux",
     "deployedUrl": "https://shopping-dreams.netlify.app/",
     "bgImgLower": "shopEllipseImg",
     "onClickRoute": "/project2",
-    "isDivider": true,
+    "isDivider": false,
     "isReversed": true,
     "isDividerReversed": false
   }

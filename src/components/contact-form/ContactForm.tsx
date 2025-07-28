@@ -83,7 +83,7 @@ const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBe
                     <Row justify={'center'} style={{paddingTop: 24}}>
                         <Col span={12}>
                             <Row justify={'center'}>
-                                <WebsiteButton size={'large'} icon={<SvgIcon type={'black-plane'}/>} block
+                                <WebsiteButton size={'large'} icon={<SvgIcon type={'black-plane'} color={'primary'}/>} block
                                                btnType={'secondary'} htmlType={"submit"} text={'Send Message'}/>
                             </Row>
                         </Col>
