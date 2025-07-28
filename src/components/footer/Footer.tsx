@@ -2,7 +2,7 @@ import {type FC} from 'react';
 
 import './Footer.scss'
 import {Col, Row, Space} from "antd";
-import {Link} from "react-router";
+import {Link, useLocation} from "react-router";
 import {useContactModal} from '@/context/ContactModalContext';
 import WebsiteButton from "../website-button/WebsiteButton";
 import {type IconTypes, SvgIcon} from "@/components/icon/SvgIcon";
@@ -51,6 +51,8 @@ export const contactInfo: ContactItem[] = [
 ]
 
 const Footer: FC = () => {
+    const location = useLocation();
+    const isAboutPage = location.pathname === '/about';
 
     const {openModal} = useContactModal();
 
@@ -102,7 +104,7 @@ const Footer: FC = () => {
                             <Space direction={'vertical'} size={'large'}>
                                 <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
                                                onClick={openModal} block/>
-                                <DownloadPdfBtn btnType={'ghost-white'} />
+                                {!isAboutPage && (<DownloadPdfBtn btnType={'ghost-white'} />) }
                             </Space>
 
                         </Row>
