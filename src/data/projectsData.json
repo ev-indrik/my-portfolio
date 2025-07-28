@@ -60,7 +60,7 @@
     "id": "geometrical-calculator-project",
     "title": "Geometrical Calculator",
     "description": "A React-based calculator for computing basic geometric properties based on sides or coordinate points.",
-    "detailedDescription": "This platform streamlines the complex process of managing documents and wayleave agreements between service providers and their clients. Designed for efficiency and clarity, it allows users to register, submit quote requests, manage and sign documentation, and interact with geospatial data through an intuitive interface. The system ensures seamless communication, transparent workflows, and secure handling of sensitive information, helping organizations reduce manual work and accelerate approval cycles. Built with scalability and user experience in mind, it supports both internal teams and external users in a unified environment.",
+    "detailedDescription": "Geometry Calculator is a web tool designed to compute key properties of basic shapes including area and perimeter, using both direct numeric values and coordinate-based input. For now the app supports squares, rectangles, and circles aligned with the coordinate axes (axis-aligned geometry).\n\nBuilt with React, TypeScript, and Ant Design, the tool prioritizes accuracy, clarity, and performance. Users can input shape dimensions manually or by providing coordinates, and receive instant calculations along with timestamps for each action.\n\nThe system also includes coordinate validation logic, which detects incorrect or illogical input such as coordinates that do not match the selected shape or violate its expected position within the coordinate plane, and provides users with meaningful error feedback.",
     "projectImgs": ["https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/calc2_btz2tf.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc4_jss1gu.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png", "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"],
     "techLogos": [
       {
@@ -72,37 +72,35 @@
         "title": "TypeScript"
       },
       {
-        "logoKey": "strapiImg",
-        "title": "Strapi"
-      },
-      {
         "logoKey": "sassImg",
         "title": "Sass/Less"
       }
     ],
     "tickedBoxes": [
       {
-        "tickedTitle": "User Roles",
-        "tickedDescription": "Different access levels for admins, clients, and engineers"
+        "tickedTitle": "Custom Front-End Forms",
+        "tickedDescription": "Developed dynamic Ant Design forms supporting both numeric input and coordinate-based data entry."
       },
       {
-        "tickedTitle": "Map Integration",
-        "tickedDescription": "Interactive geospatial tools for land selection"
+        "tickedTitle": "Geometry Calculations",
+        "tickedDescription": "Implemented logic to compute area and perimeter of axis-aligned squares, rectangles, and circles."
       },
       {
-        "tickedTitle": "Quote Request Workflow",
-        "tickedDescription": "Users can easily submit and track quote requests, ensuring clear communication and efficient response handling"
+        "tickedTitle": "Coordinate Validation",
+        "tickedDescription": "Built validation to detect incorrect coordinates that don’t match expected shape rules or alignment."
       },
       {
-        "tickedTitle": "Responsiveness",
-        "tickedDescription": "Website is adjusted to different displays' sizes"
+        "tickedTitle": "Calculation History",
+        "tickedDescription": "Each calculation includes a visible timestamp to track user actions during a session."
       }
-    ],
+    ]
+
+  ,
     "githubUrl": "https://github.com/ev-indrik/geometry-calculator",
     "deployedUrl": "https://geo-metry-calculation.netlify.app/",
     "bgImgLower": "geocalcEllipse2",
     "bgSectionImg": "geocalcEllipse",
-    "isDivider": false,
+    "isDivider": true,
     "onClickRoute": "/project4",
     "isReversed": true
   },
@@ -202,7 +200,7 @@
     "deployedUrl": "https://shopping-dreams.netlify.app/",
     "bgImgLower": "shopEllipseImg",
     "onClickRoute": "/project2",
-    "isDivider": true,
+    "isDivider": false,
     "isReversed": true,
     "isDividerReversed": false
   }
