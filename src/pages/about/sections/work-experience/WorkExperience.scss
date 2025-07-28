@@ -10,15 +10,12 @@
     position: relative;
     padding: 40px 0 70px;
 
-    .experiences-box {
-
-    }
-
     .bg-img-wrapper {
       width: 360px;
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       right: 0;
+      overflow: hidden;
 
       img {
         width: 100%;

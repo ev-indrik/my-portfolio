@@ -88,14 +88,7 @@ const ProjectDetailedPage: FC = () => {
                         <Title level={3} color={'primary'} centered>{'Project Description'}</Title>
                     </Col>
                     <Col span={16}>
-
                        <ReadMoreComponent text={project.detailedDescription} />
-                        {/*<Paragraph*/}
-                        {/*    centered*/}
-                        {/*    color={'primary'}*/}
-                        {/*>*/}
-                        {/*    {project.detailedDescription}*/}
-                        {/*</Paragraph>*/}
                     </Col>
                 </Row>
 

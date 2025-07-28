@@ -24,7 +24,9 @@ type HeroSectionProps = {
     subTitle?: string;
     description: string | string[];
     imageSrc?: string;
+    isImgMirrored?: boolean;
     animationSrc?: object;
+    animationBgSrc?: object;
     btnType?: WebsiteButtonType;
     buttonText?: string;
     buttonLink?: string;
@@ -50,7 +52,9 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                btnType = 'primary',
                                                buttonText,
                                                imageSrc,
+                                               isImgMirrored,
                                                animationSrc,
+                                               animationBgSrc,
                                                isSocialButtons = false,
                                                isMainButton = true,
                                                isReversed = false,
@@ -69,7 +73,7 @@ const HeroSection: FC<HeroSectionProps> = ({
 
     useEffect(() => {
         if (lottieRef.current) {
-            lottieRef.current.setSpeed(1);
+            lottieRef.current.setSpeed(0.5);
         }
     }, []);
 
@@ -89,6 +93,15 @@ const HeroSection: FC<HeroSectionProps> = ({
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
+                        {animationBgSrc && <div className={'texts-section-bg-wrapper'}>
+                            <Lottie
+                                lottieRef={lottieRef}
+                                animationData={animationBgSrc}
+                                loop
+                                autoplay
+                            />
+                        </div>}
+
                         <Title level={2} color={titleColor}
                                style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
 
@@ -128,12 +141,12 @@ const HeroSection: FC<HeroSectionProps> = ({
                     <Col flex={'auto'} order={isReversed ? 1 : 2} offset={offsetNumber}>
                         <Row justify={'end'} align={'bottom'}
                              style={{height: '100%'}}>
-                            <div className={'image-container'} style={{paddingBottom: imgPaddingBottom}}>
+                            <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'} style={{paddingBottom: imgPaddingBottom}}>
                                 {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
 
                                 {animationSrc &&
                                     <Lottie
-                                        lottieRef={lottieRef}
+                                        // lottieRef={lottieRef}
                                         animationData={animationSrc}
                                         loop
                                         autoplay

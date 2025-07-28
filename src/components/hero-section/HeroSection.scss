@@ -29,6 +29,16 @@
 
     .texts-container{
       padding-top: 120px;
+      position: relative;
+
+      .texts-section-bg-wrapper {
+        position: absolute;
+        width: 400px;
+        top: 0;
+        right: -65px;
+        z-index: -1;
+        opacity: 0.4;
+      }
     }
   }
 
@@ -36,6 +46,10 @@
     position: relative;
     width: 760px;
     overflow: visible;
+
+    &.mirrored {
+      transform: scaleX(-1);
+    }
 
     img {
     width: 100%;
