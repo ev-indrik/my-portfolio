@@ -1,4 +1,5 @@
 import {type FC, type SVGProps} from 'react';
+import './SvgIcon.scss'
 
 import MainWhale from './icons/main-whale.svg?react'
 import MenuHome from './icons/menu-home.svg?react'
@@ -27,6 +28,7 @@ import Share from './icons/share.svg?react'
 import BlackPlane from './icons/black-plane.svg?react'
 import InBoxes from './icons/inboxes.svg?react'
 import ArrowUp from './icons/arrow-up.svg?react'
+import classnames from "classnames";
 
 export type IconTypes =
     'main-whale'
@@ -90,14 +92,16 @@ const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     'at': At,
 } as const
 
-type Props = SVGProps<SVGSVGElement> & { type: IconTypes }
+type IconColorType = 'primary' | 'white' | 'black' | 'orange';
 
-const SvgIcon: FC<Props> = ({type, color, ...svgProps}) => {
+type Props = SVGProps<SVGSVGElement> & { type: IconTypes, color?: IconColorType }
+
+const SvgIcon: FC<Props> = ({type, color, className, ...svgProps}) => {
 
     const Icon = icons[type] ?? null
-
+    const classes = classnames('svg-icon', color, className)
     return (
-        Icon && <Icon {...svgProps} />
+        Icon && <Icon {...svgProps} className={classes} />
     );
 };
 

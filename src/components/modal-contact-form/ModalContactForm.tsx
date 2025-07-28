@@ -18,7 +18,7 @@ const ModalContactForm = () => {
                 onCancel={closeModal}
                 footer={null}
                 centered
-                // width={700}
+                width={800}
             >
                     <div className={"modal-border-wrapper"} >
                         <div className={"modal-inner-content"}>
@@ -30,7 +30,7 @@ const ModalContactForm = () => {
                             <Title level={2} color={'white'} centered style={{paddingTop: 32}}>
                                 {'Contact Form'}
                             </Title>
-                            <ContactForm mainColNumber={20} labelBeforeColor={'white'}/>
+                            <ContactForm mainColNumber={18} labelBeforeColor={'white'}/>
                         </div>
                     </div>
                 </Modal>

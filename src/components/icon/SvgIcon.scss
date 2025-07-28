@@ -1,0 +1,28 @@
+@use '../../abstracts/variables';
+
+.svg-icon {
+
+  &.primary {
+    path {
+      fill: variables.$primary-blue;
+    }
+  }
+
+  &.white {
+    path {
+      fill: #FFFFFF;
+    }
+  }
+
+  &.black {
+    path {
+      fill: #000000;
+    }
+  }
+
+  &.orange {
+    path {
+      fill: #FF6D2A;
+    }
+  }
+}
