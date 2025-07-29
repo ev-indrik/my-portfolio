@@ -20,9 +20,10 @@ type Props = {
     handleAnimationClick?: ()=>void;
     mainColNumber?: number;
     labelBeforeColor?: labelBeforeColorType
+    closeModal?: () => void;
 }
 
-const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBeforeColor}) => {
+const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBeforeColor, closeModal}) => {
 
     const [form] = Form.useForm();
     const messageApi = useMessageApi();
@@ -42,6 +43,7 @@ const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBe
             });
             form.resetFields();
             {handleAnimationClick && handleAnimationClick()}
+            {closeModal && closeModal()}
         } catch (error) {
             messageApi.error("Something went wrong. Please try again.");
         }

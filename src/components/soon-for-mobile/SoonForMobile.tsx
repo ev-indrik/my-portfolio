@@ -19,7 +19,7 @@ const SoonForMobile: FC = () => {
 
     const onPdfClick = () => {
         const link = document.createElement('a');
-        link.href = '/2025_cv_ev-indrik.pdf';
+        link.href = '/ev-indrik-resume.pdf';
         link.download = 'cv-yevheniia.pdf'; // naming on save
         link.click();
     }
