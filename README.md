@@ -16,8 +16,8 @@ The website is going to support English and Ukrainian languages.
 
 - Vite
 - React
-- TypeScript
 - React Router
+- TypeScript
 - Ant Design 5
 
 🚀 **Current Status**
@@ -26,9 +26,9 @@ Project in progress – setting up layout, initial structure, routing, and langu
 
 💡 **Key Features** (coming soon)
 
-- [ ] Multi-page navigation with React Router
-- [ ] Project gallery
-- [ ] Contacts form
+- [x] Multi-page navigation with React Router
+- [x] Project gallery
+- [x] Contacts form
 - [ ] Responsive design
 - [ ] English and Ukrainian language support
 - [ ] Light and Dark modes
