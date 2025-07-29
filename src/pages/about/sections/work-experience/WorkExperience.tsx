@@ -10,7 +10,7 @@ import ExperienceCard from "@/pages/about/sections/work-experience/experience-ca
 const experienceList = [
     {
         title: '2024 – now',
-        description: 'Frontend Developer (trainee)\nPritster Holdings (Pty) Ltd t/a Groundwork Solutions',
+        description: 'Frontend Developer (intern)\nPritster Holdings (Pty) Ltd t/a Groundwork Solutions',
     },
     {
         title: '2015–2019',
