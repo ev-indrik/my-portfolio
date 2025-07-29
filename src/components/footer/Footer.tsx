@@ -71,7 +71,6 @@ const Footer: FC = () => {
                 <Row justify={'space-between'} align={'stretch'} wrap={false}
                      style={{paddingTop: 50, paddingBottom: 24}}>
                     <Col span={6}>
-                        {/*<Space direction={'vertical'}>*/}
                         <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Menu'}</Paragraph>
 
                         <div className={'contact-item-box'}>
@@ -89,12 +88,10 @@ const Footer: FC = () => {
                                 <Link to="/projects">{'Projects'}</Link>
                             </Paragraph>
                         </div>
-                        {/*</Space>*/}
 
                         <SocialButtons/>
                     </Col>
                     <Col span={6}>
-                        {/*<Space direction={'vertical'}>*/}
                         <Paragraph color={'white'} size={'lg'} weight={'w700'}
                                    style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
                         {contactInfo.map((it) =>
@@ -103,7 +100,6 @@ const Footer: FC = () => {
                                 <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
                             </div>
                         )}
-                        {/*</Space>*/}
                     </Col>
                     <Col span={6}>
                         <Row justify={'end'} align={'top'} style={{paddingBottom: 16}}>
@@ -118,7 +114,7 @@ const Footer: FC = () => {
                     </Col>
                 </Row>
 
-                <WebsiteDivider color={'white'} marginNumber={10}/>
+                <WebsiteDivider color={'white'} paddingTop={10} paddingBottom={10}/>
 
                 <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 48}}>
                     <Paragraph color={'white'}>
