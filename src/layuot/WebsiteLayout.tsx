@@ -1,10 +1,10 @@
 import {type FC} from 'react';
 import Header from "../components/header/Header.tsx";
-import Footer from '../components/footer/Footer.tsx';
-import {Outlet} from "react-router";
+// import Footer from '../components/footer/Footer.tsx';
+// import {Outlet} from "react-router";
 import BackToTopButton from "@/components/back-to-top-button/BackToTopButton";
-import useIsMobile from "@/hook/useIsMobile";
-import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
+// import useIsMobile from "@/hook/useIsMobile";
+// import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
 import {ContactModalProvider} from "@/context/ContactModalContext";
 import ModalContactForm from "@/components/modal-contact-form/ModalContactForm";
 
@@ -12,24 +12,41 @@ import ModalContactForm from "@/components/modal-contact-form/ModalContactForm";
 // const isHome = ['/home', '/'].includes(location.pathname);
 
     const WebsiteLayout: FC = () => {
-        const isMobile = useIsMobile();
+        // const isMobile = useIsMobile();
 
         return (
             <ContactModalProvider>
-                {isMobile ? (
-                    <SoonForMobile />
-                ) : (
+                {/*{isMobile ? (*/}
+                {/*    <SoonForMobile />*/}
+                {/*) : (*/}
                     <div className={'layout-wrapper'}>
                         <BackToTopButton />
                         <Header />
-                        <div className={'pages-wrapper'}>
-                            <Outlet />
-                        </div>
-                        <Footer />
+                        {/*<div className={'pages-wrapper'}>*/}
+                        {/*    <Outlet />*/}
+                        {/*</div>*/}
+                        {/*<Footer />*/}
                         <ModalContactForm />
                     </div>
-                )}
+                {/*)}*/}
             </ContactModalProvider>
+
+
+            // <ContactModalProvider>
+            //     {isMobile ? (
+            //         <SoonForMobile />
+            //     ) : (
+            //         <div className={'layout-wrapper'}>
+            //             <BackToTopButton />
+            //             <Header />
+            //             <div className={'pages-wrapper'}>
+            //                 <Outlet />
+            //             </div>
+            //             <Footer />
+            //             <ModalContactForm />
+            //         </div>
+            //     )}
+            // </ContactModalProvider>
         );
     };
 
