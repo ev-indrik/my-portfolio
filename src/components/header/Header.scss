@@ -46,12 +46,16 @@
 .popup-wrapper {
   position: relative;
 
+  .ant-divider.ant-divider-horizontal {
+    margin: 0;
+  }
+
   .popover-bg-wrapper {
-    position: absolute;
-    width: 30%;
-    top: 40px;
-    right: -10px;
     overflow: hidden;
+    position: absolute;
+    height: 190px;
+    top: 40px;
+    right: -12px;
 
     img {
       width: 100%;
@@ -61,7 +65,7 @@
   }
 
   .header-menu {
-    border-inline-end: none!important;
+    border-inline-end: none !important;
 
     @media screen and (max-width: 992px) {
       width: 50vw;
@@ -73,7 +77,7 @@
       }
 
       .ant-menu-item.ant-menu-item-active {
-        background-color: transparent!important;
+        background-color: transparent !important;
       }
 
       .ant-menu-item.ant-menu-item-selected {
@@ -84,3 +88,4 @@
     }
   }
 }
+

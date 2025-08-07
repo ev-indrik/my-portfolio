@@ -1,5 +1,5 @@
 import {type FC, useEffect, useState} from 'react';
-import {Button, Col, Menu, type MenuProps, Popover, Row } from "antd";
+import {Button, Col, Divider, Menu, type MenuProps, Popover, Row} from "antd";
 
 import {useLocation, useNavigate} from "react-router";
 import MenuItem from './menu-item/MenuItem';
@@ -8,10 +8,10 @@ import {SvgIcon} from "../icon/SvgIcon.tsx";
 import greenBg from '../../assets/green-bg-logo.png'
 import popoverBgImg from './images/popover-bg-img.png'
 
-import './Header.scss'
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
+import './Header.scss'
 import WebsiteButton from "@/components/website-button/WebsiteButton";
-import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
+import BurgerIcon from "@/components/animated-burger-icon/BurgerIcon";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -47,7 +47,7 @@ const Header: FC = () => {
 
     const {xxl, xl, lg} = useBreakpoint()
 
-    const [isPopoverOpen, setPopoverOpen] = useState(false)
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
     const navigate = useNavigate()
     const {pathname} = useLocation()
@@ -65,6 +65,18 @@ const Header: FC = () => {
 
     }, [currentLocation])
 
+    useEffect(() => {
+        if (isPopoverOpen) {
+            document.body.classList.add('no-scroll')
+        } else {
+            const timeout = setTimeout(() => {
+                document.body.classList.remove('no-scroll')
+            }, 300)
+            return () => clearTimeout(timeout)
+        }
+    }, [isPopoverOpen])
+
+
     const onClick: MenuProps['onClick'] = (e) => {
         setCurrent(e.key);
         navigate(`/${e.key}`)
@@ -75,7 +87,7 @@ const Header: FC = () => {
     }
 
     const onOpenChange = (isOpen: boolean) => {
-        setPopoverOpen(isOpen)
+        setIsPopoverOpen(isOpen)
     }
 
     const menuContent = (
@@ -84,7 +96,6 @@ const Header: FC = () => {
             <div className={'popover-bg-wrapper'}>
                 <img src={popoverBgImg} alt={"illustration for background"}/>
             </div>
-
                 <Menu
                     className={'header-menu'}
                     onClick={onClick}
@@ -94,13 +105,14 @@ const Header: FC = () => {
                     overflowedIndicator={false}
                 />
 
-            <WebsiteDivider paddingTop={5} paddingBottom={5}/>
+            <Divider />
         </div>
     )
 
     return (
         <div className={'header-wrapper'}>
             <div className={'container'}>
+
                 {(xxl || xl || lg) ? (
 
                         <Row justify={'space-between'}>
@@ -135,7 +147,17 @@ const Header: FC = () => {
                     )
                     :
                     (
-                        <Row justify={'end'}>
+                        <Row justify={'space-between'}>
+
+                            <Col>
+                                <Button type={'text'} className={'logo-btn'} onClick={onLogoClick}>
+                                    <SvgIcon type={'main-whale'}/>
+                                </Button>
+                                <div className={'header-logo-bg'}>
+                                    <img src={greenBg} alt={"Green background"}/>
+                                </div>
+                            </Col>
+
                             <Popover
                                 title={null}
                                 content={menuContent}
@@ -146,18 +168,16 @@ const Header: FC = () => {
                             >
                                 <WebsiteButton
                                     className={"burger-button"}
-                                    btnType={"icon"}
-                                    icon={<SvgIcon
-                                        type={isPopoverOpen ? "refresh" : "burger"}/>}
+                                    btnType="icon"
+                                    icon={<BurgerIcon isOpen={isPopoverOpen} />}
                                 />
                             </Popover>
+
                         </Row>
                     )}
-
             </div>
         </div>
-    )
-        ;
+    );
 };
 
 export default Header;

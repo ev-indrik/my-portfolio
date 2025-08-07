@@ -16,3 +16,8 @@ body {
   background: variables.$primary-bg-color;
 }
 
+body.no-scroll {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
