@@ -159,10 +159,11 @@ const Header: FC = () => {
                             </Col>
 
                             <Popover
+                                placement={'topLeft'}
                                 title={null}
                                 content={menuContent}
                                 trigger={"click"}
-                                showArrow={false}
+                                arrow={false}
                                 onOpenChange={onOpenChange}
                                 open={isPopoverOpen}
                             >

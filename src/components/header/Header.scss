@@ -97,30 +97,14 @@
         border-radius: 7px;
       }
     }
-    //
-    //@include mixins.sm-max {
-    //  width: 80vw;
-    //}
 
-    //@media screen and (max-width: 992px) {
-    //  width: 50vw;
-    //
-    //  .ant-menu-item {
-    //    height: 60px;
-    //    display: flex;
-    //    align-items: center;
-    //  }
-    //
-    //  .ant-menu-item.ant-menu-item-active {
-    //    background-color: transparent !important;
-    //  }
-    //
-    //  .ant-menu-item.ant-menu-item-selected {
-    //    background-color: transparent;
-    //    border: 1px solid #000000;
-    //    border-radius: 7px;
-    //  }
-    //}
+    @include mixins.sm-max {
+      width: 60vw;
+    }
+
+    @include mixins.xs-max {
+      width: 84vw;
+    }
   }
 }
 
