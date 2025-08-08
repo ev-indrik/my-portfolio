@@ -1,4 +1,5 @@
 @use '../../abstracts/variables';
+@use '../../abstracts/mixins';
 
 .header-wrapper {
   position: relative;
@@ -46,6 +47,16 @@
 .popup-wrapper {
   position: relative;
 
+  .ant-popover-inner {
+    background-color: #F7FFE7;
+
+    .ant-menu {
+      background-color: #F7FFE7;
+      border-radius: 8px;
+    }
+
+  }
+
   .ant-divider.ant-divider-horizontal {
     margin: 0;
   }
@@ -67,7 +78,7 @@
   .header-menu {
     border-inline-end: none !important;
 
-    @media screen and (max-width: 992px) {
+    @include mixins.md-max {
       width: 50vw;
 
       .ant-menu-item {
@@ -86,6 +97,30 @@
         border-radius: 7px;
       }
     }
+    //
+    //@include mixins.sm-max {
+    //  width: 80vw;
+    //}
+
+    //@media screen and (max-width: 992px) {
+    //  width: 50vw;
+    //
+    //  .ant-menu-item {
+    //    height: 60px;
+    //    display: flex;
+    //    align-items: center;
+    //  }
+    //
+    //  .ant-menu-item.ant-menu-item-active {
+    //    background-color: transparent !important;
+    //  }
+    //
+    //  .ant-menu-item.ant-menu-item-selected {
+    //    background-color: transparent;
+    //    border: 1px solid #000000;
+    //    border-radius: 7px;
+    //  }
+    //}
   }
 }
 
