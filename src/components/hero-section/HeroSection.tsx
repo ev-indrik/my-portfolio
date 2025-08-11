@@ -15,6 +15,7 @@ import TextListItem from "../text-list-item/TextListItem";
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import type {IconTypes} from "@/components/icon/SvgIcon";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography;
 
@@ -69,6 +70,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                imgPaddingBottom
                                            }) => {
 
+    const {xxl, xl, lg, md} = useBreakpoint()
+
     const lottieRef = useRef<LottieRefCurrentProps>(null);
 
     useEffect(() => {
@@ -86,10 +89,16 @@ const HeroSection: FC<HeroSectionProps> = ({
                         <img src={bgImg} alt={"background illustration"}/>
                     </div>}
 
-                <Row wrap={false} gutter={24} className={'hero-section-content-wrapper'}>
+                <Row
+                    wrap={(xxl||xl||lg||md ? false : undefined)}
+                    gutter={[24, 24]}
+                    className={'hero-section-content-wrapper'}
+                    justify={(xxl||xl||lg||md ? undefined : 'center')}
+                >
 
                     <Col
-                        span={spanNumber}
+                        // span={spanNumber}
+                        xxl={spanNumber} xl={spanNumber+1} lg={spanNumber+1} md={spanNumber+3} sm={20} xs={24}
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
@@ -102,17 +111,23 @@ const HeroSection: FC<HeroSectionProps> = ({
                             />
                         </div>}
 
-                        <Title level={2} color={titleColor}
-                               style={{paddingBottom: subTitle ? 2 : 24}}>{mainTitle}</Title>
+                        <Title
+                            level={2}
+                            color={titleColor}
+                            style={{paddingBottom: subTitle ? 2 : 24}}
+                            centered={!(xxl||xl||lg||md)}
+                        >
+                            {mainTitle}
+                        </Title>
 
-                        {subTitle && <Title level={3} style={{paddingBottom: 24}}>{subTitle}</Title>}
+                        {subTitle && <Title level={3} style={{paddingBottom: 24}} centered={!(xxl||xl||lg||md)}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
                                 <TextListItem key={index} text={item}/>
                             ))
                         ) : (
-                            <Paragraph>{description}</Paragraph>
+                            <Paragraph centered={!(xxl||xl||lg||md)}>{description}</Paragraph>
                         )}
 
 
@@ -123,6 +138,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    block={!(xxl||xl||lg||md)}
                                     disabled={isDisabled}
                                 /> :
                                 <WebsiteButton
@@ -130,6 +146,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
+                                    block={!(xxl||xl||lg||md)}
                                     disabled={isDisabled}
                                 />}
                         </Row>)}
@@ -138,7 +155,17 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                     </Col>
 
-                    <Col flex={'auto'} order={isReversed ? 1 : 2} offset={offsetNumber}>
+                    <Col
+                        order={isReversed ? 1 : 2}
+                        offset={offsetNumber}
+                        flex={'auto'}
+                        // xxl={{ flex: 'auto', offset: offsetNumber }}
+                        // xl={{ flex: 'auto', offset: offsetNumber }}
+                        // lg={{ flex: 'auto', offset: offsetNumber }}
+                        // md={{ flex: 'auto', offset: offsetNumber }}
+                        sm={{ span: 20, offset: 0 }}
+                        xs={{ span: 24, offset: 0 }}
+                    >
                         <Row justify={'end'} align={'bottom'}
                              style={{height: '100%'}}>
                             <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'} style={{paddingBottom: imgPaddingBottom}}>
