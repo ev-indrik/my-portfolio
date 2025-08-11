@@ -1,4 +1,5 @@
 @use '../../abstracts/variables';
+@use '../../abstracts/mixins';
 
 .footer-wrapper {
   background: variables.$primary-blue;
@@ -18,10 +19,22 @@
     color: #FFFFFF;
   }
 
-  .contact-item-box {
-    display: flex;
-    height: 40px;
-  }
+    .contact-item-box {
+      display: flex;
+      height: 40px;
+
+      @include mixins.sm-max {
+        padding-left: 34%;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding-left: 25%;
+      }
+
+      @media screen and (max-width: 400px) {
+        padding-left: 14%;
+      }
+    }
 
   .signature-container {
     display: flex;

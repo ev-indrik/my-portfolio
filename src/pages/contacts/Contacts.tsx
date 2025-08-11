@@ -7,11 +7,14 @@ import heroSectionContent from "@/data/heroSectionContent.json";
 import ContactsBlock from "@/pages/contacts/sections/contacs-block/ContactsBlock";
 import ContactFormSection from "@/pages/contacts/sections/contact-form-section/ContactFormSection";
 import {useMessageApi} from "@/context/MessageContext";
+import useIsMobile from "@/hook/useIsMobile";
+import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
 const sectionData = heroSectionContent['contact'];
 
 const Contacts: FC = () => {
 
     const messageApi = useMessageApi();
+    const isMobile = useIsMobile();
 
     const onShareClick = async () => {
         try {
@@ -34,7 +37,9 @@ const Contacts: FC = () => {
         }
     };
 
-    return (
+    return isMobile ? (
+        <SoonForMobile />
+    ) : (
         <>
             <HeroSection
                 mainTitle={sectionData.mainTitle}

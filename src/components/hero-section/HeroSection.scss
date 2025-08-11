@@ -1,3 +1,5 @@
+@use '../../abstracts/mixins';
+
 .hero-section-wrapper {
   width: 100%;
   min-height: calc(100vh - 150px);
@@ -30,6 +32,15 @@
     .texts-container{
       padding-top: 120px;
       position: relative;
+      z-index: 2;
+
+      @include mixins.md-max {
+        padding-top: 90px;
+      }
+
+      @include mixins.sm-max {
+        padding-top: 24px;
+      }
 
       .texts-section-bg-wrapper {
         position: absolute;
@@ -45,10 +56,23 @@
   .image-container {
     position: relative;
     width: 760px;
+    min-width: 700px;
     overflow: visible;
 
     &.mirrored {
       transform: scaleX(-1);
+    }
+
+    @media screen and (max-width: 900px) {
+      min-width: 670px;
+    }
+
+    @media screen and (max-width: 899px) and (min-width: 768px) {
+      min-width: 560px;
+    }
+
+    @include mixins.sm-max {
+      min-width: unset;
     }
 
     img {

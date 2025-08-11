@@ -5,10 +5,12 @@ import './ModalContactForm.scss'
 
 import bgModalImg from './images/modal-bg.png';
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 const {Title} = WebsiteTypography
 
 const ModalContactForm = () => {
     const { isOpen, closeModal } = useContactModal();
+    const {xxl, xl, lg, md} = useBreakpoint()
 
     return (
         <>
@@ -18,7 +20,7 @@ const ModalContactForm = () => {
                 onCancel={closeModal}
                 footer={null}
                 centered
-                width={800}
+                // width={800}
             >
                     <div className={"modal-border-wrapper"} >
                         <div className={"modal-inner-content"}>
@@ -27,7 +29,7 @@ const ModalContactForm = () => {
                                 <img src={bgModalImg} alt={"background abstract illustration"}/>
                             </div>
 
-                            <Title level={2} color={'white'} centered style={{paddingTop: 32}}>
+                            <Title level={(xxl||xl||lg||md) ? 2 : 3} color={'white'} centered style={{paddingTop: 32}}>
                                 {'Contact Form'}
                             </Title>
                             <ContactForm mainColNumber={18} labelBeforeColor={'white'} closeModal={closeModal}/>
