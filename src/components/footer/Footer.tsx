@@ -12,6 +12,7 @@ import bgPetalsImg from './images/footer-petals-img.png';
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import DownloadPdfBtn from "@/components/download-pfd-btn/DownloadPdfBtn";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Paragraph} = WebsiteTypography;
 
@@ -51,6 +52,9 @@ export const contactInfo: ContactItem[] = [
 ]
 
 const Footer: FC = () => {
+
+    const {xxl, xl, lg, md} = useBreakpoint()
+
     const location = useLocation();
     const isAboutPage = location.pathname === '/about';
 
@@ -68,9 +72,26 @@ const Footer: FC = () => {
             </div>
 
             <div className={'container'}>
-                <Row justify={'space-between'} align={'stretch'} wrap={false}
-                     style={{paddingTop: 50, paddingBottom: 24}}>
-                    <Col span={6}>
+
+                <Row
+                    justify={(xxl||xl||lg||md) ? 'space-between' : 'center'}
+                     align={(xxl||xl||lg||md) ? 'stretch' : undefined}
+                     wrap={(xxl||xl||lg||md) ? false : undefined}
+                     style={{paddingTop: (xxl||xl||lg||md) ? 50 : 0, paddingBottom: 24}}
+                >
+
+                    {!(xxl||xl||lg||md) &&
+                    <Col
+                        span={20}
+                        sm={20} xs={23}
+                    >
+                        <Row justify={'center'}>
+                            <SocialButtons/>
+                        </Row>
+                    </Col>
+                    }
+
+                    {(xxl||xl||lg||md) && <Col span={6}>
                         <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Menu'}</Paragraph>
 
                         <div className={'contact-item-box'}>
@@ -88,26 +109,51 @@ const Footer: FC = () => {
                                 <Link to="/projects">{'Projects'}</Link>
                             </Paragraph>
                         </div>
-
                         <SocialButtons/>
-                    </Col>
-                    <Col span={6}>
-                        <Paragraph color={'white'} size={'lg'} weight={'w700'}
-                                   style={{paddingBottom: 16}}>{'Contact info'}</Paragraph>
-                        {contactInfo.map((it) =>
-                            <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
-                                <SvgIcon type={it.iconType}/>
-                                <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
-                            </div>
-                        )}
-                    </Col>
-                    <Col span={6}>
-                        <Row justify={'end'} align={'top'} style={{paddingBottom: 16}}>
+                    </Col>}
 
-                            <Space direction={'vertical'} size={'large'}>
-                                <WebsiteButton btnType={'secondary'} size={'large'} text={'Contact Form'}
-                                               onClick={openModal} block/>
-                                {!isAboutPage && (<DownloadPdfBtn btnType={'ghost-white'}/>)}
+                    <Col
+                    xxl={6} xl={6} lg={6} md={6} sm={20} xs={24}
+                    style={{paddingTop: !(xxl||xl||lg||md) ? 48 : 0}}
+                    >
+                        <Paragraph
+                            color={'white'}
+                            size={'lg'}
+                            weight={'w700'}
+                            style={{paddingBottom: !(xxl||xl||lg||md) ? 32 : 16}}
+                            centered={!(xxl||xl||lg||md)}
+                        >
+                            {'Contact info'}
+                        </Paragraph>
+
+                            {contactInfo.map((it) =>
+                                <div key={it.id} className={"contact-item-box"} style={{paddingBottom: 2}}>
+                                    <SvgIcon type={it.iconType}/>
+                                    <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
+                                </div>
+                            )}
+                    </Col>
+                    <Col
+                        xxl={6} xl={6} lg={6} md={6} sm={20} xs={24}
+                    >
+                        <Row
+                            justify={(xxl||xl||lg||md ? 'end' : 'center')}
+                            align={'top'}
+                            style={{paddingBottom: 16}}
+                        >
+
+                            <Space
+                                direction={'vertical'}
+                                size={'large'}
+                                style={{paddingTop: !(xxl||xl||lg||md) ? 32 : 0, width: (xxl||xl||lg||md) ? undefined : '100%'}}
+                            >
+                                <WebsiteButton
+                                    btnType={'secondary'}
+                                    size={(xxl||xl||lg) ? 'large' : 'middle'}
+                                    text={'Contact Form'}
+                                    onClick={openModal} block
+                                />
+                                {!isAboutPage && (<DownloadPdfBtn size={(xxl||xl||lg) ? 'large' : 'middle'} btnType={'ghost-white'}/>)}
                             </Space>
 
                         </Row>

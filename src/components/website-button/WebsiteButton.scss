@@ -1,4 +1,5 @@
 @use '../../abstracts/variables';
+@use '../../abstracts/mixins';
 
 .ant-btn.custom-button {
   font-family: variables.$main-font;
@@ -12,6 +13,10 @@
   box-shadow: unset;
   padding: 8px 32px;
 
+  @include mixins.md-max {
+
+  }
+
   span.ant-btn-icon {
 
     svg {
@@ -21,8 +26,9 @@
   }
 
   &.ant-btn-default {
-    min-height: 42px;
-    height: 42px;
+    min-height: 46px;
+    height: 46px;
+    padding: 8px 20px;
 
     span.ant-btn-icon {
 
@@ -41,6 +47,7 @@
     &.ant-btn-sm {
       min-height: 36px;
       height: 36px;
+      padding: 8px 20px;
 
       span.ant-btn-icon {
 
@@ -124,6 +131,12 @@
     padding: 0;
     width: 42px;
     height: 42px;
+
+    svg {
+    width: 32px!important;
+    height: 32px!important;
+    object-fit: contain;
+    }
 
     .ant-btn-icon {
       display: flex;

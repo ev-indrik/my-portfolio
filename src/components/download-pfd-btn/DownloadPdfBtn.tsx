@@ -1,11 +1,14 @@
 import type {FC} from 'react';
 import {SvgIcon} from "@/components/icon/SvgIcon";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
+import type {ButtonProps} from "antd";
 
 type DownloadPdfBtnType = 'primary' | 'ghost-white'
+type Size = 'small' | 'middle' | 'large'
 
 type Props = {
     btnType: DownloadPdfBtnType;
+    size?: Size;
 };
 
 export const onPdfClick = ()=>{
@@ -15,7 +18,7 @@ export const onPdfClick = ()=>{
     link.click();
 }
 
-const DownloadPdfBtn: FC<Props> = ({btnType}) => {
+const DownloadPdfBtn: FC<Props & ButtonProps> = ({btnType, size='large'}) => {
     const mappedBtnType = btnType === 'ghost-white' ? 'white-ghost' : 'primary';
 
     return (
@@ -23,7 +26,7 @@ const DownloadPdfBtn: FC<Props> = ({btnType}) => {
             btnType={mappedBtnType}
             icon={<SvgIcon type={'pdf'} color={'orange'}/>}
             text={'Download PDF Resume'}
-            size={'large'}
+            size={size}
             onClick={onPdfClick}
             block
         />

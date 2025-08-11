@@ -22,12 +22,13 @@ body {
   max-width: 1200px;
   height: 100%;
 
-  @media screen and (max-width: 1240px) {
+  @include mixins.lg-max {
     padding: 0 20px;
   }
 
-  @media screen and (max-width: 575px) {
+  @include mixins.xs-max {
     padding: 0 12px;
+
   }
 }
 
