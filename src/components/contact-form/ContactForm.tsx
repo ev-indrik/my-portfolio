@@ -51,7 +51,15 @@ const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBe
 
     return (
         <Row justify={'center'} style={{paddingTop: 40}}>
-            <Col span={mainColNumber}>
+            <Col
+                span={mainColNumber}
+                xxl={mainColNumber}
+                xl={mainColNumber}
+                lg={mainColNumber}
+                md={mainColNumber}
+                sm={20}
+                xs={22}
+            >
                 <Form
                     form={form}
                     layout="vertical"

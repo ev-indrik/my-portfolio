@@ -1,9 +1,22 @@
 @use '.././../abstracts/variables';
+@use '.././../abstracts/mixins';
 
 .ant-modal {
   overflow: hidden;
   //border-radius: 30px;
-  //width: 700px!important;
+  width: 800px!important;
+
+  @include mixins.md-max {
+    width: 680px!important;
+  }
+
+  @include mixins.sm-max {
+    width: 80vw!important;
+  }
+
+  @include mixins.xs-max {
+    width: 94vw!important;
+  }
 
   .ant-modal-content {
     background: transparent;
@@ -13,6 +26,11 @@
     .ant-modal-close {
       top: 32px;
       inset-inline-end: 32px;
+
+      @media screen and (max-width: 380px) {
+        top: 18px;
+        inset-inline-end: 18px;
+      }
 
       svg {
         fill: #FFFFFF;
@@ -27,6 +45,16 @@
     padding: 18px;
     position: relative;
     overflow: hidden;
+
+    @include mixins.sm-max {
+      padding: 12px;
+      border-radius: 28px;
+    }
+
+    @include mixins.xs-max {
+      padding: 8px;
+      border-radius: 24px;
+    }
 
     .modal-inner-content {
       position: relative;
