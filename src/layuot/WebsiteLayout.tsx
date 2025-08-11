@@ -16,8 +16,6 @@ const WebsiteLayout: FC = () => {
     const isMobile = useIsMobile();
     const {pathname} = useLocation()
 
-    console.log(isMobile);
-
     return (
         <ContactModalProvider>
             <div className={'layout-wrapper'}>

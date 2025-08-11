@@ -1,27 +1,25 @@
 import './SoonForMobile.scss';
 
-import type {FC} from 'react';
-import {Row, Col, Space} from "antd";
+import {type FC} from 'react';
+import {Row, Col} from "antd";
 import {SvgIcon} from "@/components/icon/SvgIcon";
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 
-const {Title, Paragraph} = WebsiteTypography
 import profileImg from './images/jane-portrait.png';
-import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
-import {contactInfo} from "@/components/footer/Footer";
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
+import {useNavigate} from "react-router";
+
+const {Title, Paragraph} = WebsiteTypography
 
 const SoonForMobile: FC = () => {
 
     const {xxl, xl, lg, md, sm} = useBreakpoint()
+    const navigate = useNavigate()
 
-    const onPdfClick = () => {
-        const link = document.createElement('a');
-        link.href = '/ev-indrik-resume.pdf';
-        link.download = 'cv-yevheniia.pdf'; // naming on save
-        link.click();
+    const onHomeClick = () => {
+        navigate('/home')
     }
 
     return (
@@ -40,7 +38,7 @@ const SoonForMobile: FC = () => {
                             </Col>
 
                             <Col span={24} style={{paddingBottom: 24}}>
-                                <Title level={(xxl||xl||lg||md||sm ? 2 : 3)} color={'white'} centered>
+                                <Title level={(xxl || xl || lg || md || sm ? 2 : 3)} color={'white'} centered>
                                     {'Mobile Version Coming Soon...'}
                                 </Title>
                             </Col>
@@ -52,15 +50,15 @@ const SoonForMobile: FC = () => {
                                 {'Thank you for visiting!\nI am currently working on optimizing my website for mobile devices to give you the best possible experience.\n\nIn the meantime, I recommend accessing the site from a desktop or laptop.'}
                             </Paragraph>
 
-                            <Row justify={'center'} style={{width: '100%', paddingTop: 32}}>
+                            <Row justify={'center'} align={'middle'} style={{width: '100%', paddingTop: 32}}>
                                 <Col span={14} md={14} sm={16} xs={24}>
-                                    <WebsiteButton
-                                        btnType={'white-ghost'}
-                                        icon={<SvgIcon type={'pdf'}/>}
-                                        text={'Download PDF Resume'}
-                                        onClick={onPdfClick}
-                                        block
-                                    />
+                                        <WebsiteButton
+                                            btnType={'white-ghost'}
+                                            icon={<SvgIcon type={'plane'} color={'white'}/>}
+                                            text={'Back to Home page'}
+                                            onClick={onHomeClick}
+                                            block
+                                        />
                                 </Col>
                             </Row>
 
@@ -82,39 +80,9 @@ const SoonForMobile: FC = () => {
                                     </Paragraph>
                                 </Col>
                             </Row>
-
                         </Row>
-
                     </Col>
-
-                    <Col span={24}>
-                        <WebsiteDivider color={'white'}/>
-                    </Col>
-
-                   <Row justify={'center'} style={{width: '100%'}}>
-                       <Col>
-                           <Space direction={'vertical'} style={{width: '100%'}}>
-                               <Paragraph
-                                   color={'white'}
-                                   size={'lg'}
-                                   weight={'w700'}
-                                   style={{paddingBottom: 16}}
-                                   centered={!(xxl||xl||lg||md||sm)}
-                               >
-                                   {'Contact info'}
-                               </Paragraph>
-                               {contactInfo.map((it) =>
-                                   <div key={it.id} className={'contact-item-box'} style={{paddingBottom: 2}}>
-                                       <SvgIcon type={it.iconType}/>
-                                       <Paragraph color={'white'} style={{paddingLeft: 12}}>{it.text}</Paragraph>
-                                   </div>
-                               )}
-                           </Space>
-                       </Col>
-                   </Row>
-
                 </Row>
-
 
             </div>
         </div>
