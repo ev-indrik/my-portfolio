@@ -5,11 +5,18 @@ import HeroSection from "../../components/hero-section/HeroSection";
 import heroSectionContent from '../../data/heroSectionContent.json'
 import ProjectsGallery from "@/pages/projects/sections/projects-gallery/ProjectsGallery";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
+import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
+import useIsMobile from "@/hook/useIsMobile";
 
 const sectionData = heroSectionContent['projects'];
 
 const Projects: FC = () => {
-    return (
+
+    const isMobile = useIsMobile();
+
+    return isMobile ? (
+        <SoonForMobile />
+    ) : (
         <>
             <HeroSection
                 mainTitle={sectionData.mainTitle}
