@@ -121,7 +121,6 @@ const Footer: FC = () => {
                             size={'lg'}
                             weight={'w700'}
                             style={{paddingBottom: !(xxl||xl||lg||md) ? 32 : 16}}
-                            centered={!(xxl||xl||lg||md)}
                         >
                             {'Contact info'}
                         </Paragraph>
@@ -149,11 +148,11 @@ const Footer: FC = () => {
                             >
                                 <WebsiteButton
                                     btnType={'secondary'}
-                                    size={(xxl||xl||lg) ? 'large' : 'middle'}
+                                    size={'large'}
                                     text={'Contact Form'}
                                     onClick={openModal} block
                                 />
-                                {!isAboutPage && (<DownloadPdfBtn size={(xxl||xl||lg) ? 'large' : 'middle'} btnType={'ghost-white'}/>)}
+                                {!isAboutPage && (<DownloadPdfBtn size={'large'} btnType={'ghost-white'}/>)}
                             </Space>
 
                         </Row>

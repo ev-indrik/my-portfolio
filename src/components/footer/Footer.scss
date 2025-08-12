@@ -22,18 +22,6 @@
     .contact-item-box {
       display: flex;
       height: 40px;
-
-      @include mixins.sm-max {
-        padding-left: 34%;
-      }
-
-      @media screen and (max-width: 480px) {
-        padding-left: 25%;
-      }
-
-      @media screen and (max-width: 400px) {
-        padding-left: 14%;
-      }
     }
 
   .signature-container {
@@ -48,6 +36,11 @@
     top: -20px;
     right: 0;
     pointer-events: none;
+
+    @include mixins.sm-max {
+      height: 420px;
+      top: 0;
+    }
 
     img {
     width: 100%;
