@@ -13,11 +13,14 @@ import WebsiteTypography from "@/components/website-typography/WebsiteTypography
 import WebsiteButton from "@/components/website-button/WebsiteButton";
 import {useNavigate} from "react-router";
 import {SvgIcon} from "@/components/icon/SvgIcon";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography;
 
 const NotFound: FC = () => {
     const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
 
     useEffect(() => {
         if (lottieRef.current) {
@@ -39,16 +42,21 @@ const NotFound: FC = () => {
             </div>
             <div className={'container'}>
                 <Row justify={'center'}>
-                    <Col span={14}>
+                    <Col
+                        xxl={14} xl={14} lg={16} md={18} sm={20} xs={23}
+                    >
                         <Row justify={'center'}>
                             <Col span={24}>
-                                <Title level={2} centered>{'Oops! Page Not Found'}</Title>
+                                <Title level={(xxl||xl||lg||md||sm) ? 2 : 3} centered>{'Oops! Page Not Found'}</Title>
                             </Col>
                             <Paragraph centered style={{paddingTop: 32}}>
                                 {'Well… this page must have gone on vacation!\nEither it\'s hiding somewhere in the code or hasn\'t been built yet'}
                             </Paragraph>
 
-                            <Col span={18} style={{paddingTop: 16}}>
+                            <Col
+                                xxl={18} xl={18} lg={20} md={20} sm={23} xs={24}
+                                 style={{paddingTop: 16}}
+                            >
                                 <div className={'lottie-box'}>
 
                                     <div className={'not-found-horizontal-bg-wrapper'}>
@@ -64,7 +72,9 @@ const NotFound: FC = () => {
                                 </div>
                             </Col>
 
-                            <Col span={8}>
+                            <Col
+                                xxl={8} xl={8} lg={8} md={8} sm={20} xs={24}
+                            >
                                 <Row justify={'center'} style={{paddingTop: 48}}>
                                     <WebsiteButton
                                         btnType={'ghost'}
