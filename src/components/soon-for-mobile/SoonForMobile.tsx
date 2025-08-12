@@ -57,6 +57,7 @@ const SoonForMobile: FC = () => {
                                             icon={<SvgIcon type={'plane'} color={'white'}/>}
                                             text={'Back to Home page'}
                                             onClick={onHomeClick}
+                                            size={'large'}
                                             block
                                         />
                                 </Col>

@@ -70,7 +70,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                imgPaddingBottom
                                            }) => {
 
-    const {xxl, xl, lg, md} = useBreakpoint()
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
 
     const lottieRef = useRef<LottieRefCurrentProps>(null);
 
@@ -112,7 +112,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                         </div>}
 
                         <Title
-                            level={2}
+                            level={(xxl||xl||lg||md||sm) ? 2 : 3}
                             color={titleColor}
                             style={{paddingBottom: subTitle ? 2 : 24}}
                             centered={!(xxl||xl||lg||md)}
@@ -120,7 +120,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                             {mainTitle}
                         </Title>
 
-                        {subTitle && <Title level={3} style={{paddingBottom: 24}} centered={!(xxl||xl||lg||md)}>{subTitle}</Title>}
+                        {subTitle && <Title level={(xxl||xl||lg||md||sm) ? 3: 4} style={{paddingBottom: 24}} centered={!(xxl||xl||lg||md)}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
@@ -167,7 +167,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                         xs={{ span: 24, offset: 0 }}
                     >
                         <Row justify={'end'} align={'bottom'}
-                             style={{height: '100%'}}>
+                             style={{height: '100%', paddingBottom: (xxl||xl||lg||md ? 0 : 42)}}>
                             <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'} style={{paddingBottom: imgPaddingBottom}}>
                                 {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
 

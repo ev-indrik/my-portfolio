@@ -1,3 +1,5 @@
+@use '../../abstracts/mixins';
+
 .not-found-wrapper {
   position: relative;
   padding: 60px 0 0;
@@ -27,6 +29,19 @@
       right: 0;
       width: 500px;
       z-index: -1;
+
+      @include mixins.sm-max {
+        width: 400px;
+        bottom: 10px;
+      }
+
+      @include mixins.xs-max {
+        width: 300px;
+      }
+
+      @media screen and (max-width: 360px) {
+        width: 230px;
+      }
 
       img {
         width: 100%;
