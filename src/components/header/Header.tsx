@@ -45,7 +45,7 @@ const items: MenuItem[] = [
 
 const Header: FC = () => {
 
-    const {xxl, xl, lg} = useBreakpoint()
+    const {xxl, xl, lg, md} = useBreakpoint()
 
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
@@ -97,16 +97,16 @@ const Header: FC = () => {
             <div className={'popover-bg-wrapper'}>
                 <img src={popoverBgImg} alt={"illustration for background"}/>
             </div>
-                <Menu
-                    className={'header-menu'}
-                    onClick={onClick}
-                    selectedKeys={[current]}
-                    mode={"vertical"}
-                    items={items}
-                    overflowedIndicator={false}
-                />
+            <Menu
+                className={'header-menu'}
+                onClick={onClick}
+                selectedKeys={[current]}
+                mode={"vertical"}
+                items={items}
+                overflowedIndicator={false}
+            />
 
-            <Divider />
+            <Divider/>
         </div>
     )
 
@@ -146,8 +146,7 @@ const Header: FC = () => {
                             </Col>
                         </Row>
                     )
-                    :
-                    (
+                    : md ? (
                         <Row justify={'space-between'}>
 
                             <Col>
@@ -171,11 +170,41 @@ const Header: FC = () => {
                                 <WebsiteButton
                                     className={"burger-button"}
                                     btnType="icon"
-                                    icon={<BurgerIcon isOpen={isPopoverOpen} />}
+                                    icon={<BurgerIcon isOpen={isPopoverOpen}/>}
                                 />
                             </Popover>
-
                         </Row>
+                    ) : (
+                        <>
+                            <Row justify={'end'} className={'popover-raw-wrapper'}>
+                                <Popover
+                                    placement={'topLeft'}
+                                    title={null}
+                                    content={menuContent}
+                                    trigger={"click"}
+                                    arrow={false}
+                                    onOpenChange={onOpenChange}
+                                    open={isPopoverOpen}
+                                >
+                                    <WebsiteButton
+                                        className={"burger-button"}
+                                        btnType="icon"
+                                        icon={<BurgerIcon isOpen={isPopoverOpen}/>}
+                                    />
+                                </Popover>
+                            </Row>
+
+                            <Row justify={'center'} style={{marginTop: '-40px'}}>
+                                <Col>
+                                    <Button type={'text'} className={'logo-btn'} onClick={onLogoClick}>
+                                        <SvgIcon type={'main-whale'}/>
+                                    </Button>
+                                    <div className={'header-logo-bg'}>
+                                        <img src={greenBg} alt={"Green background"}/>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </>
                     )}
             </div>
         </div>
