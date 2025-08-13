@@ -56,8 +56,8 @@
 
   .image-container {
     position: relative;
-    //width: 760px;
     overflow: visible;
+    //width: 760px;
 
     &.mirrored {
       transform: scaleX(-1);
