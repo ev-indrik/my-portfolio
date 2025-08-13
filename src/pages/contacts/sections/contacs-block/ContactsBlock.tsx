@@ -66,13 +66,15 @@ const ContactsBlock: FC = () => {
                         </Row>
 
                         <Row justify={'center'}>
-                            <SocialButtons/>
+                            <Col span={8}>
+                                <SocialButtons color={'primary'}/>
+                            </Col>
                         </Row>
                     </Col>
 
                 </Row>
 
-                <WebsiteDivider marginNumber={50} />
+                <WebsiteDivider paddingBottom={50} paddingTop={50} />
             </div>
         </div>
     );
