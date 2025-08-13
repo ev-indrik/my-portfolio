@@ -9,7 +9,6 @@
 
   .header-menu {
     position: relative;
-    //background: variables.$primary-bg-color;
     background-color: transparent;
     border: none;
     display: flex;
@@ -62,15 +61,6 @@
 .popup-content-wrapper {
   position: relative;
 }
-
-//.ant-popover-inner {
-//  background-color: #F7FFE7;
-//
-//  .ant-menu {
-//    background-color: #F7FFE7;
-//    border-radius: 8px;
-//  }
-//}
 
 .ant-divider.ant-divider-horizontal {
   margin: 0;
@@ -133,13 +123,11 @@
   }
 }
 
-.ant-popover-content {
+.popover-menu-wrapper.ant-popover-inner {
+  background-color: #F7FFE7;
 
-  .popover-menu-wrapper {
-    background-color: #F7FFE7!important;
-    .header-menu {
-      background: transparent;
-    }
+  .header-menu {
+    background: transparent;
   }
 }
 

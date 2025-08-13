@@ -98,7 +98,7 @@ const icons: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     'at': At,
 } as const
 
-type IconColorType = 'primary' | 'white' | 'black' | 'orange';
+export type IconColorType = 'primary' | 'white' | 'black' | 'orange';
 
 type Props = SVGProps<SVGSVGElement> & { type: IconTypes, color?: IconColorType }
 

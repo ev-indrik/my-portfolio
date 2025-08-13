@@ -108,7 +108,7 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                 <Row
                     wrap={!isDesktop}
-                    gutter={[24, 24]}
+                    gutter={[24, 32]}
                     className={'hero-section-content-wrapper'}
                     justify={isDesktop ? undefined : 'center'}
                     style={{paddingBottom: 16}}

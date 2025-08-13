@@ -35,23 +35,26 @@ const WorkExperience: FC = () => {
         <div className={'work-experience-wrapper'}>
             <div className={'container'}>
 
-                <div className={'bg-img-wrapper'}>
-                    <img src={bgLeaves} alt={"background illustration"}/>
-                </div>
+               <div className={'experience-table-wrapper'}>
 
-                <TitleIconGroup content={{title: 'My Work Experience', image: titleImg}} marginBottom={'-30px'}/>
+                   <div className={'bg-img-wrapper'}>
+                       <img src={bgLeaves} alt={"background illustration"}/>
+                   </div>
 
-                <div className={'experiences-box'}>
+                   <TitleIconGroup content={{title: 'My Work Experience', image: titleImg}} marginBottom={'-30px'}/>
 
-                    {experienceList.map((item, index) => (
-                        <ExperienceCard
-                            key={index}
-                            isEven={index % 2 === 1}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    ))}
-                </div>
+                   <div className={'experiences-box'}>
+
+                       {experienceList.map((item, index) => (
+                           <ExperienceCard
+                               key={index}
+                               isEven={index % 2 === 1}
+                               title={item.title}
+                               description={item.description}
+                           />
+                       ))}
+                   </div>
+               </div>
 
             </div>
         </div>

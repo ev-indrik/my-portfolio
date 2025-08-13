@@ -6,7 +6,7 @@ import WebsiteTypography from "@/components/website-typography/WebsiteTypography
 import Lottie from 'lottie-react';
 import type {LottieRefCurrentProps} from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
-import catSignature from '../../../../assets/lottie-animation/cat-signature.json';
+import catSignature from '../../../../assets/lottie-animation/blue-cat-signature.json';
 import ContactForm from "@/components/contact-form/ContactForm";
 
 const {Title, Paragraph} = WebsiteTypography
@@ -46,7 +46,7 @@ const ContactFormSection: FC = () => {
                     {'As one option, you can use the contact form below.\nI’ll get back to you as soon as possible. Looking forward to hearing from you!'}
                 </Paragraph>
 
-                <div ref={ref} className="signature-wrapper" onClick={handleAnimationClick} style={{ cursor: 'pointer' }}>
+                <div ref={ref} className={"signature-wrapper"} onClick={handleAnimationClick} style={{ cursor: 'pointer' }}>
                     <Lottie
                         lottieRef={animationRef}
                         animationData={catSignature}

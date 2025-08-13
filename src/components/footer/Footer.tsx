@@ -92,7 +92,7 @@ const Footer: FC = () => {
                     }
 
                     {(xxl||xl||lg||md) && <Col span={6}>
-                        <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 16}}>{'Menu'}</Paragraph>
+                        <Paragraph color={'white'} size={'lg'} weight={'w700'} style={{paddingBottom: 40}}>{'Menu'}</Paragraph>
 
                         <div className={'contact-item-box'}>
                             <Paragraph>
@@ -120,7 +120,7 @@ const Footer: FC = () => {
                             color={'white'}
                             size={'lg'}
                             weight={'w700'}
-                            style={{paddingBottom: !(xxl||xl||lg||md) ? 32 : 16}}
+                            style={{paddingBottom: 40}}
                         >
                             {'Contact info'}
                         </Paragraph>
@@ -162,8 +162,9 @@ const Footer: FC = () => {
                 <WebsiteDivider color={'white'} paddingTop={10} paddingBottom={10}/>
 
                 <Row className={'signature-container'} justify={'center'} style={{paddingTop: 24, paddingBottom: 48}}>
-                    <Paragraph color={'white'} centered>
-                        {'Coded by '}
+                    <Paragraph color={'white'} centered style={{display: 'flex', alignItems: 'center'}}>
+                        <SvgIcon type={'git-small'} style={{marginRight: 8}}/>
+                        {'Coded by\u00A0'}
                         <a href={"https://github.com/ev-indrik"} target="_blank"
                            rel="noopener noreferrer">
                             {'©ev-indrik'}
