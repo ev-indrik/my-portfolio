@@ -47,7 +47,7 @@ const Contacts: FC = () => {
                 description={sectionData.description}
                 imageSrc={meImg}
                 buttonText={sectionData.buttonText}
-                btnType={'secondary'}
+                btnType={'ghost'}
                 svgType={'share'}
                 onClick={onShareClick}
                 offsetNumber={3}

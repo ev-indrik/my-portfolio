@@ -46,7 +46,7 @@ const ContactFormSection: FC = () => {
                     {'As one option, you can use the contact form below.\nI’ll get back to you as soon as possible. Looking forward to hearing from you!'}
                 </Paragraph>
 
-                <div ref={ref} className="signature-wrapper" onClick={handleAnimationClick} style={{ cursor: 'pointer' }}>
+                <div ref={ref} className={"signature-wrapper"} onClick={handleAnimationClick} style={{ cursor: 'pointer' }}>
                     <Lottie
                         lottieRef={animationRef}
                         animationData={catSignature}
