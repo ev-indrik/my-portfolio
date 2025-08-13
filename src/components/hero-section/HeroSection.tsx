@@ -70,7 +70,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                imgPaddingBottom
                                            }) => {
 
-    const {xxl, xl, lg, md, sm} = useBreakpoint()
+    const {xxl, xl, lg, md } = useBreakpoint()
+    const isDesktop = xxl || xl || lg || md;
 
     const lottieRef = useRef<LottieRefCurrentProps>(null);
 
@@ -79,6 +80,8 @@ const HeroSection: FC<HeroSectionProps> = ({
             lottieRef.current.setSpeed(0.5);
         }
     }, []);
+
+
 
     return (
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
@@ -90,14 +93,13 @@ const HeroSection: FC<HeroSectionProps> = ({
                     </div>}
 
                 <Row
-                    wrap={(xxl||xl||lg||md ? false : undefined)}
+                    wrap={!isDesktop}
                     gutter={[24, 24]}
                     className={'hero-section-content-wrapper'}
-                    justify={(xxl||xl||lg||md ? undefined : 'center')}
+                    justify={isDesktop ? undefined : 'center'}
                 >
 
                     <Col
-                        // span={spanNumber}
                         xxl={spanNumber} xl={spanNumber+1} lg={spanNumber+1} md={spanNumber+3} sm={20} xs={24}
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
@@ -112,22 +114,22 @@ const HeroSection: FC<HeroSectionProps> = ({
                         </div>}
 
                         <Title
-                            level={(xxl||xl||lg||md||sm) ? 2 : 3}
+                            level={isDesktop ? 2 : 3}
                             color={titleColor}
                             style={{paddingBottom: subTitle ? 2 : 24}}
-                            centered={!(xxl||xl||lg||md)}
+                            centered={!isDesktop}
                         >
                             {mainTitle}
                         </Title>
 
-                        {subTitle && <Title level={(xxl||xl||lg||md||sm) ? 3: 4} style={{paddingBottom: 24}} centered={!(xxl||xl||lg||md)}>{subTitle}</Title>}
+                        {subTitle && <Title level={isDesktop ? 3 : 4} style={{paddingBottom: 24}} centered={!isDesktop}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
                                 <TextListItem key={index} text={item}/>
                             ))
                         ) : (
-                            <Paragraph centered={!(xxl||xl||lg||md)}>{description}</Paragraph>
+                            <Paragraph centered={!isDesktop}>{description}</Paragraph>
                         )}
 
 
@@ -138,7 +140,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
-                                    block={!(xxl||xl||lg||md)}
+                                    block={!isDesktop}
                                     disabled={isDisabled}
                                 /> :
                                 <WebsiteButton
@@ -146,7 +148,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
-                                    block={!(xxl||xl||lg||md)}
+                                    block={!isDesktop}
                                     disabled={isDisabled}
                                 />}
                         </Row>)}
@@ -157,17 +159,13 @@ const HeroSection: FC<HeroSectionProps> = ({
 
                     <Col
                         order={isReversed ? 1 : 2}
-                        offset={offsetNumber}
-                        flex={'auto'}
-                        // xxl={{ flex: 'auto', offset: offsetNumber }}
-                        // xl={{ flex: 'auto', offset: offsetNumber }}
-                        // lg={{ flex: 'auto', offset: offsetNumber }}
-                        // md={{ flex: 'auto', offset: offsetNumber }}
-                        sm={{ span: 20, offset: 0 }}
-                        xs={{ span: 24, offset: 0 }}
+                        offset={isDesktop ? offsetNumber : 0}
+                        flex={isDesktop ? 'auto' : undefined}
+                        sm={20}
+                        xs={24}
                     >
                         <Row justify={'end'} align={'bottom'}
-                             style={{height: '100%', paddingBottom: (xxl||xl||lg||md ? 0 : 42)}}>
+                             style={{height: '100%', paddingBottom: isDesktop ? 0 : 42}}>
                             <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'} style={{paddingBottom: imgPaddingBottom}}>
                                 {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
 

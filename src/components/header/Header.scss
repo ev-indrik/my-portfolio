@@ -9,7 +9,8 @@
 
   .header-menu {
     position: relative;
-    background: variables.$primary-bg-color;
+    //background: variables.$primary-bg-color;
+    background-color: transparent;
     border: none;
     display: flex;
     align-items: center;
@@ -22,6 +23,10 @@
     height: 120px;
     padding: 4px;
     z-index: 4;
+
+    @include mixins.sm-max {
+      margin-top: 40px;
+    }
 
     &.ant-btn:hover {
       background-color: transparent;
@@ -43,7 +48,7 @@
     @include mixins.sm-max {
       width: 280px;
       left: -100px;
-      top: 50px;
+      top: 90px;
     }
 
     img {
@@ -54,66 +59,66 @@
   }
 }
 
-.popup-wrapper {
+.popup-content-wrapper {
   position: relative;
+}
 
-  .ant-popover-inner {
-    background-color: #F7FFE7;
+//.ant-popover-inner {
+//  background-color: #F7FFE7;
+//
+//  .ant-menu {
+//    background-color: #F7FFE7;
+//    border-radius: 8px;
+//  }
+//}
 
-    .ant-menu {
-      background-color: #F7FFE7;
-      border-radius: 8px;
+.ant-divider.ant-divider-horizontal {
+  margin: 0;
+}
+
+.popover-bg-wrapper {
+  overflow: hidden;
+  position: absolute;
+  height: 190px;
+  top: 40px;
+  right: -12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.header-menu {
+  border-inline-end: none !important;
+
+  @include mixins.md-max {
+    width: 50vw;
+
+    .ant-menu-item {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ant-menu-item.ant-menu-item-active {
+      background-color: transparent !important;
+    }
+
+    .ant-menu-item.ant-menu-item-selected {
+      background-color: transparent;
+      border: 1px solid #000000;
+      border-radius: 7px;
     }
   }
 
-  .ant-divider.ant-divider-horizontal {
-    margin: 0;
+  @include mixins.sm-max {
+    width: 60vw;
   }
 
-  .popover-bg-wrapper {
-    overflow: hidden;
-    position: absolute;
-    height: 190px;
-    top: 40px;
-    right: -12px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .header-menu {
-    border-inline-end: none !important;
-
-    @include mixins.md-max {
-      width: 50vw;
-
-      .ant-menu-item {
-        height: 60px;
-        display: flex;
-        align-items: center;
-      }
-
-      .ant-menu-item.ant-menu-item-active {
-        background-color: transparent !important;
-      }
-
-      .ant-menu-item.ant-menu-item-selected {
-        background-color: transparent;
-        border: 1px solid #000000;
-        border-radius: 7px;
-      }
-    }
-
-    @include mixins.sm-max {
-      width: 60vw;
-    }
-
-    @include mixins.xs-max {
-      width: 84vw;
-    }
+  @include mixins.xs-max {
+    width: 84vw;
   }
 }
 
@@ -123,8 +128,18 @@
     margin-right: -30px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 320px) {
     margin-right: unset;
+  }
+}
+
+.ant-popover-content {
+
+  .popover-menu-wrapper {
+    background-color: #F7FFE7;
+    .header-menu {
+      background: transparent;
+    }
   }
 }
 
