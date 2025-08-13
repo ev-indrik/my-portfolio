@@ -3,6 +3,7 @@ import HeroSection from "../../components/hero-section/HeroSection";
 
 import heroSectionContent from '../../data/heroSectionContent.json'
 import imageSrc from '../../components/hero-section/images/about-hero-img.png'
+import bgImg from '../../components/hero-section/images/bg-images/about-bg-img.png'
 import HardSkills from "@/pages/about/sections/hard-skills/HardSkills";
 import WorkExperience from "@/pages/about/sections/work-experience/WorkExperience";
 import experienceAnimation from '@/assets/lottie-animation/cat-coding.json';
@@ -12,19 +13,33 @@ import {useNavigate} from "react-router";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 import {onPdfClick} from "@/components/download-pfd-btn/DownloadPdfBtn";
 import useIsMobile from "@/hook/useIsMobile";
-import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
+// import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
 
 const About: FC = () => {
 
-    const navigate = useNavigate()
-    const onProjectsClick = () => navigate('/projects')
-    const isMobile = useIsMobile();
+        const navigate = useNavigate()
+        const onProjectsClick = () => navigate('/projects')
+        const isMobile = useIsMobile();
 
         return isMobile ? (
-            <SoonForMobile />
+            <>
+                    <HeroSection
+                        mainTitle={sectionData.mainTitle}
+                        description={sectionData.description}
+                        buttonText={sectionData.buttonText}
+                        imageSrc={imageSrc}
+                        onClick={onProjectsClick}
+                        bgImg={{
+                                image: bgImg,
+                                desktop: {width: '86%', right: '-175px', top: '-40px'},
+                                mobile: {width: '100%', bottom: 80, right: 0}
+                        }}
+                    />
+                {/*<SoonForMobile/>*/}
+            </>
         ) : (
             <>
                 <HeroSection
@@ -33,9 +48,13 @@ const About: FC = () => {
                     buttonText={sectionData.buttonText}
                     imageSrc={imageSrc}
                     onClick={onProjectsClick}
+                    bgImg={{
+                            image: bgImg,
+                            desktop: {width: '86%', right: '-225px'}
+                }}
                 />
-                <HardSkills />
-                <WorkExperience />
+                <HardSkills/>
+                <WorkExperience/>
                 <HeroSection
                     mainTitle={sectionDataExperience.mainTitle}
                     description={sectionDataExperience.description}
@@ -43,17 +62,18 @@ const About: FC = () => {
                     animationSrc={experienceAnimation}
                     animationBgSrc={gearsAnimation}
                     isReversed
-                    isBgImg
-                    bgImg={leaveHorizontalImg}
+                    bgImg={{
+                            image: leaveHorizontalImg,
+                            desktop: {width: '60%', bottom: '-30px', left: 0}
+                    }}
                     isImgMirrored
-                    spanNumber={12}
                     svgType="pdf"
                     paddingBtm={90}
                     onClick={onPdfClick}
                 />
             </>
         );
-}
-    ;
+    }
+;
 
-    export default ScrollToTop(About);
+export default ScrollToTop(About);

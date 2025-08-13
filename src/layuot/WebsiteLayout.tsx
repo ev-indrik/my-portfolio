@@ -21,7 +21,7 @@ const WebsiteLayout: FC = () => {
             <div className={'layout-wrapper'}>
                 <BackToTopButton/>
 
-                {(!isMobile || pathname === '/home' || pathname === '/') && <Header />}
+                {(!isMobile || pathname === '/home' || pathname === '/' || pathname === '/about') && <Header />}
 
                 <div className={'pages-wrapper'}>
                     <Outlet/>

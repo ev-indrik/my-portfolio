@@ -195,7 +195,7 @@ const Header: FC = () => {
                                 </Popover>
                             </Row>
 
-                            <Row justify={'center'} style={{marginTop: '-40px'}}>
+                            <Row justify={'center'} style={{marginTop: '-60px'}}>
                                 <Col>
                                     <Button type={'text'} className={'logo-btn'} onClick={onLogoClick}>
                                         <SvgIcon type={'main-whale'}/>

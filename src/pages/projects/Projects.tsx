@@ -23,9 +23,7 @@ const Projects: FC = () => {
                 description={sectionData.description}
                 imageSrc={imageSrc}
                 isMainButton={false}
-                spanNumber={11}
-                paddingBtm={60}
-                offsetNumber={1}
+                spanNumber={10}
             />
             <ProjectsGallery/>
         </>
