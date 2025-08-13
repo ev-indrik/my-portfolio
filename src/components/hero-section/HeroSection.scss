@@ -56,11 +56,14 @@
   .image-container {
     position: relative;
     width: 760px;
-    min-width: 700px;
     overflow: visible;
 
     &.mirrored {
       transform: scaleX(-1);
+    }
+
+    @include mixins.lg-max {
+      min-width: 700px;
     }
 
     @media screen and (max-width: 900px) {

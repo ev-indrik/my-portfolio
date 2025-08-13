@@ -92,7 +92,7 @@ const Header: FC = () => {
     }
 
     const menuContent = (
-        <div className={'popup-wrapper'}>
+        <div className={'popup-content-wrapper'}>
 
             <div className={'popover-bg-wrapper'}>
                 <img src={popoverBgImg} alt={"illustration for background"}/>
@@ -159,6 +159,7 @@ const Header: FC = () => {
                             </Col>
 
                             <Popover
+                                classNames={{body: 'popover-menu-wrapper'}}
                                 placement={'topLeft'}
                                 title={null}
                                 content={menuContent}
