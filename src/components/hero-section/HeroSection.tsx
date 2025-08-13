@@ -1,11 +1,11 @@
 import './HeroSection.scss';
 
-import { useRef, useEffect } from 'react';
+import {useRef, useEffect} from 'react';
 import {type FC} from 'react';
 import {Col, Row} from "antd";
 
 import Lottie from 'lottie-react';
-import type { LottieRefCurrentProps } from 'lottie-react';
+import type {LottieRefCurrentProps} from 'lottie-react';
 
 import WebsiteButton from "../website-button/WebsiteButton.tsx";
 import type {WebsiteButtonType} from "../website-button/WebsiteButton"
@@ -18,6 +18,20 @@ import type {IconTypes} from "@/components/icon/SvgIcon";
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography;
+
+type BgImagePosition = {
+    width?: number | string;
+    top?: number | string;
+    bottom?: number | string;
+    left?: number | string;
+    right?: number | string;
+};
+
+type bgImage = {
+    image: string;
+    desktop?: BgImagePosition;
+    mobile?: BgImagePosition;
+};
 
 type HeroSectionProps = {
     mainTitle: string;
@@ -34,8 +48,6 @@ type HeroSectionProps = {
     isMainButton?: boolean;
     isSocialButtons?: boolean;
     isReversed?: boolean;
-    isBgImg?: boolean;
-    bgImg?: string;
     spanNumber?: number;
     svgType?: IconTypes;
     paddingBtm?: number;
@@ -43,6 +55,7 @@ type HeroSectionProps = {
     isDisabled?: boolean;
     offsetNumber?: number;
     imgPaddingBottom?: number;
+    bgImg?: bgImage;
 };
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -59,9 +72,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                isSocialButtons = false,
                                                isMainButton = true,
                                                isReversed = false,
-                                               isBgImg = false,
                                                bgImg,
-                                               spanNumber = 8,
+                                               spanNumber = 10,
                                                svgType,
                                                paddingBtm,
                                                onClick,
@@ -70,7 +82,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                                imgPaddingBottom
                                            }) => {
 
-    const {xxl, xl, lg, md } = useBreakpoint()
+    const {xxl, xl, lg, md} = useBreakpoint()
     const isDesktop = xxl || xl || lg || md;
 
     const lottieRef = useRef<LottieRefCurrentProps>(null);
@@ -82,14 +94,16 @@ const HeroSection: FC<HeroSectionProps> = ({
     }, []);
 
 
-
     return (
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
             <div className={'container'}>
 
-                {isBgImg &&
-                    <div className={'hero-section-bg-wrapper'}>
-                        <img src={bgImg} alt={"background illustration"}/>
+                {bgImg &&
+                    <div
+                        className={'hero-section-bg-wrapper'}
+                        style={isDesktop ? bgImg?.desktop : bgImg?.mobile}
+                    >
+                        <img src={bgImg.image} alt={"background illustration"}/>
                     </div>}
 
                 <Row
@@ -97,10 +111,10 @@ const HeroSection: FC<HeroSectionProps> = ({
                     gutter={[24, 24]}
                     className={'hero-section-content-wrapper'}
                     justify={isDesktop ? undefined : 'center'}
+                    style={{paddingBottom: 16}}
                 >
-
                     <Col
-                        xxl={spanNumber} xl={spanNumber+1} lg={spanNumber+1} md={spanNumber+3} sm={20} xs={24}
+                        xxl={spanNumber} xl={spanNumber + 1} lg={spanNumber+1} md={spanNumber + 1} sm={20} xs={24}
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
@@ -122,7 +136,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                             {mainTitle}
                         </Title>
 
-                        {subTitle && <Title level={isDesktop ? 3 : 4} style={{paddingBottom: 24}} centered={!isDesktop}>{subTitle}</Title>}
+                        {subTitle && <Title level={isDesktop ? 3 : 4} style={{paddingBottom: 24}}
+                                            centered={!isDesktop}>{subTitle}</Title>}
 
                         {Array.isArray(description) ? (
                             description.map((item, index) => (
@@ -136,7 +151,8 @@ const HeroSection: FC<HeroSectionProps> = ({
                         {isMainButton && (<Row justify={isReversed ? 'end' : 'start'} style={{paddingTop: 64}}>
                             {svgType ? <WebsiteButton
                                     btnType={btnType}
-                                    icon={<SvgIcon type={svgType as IconTypes} color={svgType==='pdf' ? 'orange' : 'primary'}/>}
+                                    icon={<SvgIcon type={svgType as IconTypes}
+                                                   color={svgType === 'pdf' ? 'orange' : 'primary'}/>}
                                     text={buttonText}
                                     size={'large'}
                                     onClick={onClick}
@@ -164,9 +180,13 @@ const HeroSection: FC<HeroSectionProps> = ({
                         sm={20}
                         xs={24}
                     >
-                        <Row justify={'end'} align={'bottom'}
-                             style={{height: '100%', paddingBottom: isDesktop ? 0 : 42}}>
-                            <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'} style={{paddingBottom: imgPaddingBottom}}>
+                        <Row
+                            justify={'end'}
+                            // align={'bottom'}
+                            style={{height: '100%', paddingBottom: isDesktop ? 0 : 42}}
+                        >
+                            <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'}
+                                 style={{paddingBottom: imgPaddingBottom}}>
                                 {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
 
                                 {animationSrc &&
@@ -175,7 +195,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                                         animationData={animationSrc}
                                         loop
                                         autoplay
-                                />}
+                                    />}
                             </div>
                         </Row>
                     </Col>

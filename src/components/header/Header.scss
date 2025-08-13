@@ -3,9 +3,9 @@
 
 .header-wrapper {
   position: relative;
-  padding-top: 20px;
-  max-height: 150px;
-  height: 150px;
+  padding-top: 8px;
+  max-height: 100px;
+  height: 100px;
 
   .header-menu {
     position: relative;
@@ -136,7 +136,7 @@
 .ant-popover-content {
 
   .popover-menu-wrapper {
-    background-color: #F7FFE7;
+    background-color: #F7FFE7!important;
     .header-menu {
       background: transparent;
     }

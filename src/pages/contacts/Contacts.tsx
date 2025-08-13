@@ -2,7 +2,7 @@ import {type FC} from 'react';
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 import HeroSection from "@/components/hero-section/HeroSection";
 
-import meImg from '../../components/hero-section/images/me-img.png'
+import meImg from '../../components/hero-section/images/contacts-hero-img.png'
 import heroSectionContent from "@/data/heroSectionContent.json";
 import ContactsBlock from "@/pages/contacts/sections/contacs-block/ContactsBlock";
 import ContactFormSection from "@/pages/contacts/sections/contact-form-section/ContactFormSection";
@@ -47,12 +47,11 @@ const Contacts: FC = () => {
                 description={sectionData.description}
                 imageSrc={meImg}
                 buttonText={sectionData.buttonText}
-                spanNumber={12}
                 btnType={'secondary'}
                 svgType={'share'}
                 onClick={onShareClick}
-                offsetNumber={1}
-                imgPaddingBottom={48}
+                offsetNumber={3}
+                // imgPaddingBottom={48}
             />
             <ContactsBlock />
             <ContactFormSection />
