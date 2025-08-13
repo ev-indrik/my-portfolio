@@ -179,6 +179,7 @@ const Header: FC = () => {
                         <>
                             <Row justify={'end'} className={'popover-raw-wrapper'}>
                                 <Popover
+                                    classNames={{body: 'popover-menu-wrapper'}}
                                     placement={'topLeft'}
                                     title={null}
                                     content={menuContent}
