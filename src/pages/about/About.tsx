@@ -56,6 +56,7 @@ const About: FC = () => {
                 <HardSkills/>
                 <WorkExperience/>
                 <HeroSection
+                    // spanNumber={9}
                     mainTitle={sectionDataExperience.mainTitle}
                     description={sectionDataExperience.description}
                     buttonText={sectionDataExperience.buttonText}
@@ -64,10 +65,10 @@ const About: FC = () => {
                     isReversed
                     bgImg={{
                             image: leaveHorizontalImg,
-                            desktop: {width: '60%', bottom: '-30px', left: 0}
+                            desktop: {width: '60%', bottom: 100, left: 0}
                     }}
                     isImgMirrored
-                    svgType="pdf"
+                    svgType={"pdf"}
                     paddingBtm={90}
                     onClick={onPdfClick}
                 />
