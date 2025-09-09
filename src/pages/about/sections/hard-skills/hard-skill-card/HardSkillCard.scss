@@ -1,3 +1,4 @@
+@use '../../../../../abstracts/mixins';
 
 .hard-skill-item-wrapper {
   border: 1px solid #4b4b4b;
@@ -6,17 +7,39 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   white-space: pre-line;
 
+  @include mixins.md-max {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  @include mixins.sm-max {
+    padding: 24px;
+  }
+
+  @include mixins.xs-max {
+    padding: 16px;
+  }
+
   &.alone-logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
 
+    @include mixins.md-max {
+      gap: 12px;
+    }
+
     .logo-img-wrapper {
       flex-shrink: 0;
       align-self: start;
       width: 72px;
       height: 72px;
+
+      @include mixins.md-max {
+        width: 60px;
+        height: 60px;
+      }
 
       img {
         width: 100%;
@@ -41,10 +64,19 @@
     align-items: center;
     margin-bottom: 24px;
 
+    @include mixins.md-max {
+      padding-left: 0!important;
+    }
+
     .logo-img-wrapper {
       width: 72px;
       height: 72px;
       flex-shrink: 0;
+
+      @include mixins.md-max {
+        width: 60px;
+        height: 60px;
+      }
 
       img {
       width: 100%;

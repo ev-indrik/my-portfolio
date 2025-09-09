@@ -1,8 +1,15 @@
+@use '../../abstracts/mixins';
+
 .title-box {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 16px;
+
+  @include mixins.xs-max {
+    flex-direction: column;
+    gap: 16px;
+  }
 
   .title-img-wrapper {
     width: 120px;
