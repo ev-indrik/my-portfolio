@@ -1,10 +1,15 @@
 @use '../../../../abstracts/variables';
+@use '../../../../abstracts/mixins';
 
 .hard-skills-wrapper {
   position: relative;
   width: 100%;
   height: auto;
   padding-top: 40px;
+
+  @include mixins.sm-max {
+    padding-top: unset;
+  }
 
   .hard-skills--bgimg-wrapper {
     position: absolute;
@@ -46,5 +51,15 @@
     .sass       { grid-area: sass; }
     .css        { grid-area: css; }
     .strapi     { grid-area: strapi; }
+
+    @include mixins.md-max {
+      grid-template-columns: repeat(8, minmax(60px, auto));
+      gap: 10px;
+    }
+
+    @include mixins.sm-max {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

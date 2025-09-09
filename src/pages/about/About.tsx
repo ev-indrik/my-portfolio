@@ -38,6 +38,7 @@ const About: FC = () => {
                                 mobile: {width: '100%', bottom: 80, right: 0}
                         }}
                     />
+                <HardSkills/>
                 {/*<SoonForMobile/>*/}
             </>
         ) : (
@@ -51,6 +52,7 @@ const About: FC = () => {
                     bgImg={{
                             image: bgImg,
                             desktop: {width: '86%', right: '-225px'}
+
                 }}
                 />
                 <HardSkills/>

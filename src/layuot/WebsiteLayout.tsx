@@ -7,6 +7,7 @@ import {ContactModalProvider} from "@/context/ContactModalContext";
 import ModalContactForm from "@/components/modal-contact-form/ModalContactForm";
 import useIsMobile from "@/hook/useIsMobile";
 import {useLocation} from "react-router-dom";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 // const location = useLocation();
 // const isHome = ['/home', '/'].includes(location.pathname);
@@ -15,11 +16,12 @@ const WebsiteLayout: FC = () => {
 
     const isMobile = useIsMobile();
     const {pathname} = useLocation()
+    const {xxl, xl, lg, md} = useBreakpoint()
 
     return (
         <ContactModalProvider>
             <div className={'layout-wrapper'}>
-                <BackToTopButton/>
+                {(xxl||xl||lg||md) &&  <BackToTopButton/>}
 
                 {(!isMobile || pathname === '/home' || pathname === '/' || pathname === '/about') && <Header />}
 
