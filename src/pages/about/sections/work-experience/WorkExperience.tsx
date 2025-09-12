@@ -5,6 +5,7 @@ import bgLeaves from './images/bg-leaves.png'
 import titleImg from "@/pages/about/sections/work-experience/images/clock-img.png";
 import TitleIconGroup from "@/components/title-icon-group/TitleIconGroup";
 import ExperienceCard from "@/pages/about/sections/work-experience/experience-card/ExperienceCard";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 
 const experienceList = [
@@ -31,6 +32,9 @@ const experienceList = [
 ];
 
 const WorkExperience: FC = () => {
+
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
+
     return (
         <div className={'work-experience-wrapper'}>
             <div className={'container'}>
@@ -48,7 +52,7 @@ const WorkExperience: FC = () => {
                        {experienceList.map((item, index) => (
                            <ExperienceCard
                                key={index}
-                               isEven={index % 2 === 1}
+                               isEven={(xxl || xl || lg || md || sm) ? index % 2 === 1 : true}
                                title={item.title}
                                description={item.description}
                            />

@@ -1,3 +1,6 @@
+@use '../../../../../abstracts/variables';
+@use '../../../../../abstracts/mixins';
+
 .experience-item-wrapper {
   position: relative;
   width: 100%;
@@ -16,6 +19,14 @@
     background-color: #2E527D;
     transform: translateX(-1px);
     z-index: 1;
+
+    @include mixins.xs-max {
+      left: 44px;
+    }
+
+    @media (max-width: 410px) {
+      left: 24px;
+  }
   }
 
   &::after {
@@ -29,6 +40,18 @@
     border-radius: 50%;
     border: 2px solid #2E527D;
     z-index: 3;
+
+    @include mixins.sm-max {
+      left: 48%
+    }
+
+    @include mixins.xs-max {
+      left: 31px;
+    }
+
+    @media (max-width: 410px) {
+      left: 12px;
+    }
   }
 
   &:last-child {
@@ -39,6 +62,11 @@
 
   &.even {
     justify-content: end;
+
+    @include mixins.xs-max {
+      height: unset;
+      justify-content: center;
+    }
   }
 
   .experience-content {
@@ -48,9 +76,26 @@
     width: 50%;
     padding: 0 20px 20px 100px;
 
+    @include mixins.sm-max {
+      padding: 0 20px 20px 30px;
+    }
+
     &.even-content {
       padding: 0 100px 20px 20px;
       align-items: start;
+
+      @include mixins.sm-max {
+        padding: 0 20px 20px 30px;
+      }
+
+      @include mixins.xs-max {
+        width: 100%;
+        padding: 0 20px 20px 80px;
+      }
+
+      @media (max-width: 410px) {
+        padding: 0 20px 20px 50px;
+      }
 
       .paragraph-wrapper {
         text-align: left;

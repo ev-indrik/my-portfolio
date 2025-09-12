@@ -1,3 +1,5 @@
+@use '../../../../abstracts/mixins';
+
 .work-experience-wrapper {
   width: 100%;
   min-height: 100vh;
@@ -10,6 +12,15 @@
     border-top-left-radius: 90px;
     padding-top: 40px;
     padding-bottom: 70px;
+    overflow: hidden;
+
+    @include mixins.xs-max {
+      padding: 0 16px 16px;
+    }
+
+    @media (max-width: 410px) {
+      padding: 0 8px 8px;
+    }
 
     .bg-img-wrapper {
       position: absolute;

@@ -15,7 +15,6 @@ import {onPdfClick} from "@/components/download-pfd-btn/DownloadPdfBtn";
 import useIsMobile from "@/hook/useIsMobile";
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
-// import SoonForMobile from "@/components/soon-for-mobile/SoonForMobile";
 
 const sectionData = heroSectionContent['about'];
 const sectionDataExperience = heroSectionContent['experience'];
@@ -46,7 +45,7 @@ const About: FC = () => {
                 </div>
                 }
                 <HardSkills/>
-                {/*<SoonForMobile/>*/}
+                <WorkExperience/>
             </>
         ) : (
             <>
@@ -58,12 +57,12 @@ const About: FC = () => {
                     onClick={onProjectsClick}
                     bgImg={{
                         image: bgImg,
-                        desktop: {width: '86%', right: '-225px'}
-
+                        desktop: {width: '86%', right: '-175px', top: '-40px'},
+                        mobile: {width: '100%', bottom: 80, right: 0}
                     }}
                 />
                 <HardSkills/>
-                {!(xxl || xl || lg) && <WebsiteDivider/>}
+                {!(xxl || xl || lg) && <div className={'container'} style={{marginTop: -60, marginBottom: -40}}> </div>}
                 <WorkExperience/>
                 <HeroSection
                     // spanNumber={9}
