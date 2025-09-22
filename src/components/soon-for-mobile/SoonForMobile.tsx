@@ -47,7 +47,10 @@ const SoonForMobile: FC = () => {
                                 color={'white'}
                                 centered
                             >
-                                {'Thank you for visiting!\nI am currently working on optimizing my website for mobile devices to give you the best possible experience.\n\nIn the meantime, I recommend accessing the site from a desktop or laptop.'}
+                                {'Thank you for visiting!\n' +
+                                    'I am currently working on optimizing my website for mobile devices, so not all sections are ready.\n' +
+                                    '\n' +
+                                    'If possible, please access my site from a desktop or laptop.'}
                             </Paragraph>
 
                             <Row justify={'center'} align={'middle'} style={{width: '100%', paddingTop: 32}}>
