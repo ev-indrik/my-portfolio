@@ -2,6 +2,7 @@ import type {FC} from 'react';
 import './ExperienceCard.scss';
 
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography;
 
@@ -12,10 +13,13 @@ type Props = {
 }
 
 const ExperienceCard: FC<Props> = ({isEven, title, description}) => {
+
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
+
     return (
         <div className={`experience-item-wrapper ${isEven ? 'even' : ''}`}>
             <div className={`experience-content ${isEven ? 'even-content' : ''}`}>
-                <Title level={3}>
+                <Title level={!(xxl || xl || lg || md || sm) ? 4 : 3}>
                     {title}
                 </Title>
 

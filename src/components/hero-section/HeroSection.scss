@@ -54,6 +54,37 @@
     }
   }
 
+  .section-animation-wrapper {
+
+    .animation-wrapper {
+      position: relative;
+
+      .lottie-animation {
+      }
+
+      .animation-bg-img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        }
+      }
+    }
+
+    @include mixins.lg-max {
+      align-content: center;
+    }
+
+    @include mixins.xs-max {
+      margin-bottom: -40px;
+    }
+  }
+
   .image-container {
     position: relative;
     overflow: visible;

@@ -24,7 +24,7 @@ const TitleIconGroup: FC<TitleIconGroupProps> = ({content, marginBottom}) => {
                 <img src={content.image} alt={'Engineering skills logo'}/>
             </div>
 
-            <Title level={2} centered={!(xxl || xl || lg || md || sm)}>{content.title}</Title>
+            <Title level={!(xxl || xl || lg || md || sm) ? 3 : 2} centered={!(xxl || xl || lg || md || sm)}>{content.title}</Title>
         </div>
     );
 };

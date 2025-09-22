@@ -98,7 +98,7 @@ const HeroSection: FC<HeroSectionProps> = ({
         <div className={'hero-section-wrapper'} style={{paddingBottom: paddingBtm}}>
             <div className={'container'}>
 
-                {bgImg &&
+                {(bgImg && !animationSrc) &&
                     <div
                         className={'hero-section-bg-wrapper'}
                         style={isDesktop ? bgImg?.desktop : bgImg?.mobile}
@@ -114,7 +114,7 @@ const HeroSection: FC<HeroSectionProps> = ({
                     style={{paddingBottom: 16}}
                 >
                     <Col
-                        xxl={spanNumber} xl={spanNumber + 1} lg={spanNumber+1} md={spanNumber + 1} sm={20} xs={24}
+                        xxl={spanNumber} xl={spanNumber + 1} lg={spanNumber + 1} md={spanNumber + 1} sm={20} xs={24}
                         className={'texts-container'}
                         order={isReversed ? 2 : 1}
                     >
@@ -185,18 +185,37 @@ const HeroSection: FC<HeroSectionProps> = ({
                             // align={'bottom'}
                             style={{height: '100%', paddingBottom: isDesktop ? 0 : 42}}
                         >
-                            <div className={isImgMirrored ? 'image-container mirrored' : 'image-container'}
-                                 style={{paddingBottom: imgPaddingBottom}}>
-                                {imageSrc && <img src={imageSrc} alt={'illustration of developer'}/>}
+                            <div
+                                className={
+                                    animationSrc
+                                        ? "section-animation-wrapper"
+                                        : isImgMirrored
+                                            ? "image-container mirrored"
+                                            : "image-container"
+                                }
+                                style={{paddingBottom: imgPaddingBottom}}
+                            >
+                                {imageSrc && <img src={imageSrc} alt="illustration of developer"/>}
 
-                                {animationSrc &&
-                                    <Lottie
-                                        // lottieRef={lottieRef}
-                                        animationData={animationSrc}
-                                        loop
-                                        autoplay
-                                    />}
+                                {animationSrc && (
+                                    <div className={'animation-wrapper'}>
+                                        <Lottie
+                                            animationData={animationSrc}
+                                            loop
+                                            autoplay
+                                            className={'lottie-animation'}
+                                        />
+
+                                        {bgImg?.image && (
+                                            <div className={'animation-bg-img'}>
+                                                <img src={bgImg.image} alt={"abstract illustration"}/>
+                                            </div>
+                                        )}
+
+                                    </div>
+                                )}
                             </div>
+
                         </Row>
                     </Col>
                 </Row>
