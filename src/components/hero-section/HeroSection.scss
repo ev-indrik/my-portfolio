@@ -79,6 +79,10 @@
     @include mixins.lg-max {
       align-content: center;
     }
+
+    @include mixins.xs-max {
+      margin-bottom: -40px;
+    }
   }
 
   .image-container {

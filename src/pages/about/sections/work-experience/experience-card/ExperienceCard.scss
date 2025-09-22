@@ -90,7 +90,7 @@
 
       @include mixins.xs-max {
         width: 100%;
-        padding: 0 20px 20px 80px;
+        padding: 4px 20px 20px 80px;
       }
 
       @media (max-width: 410px) {
@@ -99,6 +99,10 @@
 
       .paragraph-wrapper {
         text-align: left;
+
+        @include mixins.xs-max {
+          padding-top: 8px;
+        }
       }
     }
 

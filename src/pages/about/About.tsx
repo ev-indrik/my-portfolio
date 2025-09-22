@@ -52,10 +52,6 @@ const About: FC = () => {
                     animationBgSrc={gearsAnimation}
                     isReversed
                     bgImg={{image: leaveHorizontalImg}}
-                    // bgImg={{
-                    //     image: leaveHorizontalImg,
-                    //     desktop: {width: '60%', bottom: 70, left: 0}
-                    // }}
                     isImgMirrored
                     svgType={"pdf"}
                     paddingBtm={90}
