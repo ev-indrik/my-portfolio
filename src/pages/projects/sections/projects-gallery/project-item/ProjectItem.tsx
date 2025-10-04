@@ -7,13 +7,25 @@ import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 import WebsiteTypography from "@/components/website-typography/WebsiteTypography";
 import {useNavigate} from "react-router";
 import type {ProjectItemType} from "@/type/types";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography
 
 
-const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLower, title, description, projectImgs, isDivider, bgSectionImg}) => {
+const ProjectItem: FC<ProjectItemType> = ({
+                                              id,
+                                              isReversed,
+                                              bgImgUpper,
+                                              bgImgLower,
+                                              title,
+                                              description,
+                                              projectImgs,
+                                              isDivider,
+                                              bgSectionImg
+                                          }) => {
 
     const navigate = useNavigate();
+    const {xxl, xl, lg, md, sm} = useBreakpoint()
 
     const handleReadMore = () => {
         navigate(`/projects/${id}`)
@@ -29,13 +41,24 @@ const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLowe
 
                 <div className={'container'}>
                     <div className={`project-content-wrapper ${isReversed && "reversed"}`}>
+
+                        {!(xxl || xl || lg || md) && <div className={'project-img-wrapper'}>
+                            <img src={projectImgs[0]} alt={'screenshot of project website'}/>
+                        </div>
+                        }
+
                         <div className={`project-content ${isReversed && 'reversed'}`}>
                             <div className={`text-box ${isReversed && 'reversed'}`}>
-                                <Title level={2} color={'primary'} style={{paddingBottom: 16, paddingTop: 150}}>
+                                <Title level={(xxl || xl || lg || md || sm) ? 2 : 3} color={'primary'} centered={!(xxl || xl || lg || md)}
+                                       style={{paddingBottom: 16, paddingTop: (xxl || xl || lg || md) ? 150 : 24 }}>
                                     {title}
                                 </Title>
 
-                                <Paragraph color={'primary'}>
+                                <Paragraph
+                                    color={'primary'}
+                                    centered={!(xxl || xl || lg || md)}
+                                    style={{paddingBottom: !(xxl || xl || lg || md) ? 32 : 0}}
+                                >
                                     {description}
                                 </Paragraph>
                             </div>
@@ -46,11 +69,13 @@ const ProjectItem: FC<ProjectItemType> = ({id, isReversed, bgImgUpper, bgImgLowe
                             </div>
                         </div>
 
-                        <div className={'project-img-wrapper'}>
+                        {(xxl || xl || lg || md) && <div className={'project-img-wrapper'} style={{border: '1px solid green'}}>
                             <img src={projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
+                        }
+
                     </div>
-                    {isDivider && <WebsiteDivider isReversed={isReversed} paddingTop={64} paddingBottom={0}/>}
+                    {isDivider && <WebsiteDivider isReversed={isReversed} paddingTop={(xxl || xl || lg || md) ? 64 : 24} paddingBottom={(xxl || xl || lg || md) ? 0 : 24}/>}
                 </div>
 
                 {bgImgLower && <div className={'lower-bg-img-wrapper'}>

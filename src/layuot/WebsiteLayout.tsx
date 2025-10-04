@@ -23,7 +23,7 @@ const WebsiteLayout: FC = () => {
             <div className={'layout-wrapper'}>
                 {(xxl||xl||lg||md) &&  <BackToTopButton/>}
 
-                {(!isMobile || pathname === '/home' || pathname === '/' || pathname === '/about') && <Header />}
+                {(!isMobile || pathname === '/home' || pathname === '/' || pathname === '/about' || pathname === '/projects') && <Header />}
 
                 <div className={'pages-wrapper'}>
                     <Outlet/>
