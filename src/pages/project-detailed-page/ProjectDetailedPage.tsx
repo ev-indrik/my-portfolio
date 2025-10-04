@@ -20,10 +20,12 @@ import type {ProjectItemType} from "@/type/types";
 import ScrollToTop from "@/hoc/scroll-to-top/ScrollToTop";
 import NotFound from "@/pages/not-found/NotFound";
 import ReadMoreComponent from "@/components/read-more-component/ReadMoreComponent";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const ProjectDetailedPage: FC = () => {
 
     const {projectId} = useParams();
+    const {xxl, xl, lg, md } = useBreakpoint()
 
     if (!projectId) {
         return <NotFound />
@@ -66,7 +68,7 @@ const ProjectDetailedPage: FC = () => {
 
             <div className={'container'}>
 
-                <Row justify={'center'}>
+                <Row justify={'center'} style={{paddingBottom: 16}}>
                     <Title level={2} color={'primary'}>{project.title}</Title>
                 </Row>
 
@@ -87,7 +89,15 @@ const ProjectDetailedPage: FC = () => {
                     <Col span={10} style={{paddingBottom: 24}}>
                         <Title level={3} color={'primary'} centered>{'Project Description'}</Title>
                     </Col>
-                    <Col span={16}>
+                    <Col
+                        span={16}
+                        xxl={16}
+                        xl={16}
+                        lg={16}
+                        md={16}
+                        sm={24}
+                        xs={24}
+                    >
                        <ReadMoreComponent text={project.detailedDescription} />
                     </Col>
                 </Row>
@@ -99,7 +109,16 @@ const ProjectDetailedPage: FC = () => {
                     <Col span={20} style={{paddingTop: 32}}>
                         <Row justify={'center'} gutter={[0, 40]}>
                             {project?.techLogos?.map((logo) => (
-                                <Col span={8} key={logo.logoKey}>
+                                <Col
+                                    span={8}
+                                    xxl={8}
+                                    xl={8}
+                                    lg={8}
+                                    md={8}
+                                    sm={20}
+                                    xs={24}
+                                    key={logo.logoKey}
+                                >
                                     <TechLogoItem logoKey={logo.logoKey} title={logo.title}/>
                                 </Col>
                             ))}
@@ -107,22 +126,48 @@ const ProjectDetailedPage: FC = () => {
                     </Col>
                 </Row>
 
+                {!(xxl|| xl || lg || md) && <WebsiteDivider color={'blue'}/>}
 
-                <Row justify={'center'} style={{paddingTop: 64}}>
+                <Row justify={'center'} style={{paddingTop: (xxl|| xl || lg || md) ? 64 : 12}}>
                     <Col span={16}>
                         <Title level={3} centered color={'primary'}>{'Main Features'}</Title>
                     </Col>
 
-                    <Col span={20} style={{paddingTop: 32, paddingBottom: 64}}>
+                    <Col
+                        span={20}
+                        xxl={20}
+                        xl={20}
+                        lg={20}
+                        md={20}
+                        sm={24}
+                        xs={24}
+                        style={{paddingTop: 32, paddingBottom: 64}}
+                    >
                         <Row justify={'center'}>
-                            <Col span={20}>
+                            <Col
+                                span={20}
+                                xxl={20}
+                                xl={20}
+                                lg={20}
+                                md={20}
+                                sm={24}
+                                xs={24}
+                            >
                                 <Row justify={'center'} align={'stretch'} gutter={[8, 8]}>
 
                                     {project?.tickedBoxes?.map((box, index) => (
-                                        <Col span={12}>
-                                            <div className="ticked-box-wrapper" key={index}>
-                                                <div className="header-title-box">
-                                                    <SvgIcon type="ticked-square" className="svg-box"/>
+                                        <Col
+                                            span={12}
+                                            xxl={12}
+                                            xl={12}
+                                            lg={12}
+                                            md={12}
+                                            sm={24}
+                                            xs={24}
+                                        >
+                                            <div className={"ticked-box-wrapper"} key={index}>
+                                                <div className={"header-title-box"}>
+                                                    <SvgIcon type={"ticked-square"} className={"svg-box"}/>
                                                     <Title
                                                         level={5}
                                                         color={"primary"}
@@ -145,12 +190,30 @@ const ProjectDetailedPage: FC = () => {
                     </Col>
                 </Row>
 
-                <WebsiteDivider color={'blue'}/>
+                {(xxl|| xl || lg || md) && <WebsiteDivider color={'blue'}/>}
 
                 <Row justify={'center'}>
-                    <Col span={12}>
-                        <Row justify={'center'} gutter={16} style={{width: '100%'}}>
-                            {project.githubUrl && <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
+                    <Col
+                        span={12}
+                        xxl={12}
+                        xl={12}
+                        lg={12}
+                        md={16}
+                        sm={20}
+                        xs={24}
+                    >
+                        <Row justify={'center'} gutter={[16, 16]} style={{width: '100%'}}>
+                            {project.githubUrl &&
+                                <Col
+                                    span={12}
+                                    xxl={12}
+                                    xl={12}
+                                    lg={12}
+                                    md={12}
+                                    sm={12}
+                                    xs={24}
+                                    style={{display: 'flex', justifyContent: 'center'}}
+                                >
                                 <WebsiteButton
                                     btnType={'ghost'}
                                     icon={<SvgIcon type={'github-ghost'}/>}
@@ -160,7 +223,16 @@ const ProjectDetailedPage: FC = () => {
                                     onClick={onGithubClick}
                                 />
                             </Col>}
-                            <Col span={12} style={{display: 'flex', justifyContent: 'center'}}>
+                            <Col
+                                span={12}
+                                xxl={12}
+                                xl={12}
+                                lg={12}
+                                md={12}
+                                sm={12}
+                                xs={24}
+                                style={{display: 'flex', justifyContent: 'center'}}
+                            >
                                 <WebsiteButton
                                     btnType={'secondary'}
                                     icon={<SvgIcon type={'rocket-ghost'}/>}

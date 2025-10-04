@@ -36,7 +36,7 @@ const ReadMoreComponent: FC<Props> = ({text, maxLength = 600}) => {
                     btnType={'ghost'}
                     text={expanded ? 'Hide description' : 'Read full description'}
                     style={{
-                        width: '30%',
+                        width: 250,
                         margin: '24px auto 0',
                         color: '#2E527D',
                         cursor: 'pointer',
