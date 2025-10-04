@@ -1,4 +1,5 @@
 @use '../../abstracts/variables';
+@use '../../abstracts/mixins';
 
 .project-page-wrapper {
   position: relative;
@@ -6,6 +7,10 @@
   z-index: 2;
   white-space: pre-line;
   //overflow: hidden;
+
+  @include mixins.sm-max {
+    padding-top: 40px;
+  }
 
   .slider-item-wrapper {
     position: relative;
