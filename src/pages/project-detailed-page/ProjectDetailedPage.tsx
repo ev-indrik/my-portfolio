@@ -69,7 +69,7 @@ const ProjectDetailedPage: FC = () => {
             <div className={'container'}>
 
                 <Row justify={'center'} style={{paddingBottom: 16}}>
-                    <Title level={2} color={'primary'}>{project.title}</Title>
+                    <Title level={(xxl|| xl || lg || md) ? 2 : 3} color={'primary'}>{project.title}</Title>
                 </Row>
 
                 <Carousel
@@ -86,8 +86,17 @@ const ProjectDetailedPage: FC = () => {
                 </Carousel>
 
                 <Row justify={'center'} style={{paddingTop: 64}}>
-                    <Col span={10} style={{paddingBottom: 24}}>
-                        <Title level={3} color={'primary'} centered>{'Project Description'}</Title>
+                    <Col
+                        span={10}
+                        xxl={10}
+                        xl={10}
+                        lg={10}
+                        md={10}
+                        sm={20}
+                        xs={24}
+                        style={{paddingBottom: 24}}
+                    >
+                        <Title level={(xxl|| xl || lg || md) ? 2 : 3} color={'primary'} centered>{'Project Description'}</Title>
                     </Col>
                     <Col
                         span={16}
