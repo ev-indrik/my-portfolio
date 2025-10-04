@@ -1,6 +1,17 @@
+@use '../../../../abstracts/mixins';
+
 .contacts-block-wrapper {
   position: relative;
   padding: 60px 0 20px;
+
+  @include mixins.sm-max {
+    padding: 0 0 20px;
+  }
+
+  @include mixins.xs-max {
+    padding: 0 0 20px;
+    margin-top: -24px;
+  }
 
   .contacts-block-bg-wrapper {
     position: absolute;
@@ -19,5 +30,13 @@
     padding: 60px 50px;
     border: 1px solid black;
     border-radius: 42px;
+
+    @include mixins.sm-max {
+      padding: 30px 20px;
+    }
+
+    @include mixins.xs-max {
+      padding: 20px 0;
+    }
   }
 }

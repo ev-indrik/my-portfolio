@@ -1,3 +1,5 @@
+@use '../../../../../abstracts/mixins';
+
 .contacts-item-wrapper {
   width: 100%;
   padding: 8px;
@@ -7,11 +9,21 @@
     align-items: center;
     justify-content: start;
 
+    @media screen and (max-width: 434px) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
     .icon-group-wrapper {
       display: flex;
       align-items: center;
       justify-content: start;
       width: 50%;
+
+      @media screen and (max-width: 434px) {
+        width: unset;
+      }
 
       .contacts-img-wrapper {
         margin-right: 16px;
@@ -30,6 +42,10 @@
 
     .text-box {
       width: 50%;
+
+      @media screen and (max-width: 434px) {
+        width: unset;
+      }
     }
   }
 }
