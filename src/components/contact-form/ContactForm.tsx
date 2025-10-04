@@ -57,7 +57,7 @@ const ContactForm: FC<Props> = ({handleAnimationClick, mainColNumber=14, labelBe
                 xl={mainColNumber}
                 lg={mainColNumber}
                 md={mainColNumber}
-                sm={20}
+                sm={18}
                 xs={22}
             >
                 <Form

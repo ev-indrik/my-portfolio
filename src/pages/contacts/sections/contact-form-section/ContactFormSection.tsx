@@ -8,6 +8,7 @@ import type {LottieRefCurrentProps} from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
 import catSignature from '../../../../assets/lottie-animation/blue-cat-signature.json';
 import ContactForm from "@/components/contact-form/ContactForm";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography
 
@@ -15,6 +16,7 @@ const ContactFormSection: FC = () => {
 
     const hasBeenInViewRef = useRef(false);
     const animationRef = useRef<LottieRefCurrentProps>(null);
+    const {xxl, xl, lg, md} = useBreakpoint()
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -38,7 +40,7 @@ const ContactFormSection: FC = () => {
         <div className={'contact-form-section-wrapper'}>
             <div className={'container'}>
 
-                <Title level={2} color={'primary'} centered>
+                <Title level={(xxl || xl || lg || md) ? 2 : 3} color={'primary'} centered>
                     {'Send Me a Message'}
                 </Title>
 

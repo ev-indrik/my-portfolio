@@ -1,4 +1,5 @@
 @use '../../../../abstracts/variables';
+@use '../../../../abstracts/mixins';
 
 .contact-form-section-wrapper {
   position: relative;
@@ -14,6 +15,24 @@
       width: auto;
       bottom: -180px;
       right: -130px;
+
+      @include mixins.xl-max {
+        right: -90px;
+      }
+
+      @include mixins.lg-max {
+        right: -50px;
+      }
+
+      @include mixins.md-max {
+        right: -75px;
+      }
+
+      @include mixins.sm-max {
+        width: 300px;
+        bottom: -410px;
+        right: -50px;
+      }
     }
   }
 }
