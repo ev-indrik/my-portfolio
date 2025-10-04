@@ -16,6 +16,7 @@ import storeBgImg from './images/bg-images/database-ellipse.png';
 import geocalcEllipse from './images/bg-images/geocalc-ellipse.png';
 import geocalcEllipse2 from './images/bg-images/geocalc-ellipse2.png';
 import ProjectItem from "@/pages/projects/sections/projects-gallery/project-item/ProjectItem";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const imagesMap: Record<string, string> = {
     easetechEllipseImg,
@@ -27,12 +28,14 @@ const imagesMap: Record<string, string> = {
 
 const ProjectsGallery: FC = () => {
 
+    const {xxl, xl, lg, md} = useBreakpoint()
+
     return (
         <div className={'projects-gallery-wrapper'}>
 
                 <TitleIconGroup content={{title: 'My Projects', image: logoImg}}/>
                 <div className={'container'}>
-                    <WebsiteDivider isReversed={true} paddingTop={0}/>
+                    {(xxl||xl||lg||md) && <WebsiteDivider isReversed={true} paddingTop={0}/>}
                 </div>
                 <div className={'gallery-wrapper'}>
                     {projectsData.map((item) => (

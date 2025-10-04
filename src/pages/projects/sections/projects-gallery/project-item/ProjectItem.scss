@@ -1,8 +1,14 @@
+@use '../../../../../abstracts/mixins';
+
 .project-item-wrapper {
   position: relative;
   width: 100%;
   min-height: 400px;
   padding: 32px 0;
+
+  @include mixins.sm-max {
+    padding: 8px;
+  }
 
   .container {
     position: relative;
@@ -13,8 +19,16 @@
       align-items: center;
       justify-content: center;
 
+      @include mixins.sm-max {
+        flex-direction: column;
+      }
+
       &.reversed {
         flex-direction: row-reverse;
+
+        @include mixins.sm-max {
+          flex-direction: column;
+        }
       }
 
       .project-content {
@@ -25,9 +39,23 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include mixins.sm-max {
+          justify-content: start;
+          align-items: center;
+          width: 100%;
+          min-height: unset;
+        }
+
         &.reversed {
           padding: 0 0 0 24px;
           align-items: end;
+
+          @include mixins.sm-max {
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            min-height: unset;
+          }
         }
 
         .text-box {
@@ -38,6 +66,11 @@
           &.reversed {
             align-items: end;
             text-align: right;
+
+            @include mixins.sm-max {
+              align-items: center;
+              text-align: center;
+            }
           }
         }
       }
@@ -94,6 +127,10 @@
     border-radius: 230px 30px 230px 30px;
     overflow: hidden;
     box-shadow:  0 0 20px rgba(0, 0, 0, 0.2);
+
+    @include mixins.sm-max {
+      width: unset;
+    }
 
     img {
       width: 100%;
