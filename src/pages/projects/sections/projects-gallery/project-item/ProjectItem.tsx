@@ -69,7 +69,7 @@ const ProjectItem: FC<ProjectItemType> = ({
                             </div>
                         </div>
 
-                        {(xxl || xl || lg || md) && <div className={'project-img-wrapper'} style={{border: '1px solid green'}}>
+                        {(xxl || xl || lg || md) && <div className={'project-img-wrapper'}>
                             <img src={projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
                         }
