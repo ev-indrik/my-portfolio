@@ -8,7 +8,7 @@
   },
   "about": {
     "mainTitle": "Shortly about me",
-    "description": "Starting in December 2024, I am an intern at a startup with an international team, where I develop a frontend part of a web platform using React, TypeScript, and AntDesign. My responsibilities include creating responsive and visually appealing pages based on Figma designs, collaborating closely with the designer, and addressing various inquiries throughout development. I use Git for version control to ensure smooth project management and team collaboration",
+    "description": "Starting in early 2025, I have been working as an intern at a startup with an international team, where I develop a frontend part of a web platform using React, TypeScript, and AntDesign. My responsibilities include creating responsive and visually appealing pages based on Figma designs, collaborating closely with the designer, and addressing various inquiries throughout development. I use Git for version control to ensure smooth project management and team collaboration",
     "buttonText": "My projects",
     "buttonLink": "#projects"
   },
