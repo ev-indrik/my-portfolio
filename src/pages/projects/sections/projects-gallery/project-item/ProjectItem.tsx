@@ -11,47 +11,46 @@ import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 
 const {Title, Paragraph} = WebsiteTypography
 
+type Props = {
+    it: ProjectItemType,
+    bgImgUpper: string | undefined,
+    bgImgLower: string | undefined,
+    bgSectionImg: string | undefined,
+}
 
-const ProjectItem: FC<ProjectItemType> = ({
-                                              id,
-                                              isReversed,
-                                              bgImgUpper,
-                                              bgImgLower,
-                                              title,
-                                              description,
-                                              projectImgs,
-                                              isDivider,
-                                              bgSectionImg
-                                          }) => {
+const ProjectItem: FC<Props> = ({it, bgImgUpper, bgImgLower, bgSectionImg}) => {
 
     const navigate = useNavigate();
     const {xxl, xl, lg, md, sm} = useBreakpoint()
 
     const handleReadMore = () => {
-        navigate(`/projects/${id}`)
+        navigate(`/projects/${it.id}`)
     };
+
+    console.log(it.title, it.imagePosition)
 
     return (
         <>
-            <div id={id} className={`project-item-wrapper ${isReversed && 'reversed'}`}>
+            <div id={it?.id} className={`project-item-wrapper ${it?.isReversed && 'reversed'}`}>
 
                 {bgImgUpper && <div className={'upper-bg-img-wrapper'}>
                     <img src={bgImgUpper} alt={"background illustration"}/>
                 </div>}
 
                 <div className={'container'}>
-                    <div className={`project-content-wrapper ${isReversed && "reversed"}`}>
+                    <div className={`project-content-wrapper ${it?.isReversed && "reversed"}`}>
 
-                        {!(xxl || xl || lg || md) && <div className={'project-img-wrapper'}>
-                            <img src={projectImgs[0]} alt={'screenshot of project website'}/>
+                        {!(xxl || xl || lg || md) && <div className={`project-img-wrapper ${it?.imagePosition ? `pos-${it?.imagePosition}` : ''}`}>
+                            <img src={it?.projectImgs[0]} alt={'screenshot of project website'}/>
                         </div>
                         }
 
-                        <div className={`project-content ${isReversed && 'reversed'}`}>
-                            <div className={`text-box ${isReversed && 'reversed'}`}>
-                                <Title level={(xxl || xl || lg || md || sm) ? 2 : 3} color={'primary'} centered={!(xxl || xl || lg || md)}
-                                       style={{paddingBottom: 16, paddingTop: (xxl || xl || lg || md) ? 150 : 24 }}>
-                                    {title}
+                        <div className={`project-content ${it?.isReversed && 'reversed'}`}>
+                            <div className={`text-box ${it?.isReversed && 'reversed'}`}>
+                                <Title level={(xxl || xl || lg || md || sm) ? 2 : 3} color={'primary'}
+                                       centered={!(xxl || xl || lg || md)}
+                                       style={{paddingBottom: 16, paddingTop: (xxl || xl || lg || md) ? 150 : 24}}>
+                                    {it?.title}
                                 </Title>
 
                                 <Paragraph
@@ -59,7 +58,7 @@ const ProjectItem: FC<ProjectItemType> = ({
                                     centered={!(xxl || xl || lg || md)}
                                     style={{paddingBottom: !(xxl || xl || lg || md) ? 32 : 0}}
                                 >
-                                    {description}
+                                    {it?.description}
                                 </Paragraph>
                             </div>
 
@@ -69,13 +68,18 @@ const ProjectItem: FC<ProjectItemType> = ({
                             </div>
                         </div>
 
-                        {(xxl || xl || lg || md) && <div className={'project-img-wrapper'}>
-                            <img src={projectImgs[0]} alt={'screenshot of project website'}/>
-                        </div>
+                        {(xxl || xl || lg || md) &&
+                            <div className={'project-img-wrapper'}>
+                                <img
+                                    src={it?.projectImgs[0]}
+                                    alt={'screenshot of project website'}
+                                />
+                            </div>
                         }
 
                     </div>
-                    {isDivider && <WebsiteDivider isReversed={isReversed} paddingTop={(xxl || xl || lg || md) ? 64 : 24} paddingBottom={(xxl || xl || lg || md) ? 0 : 24}/>}
+                    {it?.isDivider && <WebsiteDivider isReversed={it?.isReversed} paddingTop={(xxl || xl || lg || md) ? 64 : 24}
+                                                  paddingBottom={(xxl || xl || lg || md) ? 0 : 24}/>}
                 </div>
 
                 {bgImgLower && <div className={'lower-bg-img-wrapper'}>

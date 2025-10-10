@@ -6,7 +6,7 @@ import logoImg from '../../../../components/title-icon-group/images/hard-skills.
 
 import WebsiteDivider from "@/components/website-divider/WebsiteDivider";
 
-import projectsData from '../../../../data/projectsData.json';
+import projectsDataJson  from '../../../../data/projectsData.json';
 import easetechEllipseImg from './images/bg-images/easetech-ellipse.png';
 
 import shopEllipseImg from './images/bg-images/store-ellipse.png';
@@ -17,6 +17,7 @@ import geocalcEllipse from './images/bg-images/geocalc-ellipse.png';
 import geocalcEllipse2 from './images/bg-images/geocalc-ellipse2.png';
 import ProjectItem from "@/pages/projects/sections/projects-gallery/project-item/ProjectItem";
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
+import type {ProjectItemType} from "@/type/types";
 
 const imagesMap: Record<string, string> = {
     easetechEllipseImg,
@@ -30,6 +31,8 @@ const ProjectsGallery: FC = () => {
 
     const {xxl, xl, lg, md} = useBreakpoint()
 
+    const projectsData = projectsDataJson as ProjectItemType[]
+
     return (
         <div className={'projects-gallery-wrapper'}>
 
@@ -40,16 +43,11 @@ const ProjectsGallery: FC = () => {
                 <div className={'gallery-wrapper'}>
                     {projectsData.map((item) => (
                         <ProjectItem
-                            id={item.id}
+                            it={item}
                             key={item.id}
-                            title={item.title}
-                            description={item.description}
-                            projectImgs={item.projectImgs}
                             bgImgUpper={item.bgImgUpper ? imagesMap[item.bgImgUpper] : undefined}
                             bgImgLower={item.bgImgLower ? imagesMap[item.bgImgLower] : undefined}
                             bgSectionImg={item.bgSectionImg ? imagesMap[item.bgSectionImg] : undefined}
-                            isDivider={item.isDivider}
-                            isReversed={item.isReversed}
                         />
                     ))}
                 </div>
