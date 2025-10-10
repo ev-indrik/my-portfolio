@@ -21,6 +21,7 @@ export type ProjectItemType = {
     description: string;
     detailedDescription?: string;
     projectImgs: string[];
+    imagePosition?: 'left' | 'right'| 'center';
     techLogos?: TechContent[];
     tickedBoxes?: TickedBox[];
     githubUrl?: string;

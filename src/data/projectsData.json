@@ -72,6 +72,7 @@
       "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181708/calc3_dgaifo.png",
       "https://res.cloudinary.com/dpb15v1ct/image/upload/v1753181707/geo-calc_zdigua.png"
     ],
+    "imagePosition": "left",
     "techLogos": [
       {
         "logoKey": "reactImg",
