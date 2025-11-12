@@ -11,7 +11,7 @@ import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
 const experienceList = [
     {
         title: '2025 – now',
-        description: 'Frontend Developer (intern)\nPritster Holdings (Pty) Ltd t/a Groundwork Solutions',
+        description: 'Frontend Developer\nPritster Holdings (Pty) Ltd t/a Groundwork Solutions',
     },
     {
         title: '2015–2019',

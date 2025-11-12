@@ -8,7 +8,7 @@
   },
   "about": {
     "mainTitle": "Shortly about me",
-    "description": "Starting in early 2025, I have been working as an intern at a startup with an international team, where I develop a frontend part of a web platform using React, TypeScript, and AntDesign. My responsibilities include creating responsive and visually appealing pages based on Figma designs, collaborating closely with the designer, and addressing various inquiries throughout development. I use Git for version control to ensure smooth project management and team collaboration",
+    "description": "Starting in early 2025, I have been working a Frontend Developer with an international team, where I develop the frontend part of a web platform using React, TypeScript, and AntDesign. My responsibilities include creating responsive and visually appealing pages based on Figma designs, collaborating closely with the designer, and addressing various inquiries throughout development. I use Git for version control to ensure smooth project management and team collaboration",
     "buttonText": "My projects",
     "buttonLink": "#projects"
   },
@@ -25,15 +25,16 @@
     ]
   },
   "experience": {
-    "mainTitle": "My experience summary",
+    "mainTitle": "My Previous Experience",
     "description": [
-        "Worked on the layout of web pages based on existing designs",
-        "Administered and moderated websites, ensuring smooth operations and user engagement",
-        "Managed brand pages on social media platforms, including Facebook and Instagram",
-        "Wrote engaging infotainment content and translated business correspondence and other materials to/from English and Ukrainian",
-        "Gathered analytical data based on specific criteria, and compiled detailed reports",
-        "Provided online user support and maintained communication with customers",
-        "Managed databases and archives using specialized software and MS Office tools"
+      "Worked on the layout of web pages based on existing designs",
+      "Administered and moderated websites, ensuring smooth operations and user engagement",
+      "Managed brand pages on social media platforms, including Facebook and Instagram",
+      "Wrote engaging infotainment content and translated business correspondence and other materials to/from English and Ukrainian",
+      "Gathered analytical data based on specific criteria, and compiled detailed reports",
+      "Provided online user support and maintained communication with customers",
+      "Managed databases and archives using specialized software and MS Office tools",
+      "Performed duties as a Personal and Project Assistant"
     ],
     "buttonText": "Download PDF Resume"
   },
